@@ -1,0 +1,6 @@
+{
+    "dist" : "dist",
+    "distFiles" : "dist/*",
+
+    "srcPages": "**/*.{html}"
+}
