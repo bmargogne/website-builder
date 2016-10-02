@@ -1,0 +1,25 @@
+const changed = require('gulp-changed');
+const dest = require('gulp-dest');
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+const using = require('gulp-using');
+const watch = require('gulp-watch');
+
+const config = require('../config.json');
+
+
+// copy files looks for anything under directory name "files" and copy it raw.
+// useful for any file available for download
+gulp.task('files', function () {
+
+    const SRC = `${config.src}/${config.files.src}`;
+    const DEST = `${config.dist}/${config.files.dest}/`;
+
+    console.log(`copyFile : ${SRC} --> ${DEST}`);
+
+    return watch( SRC, { ignoreInitial: false })
+        .pipe( rename( (path) => { path.dirname = ''}))        // removes path to put all files in same folder (prevent directory tree duplication)
+        .pipe( changed( DEST ))                                // filter files that are older than the ones in DESTS
+        .pipe( using({prefix:'[files] using :', color:'blue', filesize:true}) )
+        .pipe( gulp.dest(DEST));
+});

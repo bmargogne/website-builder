@@ -1,8 +1,6 @@
 {
     "src": "src",
-
-    "dist": "dist",
-    "distFiles": "dist/*",
+    "dist": "dist", // update .gitignore if changed
 
     "srcPages": "**/*.{html}",
 
@@ -11,8 +9,16 @@
         "dest": "_assets/files"
     },
 
+    "scripts": {
+        "src": "**/*.js",
+        "dest": "_assets/scripts",
+        "vendorscripts": "**/vendorscripts/*.css",
+        "scriptfile": "script.js"
+    },
+
     "styles": {
         "src": "**/*.css",
-        "dest": "_assets/styles"
+        "dest": "_assets/styles",
+        "stylesheet": "style.css"
     }
 }

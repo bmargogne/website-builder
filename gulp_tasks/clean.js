@@ -1,11 +1,12 @@
-var clean = require('gulp-clean');
-var gulp = require('gulp');
+const clean = require('gulp-clean');
+const gulp = require('gulp');
 
-var config = require('../config.json')
+const config = require('../config.json')
 
-gulp.task('clean', function () {
+// empty the "dist" directory to ensure all present files are newly generated
+gulp.task('clean', () => {
 
-    var SRC = `${config.dist}/*`;
+    const SRC = `${config.dist}/*`;
 
     return gulp.src( SRC , {read: false})
         .pipe(clean());
