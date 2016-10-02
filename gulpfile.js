@@ -10,6 +10,7 @@ var tasks = requireDir('./gulp_tasks')
 
 
 gulp.task('default', function () {
+
     if (argv.profile) {
         switch(argv.profile) {
             case "builder": startBuilder(); break;
@@ -24,15 +25,16 @@ gulp.task('default', function () {
 });
 
 function startAll() {
-     runSequence(   'clean',
-                    ['copyFiles', 'copyVendors', 'copyScripts'],
+     return runSequence(   'clean',
+                    ['copyFiles',
+                    'styles' ],
                     'buildHtml');
 }
 
 function startBuilder() {
-     runSequence(   /* TODO : build specifi sequence */ );
+     return runSequence(   /* TODO : build specifi sequence */ );
 }
 
 function startTester() {
-     runSequence(   'copyFiles');
+     return runSequence(   'copyFiles');
 }

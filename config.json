@@ -9,5 +9,10 @@
     "files": {
         "src": "**/files/**/*.*",
         "dest": "_assets/files"
+    },
+
+    "styles": {
+        "src": "**/*.css",
+        "dest": "_assets/styles"
     }
 }
