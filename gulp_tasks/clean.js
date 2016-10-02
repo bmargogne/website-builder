@@ -5,9 +5,9 @@ var config = require('../config.json')
 
 gulp.task('clean', function () {
 
-    console.log( "function clear" );
+    var SRC = `${config.dist}/*`;
 
-    return gulp.src( config.distFiles , {read: false})
+    return gulp.src( SRC , {read: false})
         .pipe(clean());
 
 });

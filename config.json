@@ -1,6 +1,13 @@
 {
-    "dist" : "dist",
-    "distFiles" : "dist/*",
+    "src": "src",
 
-    "srcPages": "**/*.{html}"
+    "dist": "dist",
+    "distFiles": "dist/*",
+
+    "srcPages": "**/*.{html}",
+
+    "files": {
+        "src": "**/files/**/*.*",
+        "dest": "_assets/files"
+    }
 }

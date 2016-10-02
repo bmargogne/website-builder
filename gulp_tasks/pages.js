@@ -1,17 +1,17 @@
-var fileinclude = require('gulp-file-include');
 var gulp = require('gulp');
+/*var fileinclude = require('gulp-file-include');
 var gulpif = require ('gulp-if');
 var newer = require('gulp-newer');
 var plumber = require('gulp-plumber');
 var size = require('gulp-filesize');
 var using = require('gulp-using');
 
-var config = require('./config.json');
+var config = require('./config.json');*/
 
 
 // BUILDING PAGES : Generates HTML, PHP and other from various partial files
 gulp.task('pages', function () {
-
+/*
     var SRC = config.pages.src;
     var PARTIALS = config.pages.partials;
 
@@ -21,5 +21,5 @@ gulp.task('pages', function () {
             prefix: '@@',
             basepath: src
         }))
-        .pipe( gulp.dest(config.pages.target) );
+        .pipe( gulp.dest(config.pages.target) );*/
 });

@@ -1,4 +1,5 @@
 var argv = require('yargs').argv;
+var exec = require('gulp-exec');
 var gulp = require('gulp');
 var requireDir = require('require-dir');
 var runSequence = require('run-sequence');
@@ -6,8 +7,9 @@ var runSequence = require('run-sequence');
 var config = require('./config.json')
 var tasks = requireDir('./gulp_tasks')
 
-gulp.task('default', function () {
 
+
+gulp.task('default', function () {
     if (argv.profile) {
         switch(argv.profile) {
             case "builder": startBuilder(); break;
@@ -21,19 +23,16 @@ gulp.task('default', function () {
     }
 });
 
-
 function startAll() {
      runSequence(   'clean',
-                    ['copyVendors', 'copyScripts'],
+                    ['copyFiles', 'copyVendors', 'copyScripts'],
                     'buildHtml');
 }
 
 function startBuilder() {
-
      runSequence(   /* TODO : build specifi sequence */ );
 }
 
 function startTester() {
-
-     runSequence(   /* TODO : build specifi sequence */ );
+     runSequence(   'copyFiles');
 }
