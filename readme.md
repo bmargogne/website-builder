@@ -14,7 +14,7 @@ Any remark or suggestion are welcome.
 - cd website-builder
 - npm install
 - run 'gulp' and start working on your files
-- open '_gulp/config.json' to adjust the builder to your needs
+- open '_gulp/_config.json' to adjust the builder to your needs
 
 ## Features
 
@@ -45,3 +45,4 @@ Any remark or suggestion are welcome.
 - should handle PHP pages
 - should integrate git functionnalities
 - should give more freedom on "vendors" location. Ex: SRC could look like '**/vendors/*', and DEST could look like '_assets/vendors' while keeping sub-tree structure
+- should (re)write some code comments

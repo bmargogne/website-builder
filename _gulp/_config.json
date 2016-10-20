@@ -3,11 +3,6 @@
 	"dest": "www",
 	"temp": "_temp",
 
-	"pages": {
-		"src": "**/*.html",
-		"partials" :"**/_*.html"
-	},
-
 	"files": {
 		"src": "**/files/**/*.*",
 		"dest": "_assets/files"
@@ -16,6 +11,16 @@
 	"fonts": {
 		"src": "**/*.{eot,otf,ttf,woff,woff2}",
 		"dest": "_assets/fonts"
+	},
+
+	"images": {
+		"srcBitmaps": "**/*.{jpg,png,gif}",
+		"destBitmaps": "_assets/images"
+	},
+
+	"pages": {
+		"src": "**/*.html",
+		"partials" :"**/_*.html"
 	},
 
 	"scripts": {

@@ -4,7 +4,7 @@ const newer = require('gulp-newer');
 const using = require('gulp-using');
 const watch = require('gulp-watch');
 
-const config = require('./config.json');
+const config = require('./_config.json');
 
 gulp.task('pagesHtml', function () {
 
@@ -13,14 +13,15 @@ gulp.task('pagesHtml', function () {
 	const EXCLUDE2 = `!${config.src}/${config.vendors.src}`;
 	const DEST = `${config.dest}/`;
 
-	console.log(`Html Pages : ${SRC} --> ${DEST}`);
+	console.log(`Html Pages building : ${SRC} --> ${DEST}`);
+	console.log(`Html Pages excludes : ${EXCLUDE1} and ${EXCLUDE2}`);
 
-	return watch( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false } )                           // exclude files which should be left untouched (eg external scripts) or partials
+	return watch( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false } )
 		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[pages/html] using :', color:'cyan', filesize:true} ))     // list input stylesheet
-		.pipe( fileinclude({                                                      // process file includes in SRC html (partials or variables allocation...)
+		.pipe( using( {prefix:'[pages/html] using :', color:'cyan', filesize:true} ))
+		.pipe( fileinclude({
 			prefix: '@@',
 			basepath: config.src
 		}))
-		.pipe( gulp.dest(DEST) );
+		.pipe( gulp.dest( DEST ));
 });
