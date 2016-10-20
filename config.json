@@ -38,7 +38,7 @@
 	},
 
 	"vendors": {
-		"src": "vendors/**/*.*",
+		"src": "**/vendors/**/*.*",
 		"dest": "_assets/vendors"
 	}
 

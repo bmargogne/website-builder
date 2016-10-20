@@ -7,40 +7,47 @@ const runSequence = require('run-sequence');
 const config = require('../config.json');
 const tasks = requireDir('./');
 
-gulp.task('_starter', function () {
+gulp.task('_starter', () => {
 
 	if (argv.profile) {
 		switch(argv.profile) {
-			case "builder": startBuilder(); break;
-			case "tester": startTester(); break;
+			case "full": fullSequence(); break;
 			default:
 			console.log( "No valid profile chosen" );
-			startSequence();
+			defaultSequence();
 		}
 	}
 	else {
-		console.log( "running default profile. Use --profile (WIP: builder, tester, TODO: scripter, webdesigner, deployer)" );
-		startSequence();
+		console.log( "running default profile. Use --profile (WIP: full, TODO: scripter, webdesigner, deployer)" );
+		defaultSequence();
 	}
 });
 
-function startSequence() {
-	return runSequence(	//'clean'
-						['files',
-						'fonts',
-						'scripts',
-						'stylesCss',
-						'stylesScss',
-						'stylesFinal',
-						'vendors',
-						'buildHtml']
-						);
+const defaultSequence = () => {
+	return runSequence([
+		'files',
+		'fonts',
+		'scripts',
+		'stylesCss',
+		'stylesScss',
+		'stylesFinal',
+		'vendors',
+		'buildHtml'
+	]);
 }
 
-function startBuilder() {
-	return runSequence(   /* TODO : build specific sequence (with parallel tasks) */ );
-}
-
-function startTester() {
-	return runSequence(   /* TODO : build specific sequence (with parallel tasks) */ );
+const fullSequence = () => {
+	return runSequence(
+		'clean',
+		[
+			'files',
+			'fonts',
+			'scripts',
+			'stylesCss',
+			'stylesScss',
+			'stylesFinal',
+			'vendors',
+			'buildHtml'
+		]
+	);
 }
