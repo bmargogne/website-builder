@@ -7,14 +7,15 @@ const using = require('gulp-using');
 // imports
 const config = require('./_config.json');
 
-// globs
-const SRC = `${config.src}/${config.style.srcCss}`;
-const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-const DEST = `${config.temp}/${config.style.destCss}/`;
-const STYLESHEET = config.style.cssSheet;
-
 // task
 gulp.task('styleCss', () => {
+
+	// globs
+	const SRC = `${config.src}/${config.style.srcCss}`;
+	const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
+	const DEST = `${config.temp}/${config.style.destCss}/`;
+	const STYLESHEET = config.style.cssSheet;
+
 	console.log(`Style CSS building : ${SRC} --> ${DEST}${STYLESHEET}, excluding ${EXCLUDE}`);
 
 	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })

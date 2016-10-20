@@ -8,28 +8,39 @@ const watch = require('gulp-watch');
 
 // imports
 const config = require('./_config.json');
-
-// globs
-const SRC = `${config.src}/${config.fonts.src}`;
-const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-const DEST = `${config.dest}/${config.fonts.dest}/`;
+const processFonts = config.buildingSteps.processFonts;
 
 // task
 gulp.task('fonts', () => {
-	console.log(`Fonts simple copy : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+	if (processFonts) {
 
-	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-		.pipe( rename( {dirname: ''} ))
-		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[fonts] copying :', color:'gray', filesize:true} ))
-		.pipe( gulp.dest( DEST ));
+		// globs
+		const SRC = `${config.src}/${config.fonts.src}`;
+		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
+		const DEST = `${config.dest}/${config.fonts.dest}/`;
+
+		console.log(`Fonts simple copy : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+
+		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+			.pipe( rename( {dirname: ''} ))
+			.pipe( newer( DEST ))
+			.pipe( using( {prefix:'[fonts] copying :', color:'gray', filesize:true} ))
+			.pipe( gulp.dest( DEST ));
+	}
+	return;
 });
 
 // watch
 gulp.task('watch-fonts', () => {
-	console.log(`Watching fonts : ${SRC}`);
+	if (processFonts) {
+		const SRC = `${config.src}/${config.fonts.src}`;
+		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
 
-	return watch( [SRC, EXCLUDE], (event) => {
-		runSequence('fonts', 'liveReload');
-	});
+		console.log(`Watching fonts : ${SRC}, except for ${EXCLUDE}`);
+
+		return watch( [SRC, EXCLUDE], (event) => {
+			runSequence('fonts', 'liveReload');
+		});
+	}
+	return;
 })

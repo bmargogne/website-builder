@@ -8,13 +8,14 @@ const using = require('gulp-using');
 // imports
 const config = require('./_config.json');
 
-// globs
-const SRC = `${config.temp}/${config.style.srcFinalCss}`;
-const DEST = `${config.dest}/${config.style.destFinalCss}/`;
-const STYLESHEET = config.style.finalCssSheet;
-
 // task
 gulp.task('styleFinal', () => {
+
+	// globs
+	const SRC = `${config.temp}/${config.style.srcFinalCss}`;
+	const DEST = `${config.dest}/${config.style.destFinalCss}/`;
+	const STYLESHEET = config.style.finalCssSheet;
+
 	console.log(`Building stylesheet from : ${SRC} --> ${DEST}${STYLESHEET}`);
 
 	return gulp.src( SRC , { ignoreInitial: false })

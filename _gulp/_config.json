@@ -3,6 +3,30 @@
 	"dest": "www",
 	"temp": "_temp",
 
+	"buildingSteps": {
+		"cleanDest": true,
+		"cleanTemp": false,
+
+		"processBitmaps": true,
+		"processFiles": false,
+		"processFonts": false,
+		"processPages": false,
+		"processScripts": false,
+		"processSprite": false,
+		"processStyle": true,
+		"processVendors": false,
+		"processVectors": false,
+
+		"serveLocal": true,
+		"browserSyncUI": true,
+		"serveBrowsers": true
+	},
+
+	"browsers" : {
+		"chrome":true,
+		"firefox":true
+	},
+
 	"files": {
 		"src": "**/files/**/*.*",
 		"dest": "_assets/files"
@@ -18,8 +42,8 @@
 		"destBitmaps": "_assets/images",
 
 		"srcVectors": "**/*.svg",
-		"destVectors": "_assets/spritesheet",
-		"spriteSheetFile" : "_assets/vectorSprite.svg"
+		"destVectors": "_assets/images",
+		"spritesheetVector" : "spriteSvg.svg"
 	},
 
 	"pages": {
@@ -48,17 +72,7 @@
 	},
 
 	"vendors": {
-		"src": "vendors/**/*.*",
+		"src": "_vendors/**/*.*",
 		"dest": "_assets/vendors"
-	},
-
-	"ReadMeFirst":"the following options are not implemented yet",
-
-	"localserve" : {
-		"edge":true,
-		"firefox":true,
-		"internetExplorer6":true,
-		"internetExplorer8":true,
-		"opera":true
 	}
 }

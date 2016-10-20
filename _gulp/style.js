@@ -6,28 +6,34 @@ const watch = require('gulp-watch');
 
 // imports
 const config = require('./_config.json');
-const tasks = requireDir('./'); /// USEFUL ????
-
-// globs
-const CSS =  `${config.src}/${config.style.srcCss}/`;
-const SCSS =  `${config.src}/${config.style.srcScss}/`;
+const processStyle = config.buildingSteps.processStyle;
 
 // task
 gulp.task('style', () => {
-	return runSequence(
-		[
-			'styleCss',
-			'styleScss'
-		],
-		'styleFinal'
-	);
+	if (processStyle) {
+		return runSequence(
+			[
+				'styleCss',
+				'styleScss'
+			],
+			'styleFinal'
+		);
+	}
+	return;
 });
 
 // watch
 gulp.task('watch-style', () => {
-	console.log('')
+	if (processStyle) {
 
-	return watch( [CSS, SCSS], (event) => {
-		runSequence('style', 'liveReload');
-	});
+		// globs
+		const CSS =  `${config.src}/${config.style.srcCss}/`;
+		const SCSS =  `${config.src}/${config.style.srcScss}/`;
+
+		console.log(`Watching styles : ${SRC}, except for ${EXCLUDE}`);
+
+		return watch( [CSS, SCSS], (event) => {
+			runSequence('style', 'liveReload');
+		});
+	}
 })

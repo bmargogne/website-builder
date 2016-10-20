@@ -8,28 +8,41 @@ const watch = require('gulp-watch');
 
 // imports
 const config = require('./_config.json');
-
-// globs
-const SRC = `${config.src}/${config.files.src}`;
-const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-const DEST = `${config.dest}/${config.files.dest}/`;
+const processFiles = config.buildingSteps.processFiles;
 
 // task
 gulp.task('files', () => {
-	console.log(`Files simple copy: ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+	if (processFiles) {
 
-	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-		.pipe( rename( path => { path.dirname = ''}))
-		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[files] copying :', color:'blue', filesize:true} ))
-		.pipe( gulp.dest( DEST ));
+		// globs
+		const SRC = `${config.src}/${config.files.src}`;
+		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
+		const DEST = `${config.dest}/${config.files.dest}/`;
+
+		console.log(`Files simple copy: ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+
+		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+			.pipe( rename( path => { path.dirname = ''}))
+			.pipe( newer( DEST ))
+			.pipe( using( {prefix:'[files] copying :', color:'blue', filesize:true} ))
+			.pipe( gulp.dest( DEST ));
+	}
+	return;
 });
 
 // watch
 gulp.task('watch-files', () => {
-	console.log(`Watching files : ${SRC}, except for ${EXCLUDE}`);
+	if (processFiles) {
 
-	return watch( [SRC, EXCLUDE], (event) => {
-		runSequence('files', 'liveReload');
-	});
+		// globs
+		const SRC = `${config.src}/${config.files.src}`;
+		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
+
+		console.log(`Watching files : ${SRC}, except for ${EXCLUDE}`);
+
+		return watch( [SRC, EXCLUDE], (event) => {
+			runSequence('files', 'liveReload');
+		});
+	}
+	return;
 })

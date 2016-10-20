@@ -1,25 +1,32 @@
 # Website builder
+================
+
+v0.0.1
+by Bertrand Margogne.
+
 
 ## Overview
 
-A simple builder for automating some operations during website building. It performs various common operations / optimization on files (pages, scripts, styles...)
+A simple builder for automating some operations during website building. It performs various common operations / optimization on files (pages, scripts, styles, spritesheets...)
 
-It is thought for using alone on simple web front-end projects using only HTML, CSS & JS.
-It may not be adapted for bigger projects, teams, and is probably not compatible with other frameworks.
+It was developped for working alone in a simple front-end project, using 'only' HTML, CSS & JS.
+It may not be adapted for bigger projects, teams, and probably isn't compatible with other more complex frameworks.
 
-This is my first project, and any remark or suggestion is welcome.
+This is my first project... in order to improve, I welcome any remark or suggestion (...and critics, provided they are constructive!).
 
 ## Get Started
 
 - you need node & npm installed. (not sure which version, any feedback is appreciated)
 
-shell git clone https://github.com/bmargogne/website-builder.git
-shell cd website-builder
-shell npm install
-shell run 'gulp' and start working on your files
-shell open '_gulp/_config.json' to adjust the builder to your needs
+`git clone https://github.com/bmargogne/website-builder.git`
+`cd website-builder`
+`npm install`
+`run 'gulp' and start working on your files`
+`open '_gulp/_config.json' to adjust the builder to your needs`
 
-## Features
+_Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to get rid of them_
+
+## Features 0.0.1
 
 ### ** done
 - **files, fonts & vendor scripts**: raw copy for all files from source to destination, 'in _assets' directory
@@ -45,6 +52,7 @@ shell open '_gulp/_config.json' to adjust the builder to your needs
 - Watchers may miss newly created folders and their content. However creating files in existing directory is watched correctly.
 - For gulp-using, the console log of the file path may be confusing when changing 'dirname' from gulp-rename.
 - Changing a HTML partial will not rebuild the "caller" file
+- Some elements may need two reload to properly update. (even with disable cache option)
 
 ## Improvments ideas
 - should use plumber to prevent some repeated crashes if any
@@ -53,3 +61,4 @@ shell open '_gulp/_config.json' to adjust the builder to your needs
 - should be able to work external frameworks (Ember, Meteor...)
 - should accept typescript
 - test if it works for server scripting ()
+- add the link to package documentation directly in code

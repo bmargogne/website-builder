@@ -8,20 +8,23 @@ const tasks = requireDir('./');
 
 gulp.task('_starter', () => {
 
-
-
 	if (argv) {
-		if (argv.type === 'local') {
+		if (argv.s === 'local') {
 			console.log('[Website Builder] Running : Local Server sequence');
 			startLocalServer();
 		}
 
-		else if (argv.git) {
+		else if (argv.s === 'git') {
 			console.log('[Website Builder] should initiate or commit & push to remote - not implemented yet. Any hint/suggestion is welcome');
 		}
 
-		else if (argv.ftp) {
+		else if (argv.s === 'ftp') {
 			console.log('[Website Builder] should upload necessary files to ftp and delete unnecessary files from ftp. Any hint/suggestion is welcome')
+		}
+
+		else if (argv.s === 'test') {
+			console.log('[Website Builder] Running : Test sequence')
+			testSequence();
 		}
 
 		else {
@@ -31,12 +34,19 @@ gulp.task('_starter', () => {
 	}
 	else {
 		console.log( `[Website Builder] no options entered : Running Quick build.`);
-		console.log( `*** run 'gulp -local' for full clean + building + serving multiple local browsers`);
-		console.log( `*** run 'gulp -git' for initiating repo and/or commit + push to remote`);
-		console.log( `*** run 'gulp -ftp' for ftp upload to configured server`);
+		console.log( `*** run 'gulp --s local' for full clean + building + serving multiple local browsers`);
+		console.log( `*** run 'gulp --s git' for initiating repo and/or commit + push to remote`);
+		console.log( `*** run 'gulp --s ftp' for ftp upload to configured server`);
+		console.log( `*** run 'gulp --s test' for testing sequence`);
 		defaultSequence();
 	}
 });
+
+const testSequence = () => {
+	return runSequence(
+		'files'
+	);
+}
 
 const defaultSequence = () => {
 	return runSequence(
@@ -44,6 +54,7 @@ const defaultSequence = () => {
 			'files',
 			'fonts',
 			'imgBitmaps',
+			'imgVectors',
 			'pagesHtml',
 			'scripts',
 			'style',
@@ -53,11 +64,11 @@ const defaultSequence = () => {
 			'serveLocal',
 			'watch-files',
 			'watch-imgBitmaps',
+			'watch-imgVectors',
 			'watch-pagesHtml',
 			'watch-scripts',
 			'watch-style',
 			'watch-vendors',
-			'openBrowsers'
 		]
 	);
 }
@@ -68,6 +79,7 @@ const startLocalServer = () => {
 		[
 			'pagesHtml',
 			'imgBitmaps',
+			'imgVectors',
 			'files',
 			'fonts',
 			'scripts',
@@ -79,6 +91,7 @@ const startLocalServer = () => {
 			'serveLocal',
 			'watch-files',
 			'watch-imgBitmaps',
+			'watch-imgVectors',
 			'watch-pagesHtml',
 			'watch-scripts',
 			'watch-style',

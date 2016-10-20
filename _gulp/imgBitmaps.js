@@ -9,29 +9,42 @@ const watch = require('gulp-watch');
 
 // imports
 const config = require('./_config.json');
-
-// globs
-const SRC = `${config.src}/${config.images.srcBitmaps}`;
-const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-const DEST = `${config.dest}/${config.images.destBitmaps}/`;
+const processBitmaps = config.buildingSteps.processBitmaps
 
 // task
 gulp.task('imgBitmaps', () => {
-	console.log(`Images Bitmaps : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+	if (processBitmaps) {
 
-	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-		.pipe( rename( {dirname: ''}))
-		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[images/bitmaps] compressing :', color:'magenta', filesize:true} ))
-		.pipe( imagemin())
-		.pipe( gulp.dest(DEST));
+		// globs
+		const SRC = `${config.src}/${config.images.srcBitmaps}`;
+		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
+		const DEST = `${config.dest}/${config.images.destBitmaps}/`;
+
+		console.log(`Images Bitmaps : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+
+		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+			.pipe( rename( {dirname: ''}))
+			.pipe( newer( DEST ))
+			.pipe( using( {prefix:'[images/bitmaps] compressing :', color:'magenta', filesize:true} ))
+			.pipe( imagemin())
+			.pipe( gulp.dest(DEST));
+	}
+	return;
 });
 
 // watch
 gulp.task('watch-imgBitmaps', () => {
-	console.log(`Watching bitmap images : ${SRC}, except for ${EXCLUDE}`);
+	if (processBitmaps) {
 
-	return watch( [SRC, EXCLUDE], () => {
-		runSequence('imgBitmaps', 'liveReload');
-	});
+		// globs
+		const SRC = `${config.src}/${config.images.srcBitmaps}`;
+		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
+
+		console.log(`Watching bitmap images : ${SRC}, except for ${EXCLUDE}`);
+
+		return watch( [SRC, EXCLUDE], () => {
+			runSequence('imgBitmaps', 'liveReload');
+		});
+	}
+	return;
 })

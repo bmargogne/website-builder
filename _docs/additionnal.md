@@ -1,4 +1,5 @@
 # Additional Documentation
+=========================
 
 ## Example website
 
@@ -24,9 +25,13 @@ Please ask permission for exact copy.
 - gulp-file-include : https://www.npmjs.com/package/gulp-file-include
 - gulp-newer : https://www.npmjs.com/package/gulp-newer
 - gulp-open : https://www.npmjs.com/package/gulp-open
+- gulp-plumber : https://www.npmjs.com/package/gulp-plumber
 - gulp-rename : https://www.npmjs.com/package/gulp-rename
 - gulp-sass : https://www.npmjs.com/package/gulp-sass
+- gulp-sourcemaps : https://www.npmjs.com/package/gulp-sourcemaps
 - gulp-svgmin : https://www.npmjs.com/package/gulp-svgmin
+- gulp-svg-sprite : https://www.npmjs.com/package/gulp-svg-sprite
+- gulp-svg-uglify : https://www.npmjs.com/package/gulp-uglify
 - gulp-using : https://www.npmjs.com/package/gulp-using
 - gulp-watch : https://www.npmjs.com/package/gulp-watch
 
