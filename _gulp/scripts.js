@@ -1,4 +1,5 @@
 // npm packages
+const _if = require('gulp-if')
 const concat = require('gulp-concat');
 const gulp = require('gulp');
 const newer = require('gulp-newer');
@@ -18,6 +19,8 @@ gulp.task('scripts', () => {
 	if (processScripts) {
 
 		const SCRIPTFILE = config.scripts.scriptfile;
+		const isProd = config.env.isProd;
+		const isTest = config.env.isTest;
 
 		// globs
 		const SRC = `${config.src}/${config.scripts.src}`;
@@ -27,14 +30,14 @@ gulp.task('scripts', () => {
 		console.log(`Scripts building : ${SRC} --> ${DEST}${SCRIPTFILE}, excluding ${EXCLUDE}`);
 
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-			.pipe( plumber() )
 			.pipe( sourcemaps.init())
-			.pipe( newer( DEST + SCRIPTFILE ))
-			.pipe( using( {prefix:'[scripts] concatenating :', color:'green', filesize:true} ))
-			.pipe( concat ( SCRIPTFILE ))
-			.pipe( uglify() )
-			.pipe( using( {prefix:'[scripts] done :', color:'green', filesize:true} ))
-			.pipe( sourcemaps.write('maps'))
+				.pipe( plumber() )
+				.pipe( newer( DEST + SCRIPTFILE ))
+				.pipe( _if (isTest, using( {prefix:'[scripts] concatenating :', color:'green', filesize:true} )))
+				.pipe( concat ( SCRIPTFILE ))
+				.pipe( _if (isProd, uglify() ))
+				.pipe( _if (isTest, using( {prefix:'[scripts] done :', color:'green', filesize:true} )))
+			.pipe( sourcemaps.write('./'))
 			.pipe( gulp.dest( DEST ));
 	}
 	return;

@@ -1,3 +1,5 @@
+'use strict';
+
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
@@ -9,5 +11,5 @@ gulp.task('default', function () {
 	// run 'gulp --profile={profileType}' for a specific building sequence
 	// {profilType} can be builder, tester ... ( not fonctionnal)
 
-    return runSequence('_starter');
+	return runSequence('_starter');
 });

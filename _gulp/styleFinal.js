@@ -3,6 +3,7 @@ const cleanCss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const gulp = require('gulp');
 const newer = require('gulp-newer');
+const sourcemaps = require('gulp-sourcemaps');
 const using = require('gulp-using');
 
 // imports
@@ -20,9 +21,11 @@ gulp.task('styleFinal', () => {
 
 	return gulp.src( SRC , { ignoreInitial: false })
 		.pipe( newer( DEST + STYLESHEET ))
-		.pipe( using( {prefix:'[style/final] concatenating :', color:'yellow', filesize:true} ))
-		.pipe( concat ( STYLESHEET ))
-		.pipe( cleanCss())
-		.pipe( using( {prefix:'[style/final] done & cleaned :', color:'yellow', filesize:true} ))
+		.pipe( sourcemaps.init() )
+			.pipe( using( {prefix:'[style/final] concatenating :', color:'yellow', filesize:true} ))
+			.pipe( concat ( STYLESHEET ))
+			.pipe( cleanCss())
+		.pipe( sourcemaps.write('./') )
+		.pipe( using( {prefix:'[style/final] done & optimized :', color:'yellow', filesize:true} ))
 		.pipe( gulp.dest( DEST ));
 });

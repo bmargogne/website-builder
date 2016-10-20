@@ -1,4 +1,10 @@
 {
+	"env": {
+		"isDev": true,
+		"isProd": false,
+		"isTest": false
+	},
+
 	"src": "src",
 	"dest": "www",
 	"temp": "_temp",
@@ -8,14 +14,14 @@
 		"cleanTemp": false,
 
 		"processBitmaps": true,
-		"processFiles": false,
-		"processFonts": false,
-		"processPages": false,
-		"processScripts": false,
-		"processSprite": false,
+		"processFiles": true,
+		"processFonts": true,
+		"processPages": true,
+		"processScripts": true,
+		"processSprite": true,
 		"processStyle": true,
-		"processVendors": false,
-		"processVectors": false,
+		"processVendors": true,
+		"processVectors": true,
 
 		"serveLocal": true,
 		"browserSyncUI": true,

@@ -30,7 +30,7 @@ gulp.task('watch-style', () => {
 		const CSS =  `${config.src}/${config.style.srcCss}/`;
 		const SCSS =  `${config.src}/${config.style.srcScss}/`;
 
-		console.log(`Watching styles : ${SRC}, except for ${EXCLUDE}`);
+		console.log(`Watching styles : ${CSS} and ${SCSS}`);
 
 		return watch( [CSS, SCSS], (event) => {
 			runSequence('style', 'liveReload');
