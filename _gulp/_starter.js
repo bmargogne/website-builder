@@ -31,6 +31,7 @@ function startSequence() {
 						'scripts',
 						'stylesCss',
 						'stylesScss',
+						'stylesFinal',
 						'buildHtml']);
 }
 

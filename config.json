@@ -1,10 +1,10 @@
 {
 	"src": "src",
-	"dist": "www",
+	"dest": "www",
 	"temp": "_temp",
 
 	"pages": {
-		"srcPages": "**/*.{html}"
+		"srcPages": "**/*.html"
 	},
 
 	"files": {
@@ -20,8 +20,9 @@
 	"scripts": {
 		"src": "**/*.js",
 		"dest": "_assets/scripts",
-		"vendorscripts": "**/vendorscripts/*.css",
-		"scriptfile": "script.js"
+		"scriptfile": "script.js",
+
+		"vendorscripts": "**/vendorscripts/*.css"
 	},
 
 	"styles": {
@@ -31,6 +32,10 @@
 
 		"srcScss": "**/*.scss",
 		"destScss": "styles",
-		"scssSheet": "styleScss.css"
+		"scssSheet": "styleScss.css",
+
+		"srcFinalCss": "**/*.css",
+		"destFinalCss": "_assets/styles",
+		"finalCssSheet": "styles.css"
 	}
 }

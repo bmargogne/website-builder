@@ -16,7 +16,7 @@ gulp.task('stylesScss', () => {
 	console.log(`styles : ${SRC} --> ${DEST}${STYLESHEET}`);
 
 	return watch( SRC , { ignoreInitial: false })
-		.pipe( newer( SRC + STYLESHEET ))
+		.pipe( newer( DEST + STYLESHEET ))
 		.pipe( using( {prefix:'[styles/scss] using :', color:'yellow', filesize:true} ) )                    // list input stylesheet
 		.pipe( sass().on('error', sass.logError))
 		.pipe( concat ( STYLESHEET ) )                                                                  // create a single files

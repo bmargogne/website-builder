@@ -13,7 +13,7 @@ const config = require('../config.json');
 gulp.task('files', function () {
 
 	const SRC = `${config.src}/${config.files.src}`;
-	const DEST = `${config.dist}/${config.files.dest}/`;
+	const DEST = `${config.dest}/${config.files.dest}/`;
 
 	console.log(`copyFile : ${SRC} --> ${DEST}`);
 

@@ -11,7 +11,7 @@ const config = require('../config.json');
 gulp.task('fonts', function () {
 
 	const SRC = `${config.src}/${config.fonts.src}`;
-	const DEST = `${config.dist}/${config.fonts.dest}/`;
+	const DEST = `${config.dest}/${config.fonts.dest}/`;
 
 	console.log(`copyFonts : ${SRC} --> ${DEST}`);
 

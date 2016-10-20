@@ -3,10 +3,10 @@ const gulp = require('gulp');
 
 const config = require('../config.json')
 
-// empty the "dist" directory to ensure all present files are newly generated
+// empty the "dest" directory to ensure all present files are newly generated
 gulp.task('clean', () => {
 
-	const SRC = `${config.dist}/*`;
+	const SRC = `${config.dest}/*`;
 
 	return gulp.src( SRC , {read: false})
 		.pipe(clean());

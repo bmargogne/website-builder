@@ -9,7 +9,7 @@ const config = require('../config.json');
 gulp.task('scripts', () => {
 
 	const SRC = `${config.src}/${config.scripts.src}`;
-	const DEST = `${config.dist}/${config.scripts.dest}/`;
+	const DEST = `${config.dest}/${config.scripts.dest}/`;
 	const SCRIPTFILE = config.scripts.scriptfile;
 
 	console.log(`scripts : ${SRC} --> ${DEST}${SCRIPTFILE}`);
