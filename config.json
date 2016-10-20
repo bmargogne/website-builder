@@ -1,24 +1,32 @@
 {
-    "src": "src",
-    "dist": "dist", // update .gitignore if changed
+	"src": "src",
+	"dist": "www",
+	"srcPages": "**/*.{html}",
 
-    "srcPages": "**/*.{html}",
+	"files": {
+		"src": "**/files/**/*.*",
+		"dest": "_assets/files"
+	},
 
-    "files": {
-        "src": "**/files/**/*.*",
-        "dest": "_assets/files"
-    },
+	"fonts": {
+		"src": "**/*.{eot,otf,ttf,woff,woff2}",
+		"dest": "_assets/fonts"
+	},
 
-    "scripts": {
-        "src": "**/*.js",
-        "dest": "_assets/scripts",
-        "vendorscripts": "**/vendorscripts/*.css",
-        "scriptfile": "script.js"
-    },
+	"scripts": {
+		"src": "**/*.js",
+		"dest": "_assets/scripts",
+		"vendorscripts": "**/vendorscripts/*.css",
+		"scriptfile": "script.js"
+	},
 
-    "styles": {
-        "src": "**/*.css",
-        "dest": "_assets/styles",
-        "stylesheet": "style.css"
-    }
+	"styles": {
+		"srcCss": "**/*.css",
+		"destCss": "_assets/styles",
+		"cssSheet": "styleCss.css",
+
+		"srcScss": "**/*.scss",
+		"destScss": "_assets/styles",
+		"scssSheet": "styleScss.css"
+	}
 }

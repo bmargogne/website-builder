@@ -4,6 +4,6 @@ var gulp = require('gulp');
 
 gulp.task('buildHtml', function () {
 
-    console.log( "function build html" );
+	console.log( "function build html" );
 
 });

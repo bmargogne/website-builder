@@ -1,10 +1,13 @@
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
-const profiles = require('./gulp_tasks/profiles')
-
+const profiles = require('./_gulp/_starter')
 
 gulp.task('default', function () {
 
-    return runSequence('profiles');
+	// run 'gulp' for default building sequence
+	// run 'gulp --profile={profileType}' for a specific building sequence
+	// {profilType} can be builder, tester ... ( not fonctionnal)
+
+    return runSequence('_starter');
 });
