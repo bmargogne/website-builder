@@ -9,7 +9,7 @@ const config = require('../config.json');
 gulp.task('stylesCss', () => {
 
 	const SRC = `${config.src}/${config.styles.srcCss}`;
-	const DEST = `${config.dist}/${config.styles.destCss}/`;
+	const DEST = `${config.temp}/${config.styles.destCss}/`;
 	const STYLESHEET = config.styles.cssSheet;
 
 	console.log(`styles : ${SRC} --> ${DEST}${STYLESHEET}`);

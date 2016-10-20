@@ -1,7 +1,11 @@
 {
 	"src": "src",
 	"dist": "www",
-	"srcPages": "**/*.{html}",
+	"temp": "_temp",
+
+	"pages": {
+		"srcPages": "**/*.{html}"
+	},
 
 	"files": {
 		"src": "**/files/**/*.*",
@@ -22,11 +26,11 @@
 
 	"styles": {
 		"srcCss": "**/*.css",
-		"destCss": "_assets/styles",
+		"destCss": "styles",
 		"cssSheet": "styleCss.css",
 
 		"srcScss": "**/*.scss",
-		"destScss": "_assets/styles",
+		"destScss": "styles",
 		"scssSheet": "styleScss.css"
 	}
 }
