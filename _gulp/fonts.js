@@ -4,10 +4,9 @@ const rename = require('gulp-rename');
 const using = require('gulp-using');
 const watch = require('gulp-watch');
 
-const config = require('../config.json');
+const config = require('./config.json');
 
-
-// FONTS - Necessary fonts are simply copied to Assets folder
+// all fonts files are simply copied to the destination folder (default "_assets/fonts").
 gulp.task('fonts', function () {
 
 	const SRC = `${config.src}/${config.fonts.src}`;

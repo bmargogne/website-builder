@@ -5,8 +5,7 @@ const rename = require('gulp-rename');
 const using = require('gulp-using');
 const watch = require('gulp-watch');
 
-const config = require('../config.json');
-
+const config = require('./config.json');
 
 // copy files looks for anything under directory name "files" and copy it raw.
 // useful for any file available for download

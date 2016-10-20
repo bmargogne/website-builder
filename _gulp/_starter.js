@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const requireDir = require('require-dir');
 const runSequence = require('run-sequence');
 
-const config = require('../config.json');
+const config = require('./config.json');
 const tasks = requireDir('./');
 
 gulp.task('_starter', () => {
@@ -25,14 +25,14 @@ gulp.task('_starter', () => {
 
 const defaultSequence = () => {
 	return runSequence([
+		'pagesHtml',
 		'files',
 		'fonts',
 		'scripts',
 		'stylesCss',
 		'stylesScss',
 		'stylesFinal',
-		'vendors',
-		'buildHtml'
+		'vendors'
 	]);
 }
 
@@ -40,14 +40,14 @@ const fullSequence = () => {
 	return runSequence(
 		'clean',
 		[
+			'pagesHtml',
 			'files',
 			'fonts',
 			'scripts',
 			'stylesCss',
 			'stylesScss',
 			'stylesFinal',
-			'vendors',
-			'buildHtml'
+			'vendors'
 		]
 	);
 }

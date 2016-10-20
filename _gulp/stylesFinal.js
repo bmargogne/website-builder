@@ -5,7 +5,7 @@ const newer = require('gulp-newer');
 const using = require('gulp-using');
 const watch = require('gulp-watch');
 
-const config = require('../config.json');
+const config = require('./config.json');
 
 gulp.task('stylesFinal', () => {
 

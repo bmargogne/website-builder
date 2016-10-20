@@ -4,7 +4,8 @@
 	"temp": "_temp",
 
 	"pages": {
-		"srcPages": "**/*.html"
+		"src": "**/*.html",
+		"partials" :"**/_*.html"
 	},
 
 	"files": {
@@ -38,7 +39,7 @@
 	},
 
 	"vendors": {
-		"src": "**/vendors/**/*.*",
+		"src": "vendors/**/*.*",
 		"dest": "_assets/vendors"
 	}
 

@@ -4,8 +4,10 @@ const newer = require('gulp-newer');
 const using = require('gulp-using');
 const watch = require('gulp-watch');
 
-const config = require('../config.json');
+const config = require('./config.json');
 
+// CSS files are concatenated and put in a temp directory
+// the resulting CSS file will receive further treatment in the "stylesFinal" task.
 gulp.task('stylesCss', () => {
 
 	const SRC = `${config.src}/${config.styles.srcCss}`;
@@ -14,7 +16,7 @@ gulp.task('stylesCss', () => {
 
 	console.log(`styles : ${SRC} --> ${DEST}${STYLESHEET}`);
 
-	return watch( SRC , { ignoreInitial: false })
+	return watch( SRC, { ignoreInitial: false })
 		.pipe( newer( DEST + STYLESHEET ))
 		.pipe( using( {prefix:'[styles/css] using :', color:'yellow', filesize:true} ) )                    // list input stylesheet
 		.pipe( concat ( STYLESHEET ) )                                                                  // create a single files

@@ -31,6 +31,7 @@ Any remark or suggestion are welcome.
 ## known Issues
 - gulp crashes upon file deletion / renaming
 
-## Future Improvments
+## Improvments ideas
 - properly handle PHP pages
 - Git integration
+- Vendors: SRC should look like '**/vendors/*.', DEST should look like '_assets/vendors' while keeping sub-tree structure

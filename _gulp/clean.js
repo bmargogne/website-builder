@@ -1,7 +1,7 @@
 const clean = require('gulp-clean');
 const gulp = require('gulp');
 
-const config = require('../config.json')
+const config = require('./config.json')
 
 // empty the "dest" directory to ensure all present files are newly generated
 gulp.task('clean', () => {

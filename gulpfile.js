@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
-const profiles = require('./_gulp/_starter')
+const starter = require('./_gulp/_starter')
 
 gulp.task('default', function () {
 
