@@ -8,6 +8,7 @@
 - gulp-clean-css : https://www.npmjs.com/package/gulp-clean-css
 - gulp-file-include : https://www.npmjs.com/package/gulp-file-include
 - gulp-newer : https://www.npmjs.com/package/gulp-newer
+- gulp-open : https://www.npmjs.com/package/gulp-open
 - gulp-rename : https://www.npmjs.com/package/gulp-rename
 - gulp-sass : https://www.npmjs.com/package/gulp-sass
 - gulp-svgmin : https://www.npmjs.com/package/gulp-svgmin
@@ -15,7 +16,7 @@
 - gulp-watch : https://www.npmjs.com/package/gulp-watch
 
 ### other
-
-- yargs : https://www.npmjs.com/package/yargs
+- browser-sync : https://www.browsersync.io/
 - run-sequence : https://www.npmjs.com/package/run-sequence
 - require-dir : https://www.npmjs.com/package/require-dir
+- yargs : https://www.npmjs.com/package/yargs

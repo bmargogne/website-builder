@@ -8,16 +8,32 @@ const tasks = requireDir('./');
 
 gulp.task('_starter', () => {
 
-	if (argv.profile) {
-		switch(argv.profile) {
-			case "full": fullSequence(); break;
-			default:
-			console.log( "No valid profile chosen" );
+
+
+	if (argv) {
+		if (argv.type === 'local') {
+			console.log('[Website Builder] Running : Local Server sequence');
+			startLocalServer();
+		}
+
+		else if (argv.git) {
+			console.log('[Website Builder] should initiate or commit & push to remote - not implemented yet. Any hint/suggestion is welcome');
+		}
+
+		else if (argv.ftp) {
+			console.log('[Website Builder] should upload necessary files to ftp and delete unnecessary files from ftp. Any hint/suggestion is welcome')
+		}
+
+		else {
+			console.log('[Website Builder] Running : Quick Build sequence')
 			defaultSequence();
 		}
 	}
 	else {
-		console.log( "running default profile. Use --profile (WIP: full, TODO: scripter, webdesigner, deployer)" );
+		console.log( `[Website Builder] no options entered : Running Quick build.`);
+		console.log( `*** run 'gulp -local' for full clean + building + serving multiple local browsers`);
+		console.log( `*** run 'gulp -git' for initiating repo and/or commit + push to remote`);
+		console.log( `*** run 'gulp -ftp' for ftp upload to configured server`);
 		defaultSequence();
 	}
 });
@@ -40,12 +56,13 @@ const defaultSequence = () => {
 			'watch-pagesHtml',
 			'watch-scripts',
 			'watch-style',
-			'watch-vendors'
+			'watch-vendors',
+			'openBrowsers'
 		]
 	);
 }
 
-const fullSequence = () => {
+const startLocalServer = () => {
 	return runSequence(
 		'clean',
 		[
@@ -58,6 +75,7 @@ const fullSequence = () => {
 			'vendors'
 		],
 		[
+			'openBrowsers',
 			'serveLocal',
 			'watch-files',
 			'watch-imgBitmaps',

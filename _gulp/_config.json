@@ -50,6 +50,15 @@
 	"vendors": {
 		"src": "vendors/**/*.*",
 		"dest": "_assets/vendors"
-	}
+	},
 
+	"ReadMeFirst":"the following options are not implemented yet",
+
+	"localserve" : {
+		"edge":true,
+		"firefox":true,
+		"internetExplorer6":true,
+		"internetExplorer8":true,
+		"opera":true
+	}
 }
