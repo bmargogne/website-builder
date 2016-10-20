@@ -25,14 +25,16 @@ gulp.task('_starter', function () {
 });
 
 function startSequence() {
-	return runSequence(	'clean',
+	return runSequence(	//'clean'
 						['files',
 						'fonts',
 						'scripts',
 						'stylesCss',
 						'stylesScss',
 						'stylesFinal',
-						'buildHtml']);
+						'vendors',
+						'buildHtml']
+						);
 }
 
 function startBuilder() {

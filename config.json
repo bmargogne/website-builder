@@ -20,9 +20,7 @@
 	"scripts": {
 		"src": "**/*.js",
 		"dest": "_assets/scripts",
-		"scriptfile": "script.js",
-
-		"vendorscripts": "**/vendorscripts/*.css"
+		"scriptfile": "script.js"
 	},
 
 	"styles": {
@@ -37,5 +35,11 @@
 		"srcFinalCss": "**/*.css",
 		"destFinalCss": "_assets/styles",
 		"finalCssSheet": "styles.css"
+	},
+
+	"vendors": {
+		"src": "vendors/**/*.*",
+		"dest": "_assets/vendors"
 	}
+
 }

@@ -16,9 +16,9 @@ gulp.task('fonts', function () {
 	console.log(`copyFonts : ${SRC} --> ${DEST}`);
 
 	return watch( SRC, { ignoreInitial: false })
-		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[fonts] using :', color:'blue', filesize:true} ))                    // list input stylesheet
 		.pipe( rename( {dirname: ''} ))                               // removes path to put all files in same folder (prevent directory tree duplication)
+		.pipe( newer( DEST ))
+		.pipe( using( {prefix:'[fonts] using :', color:'gray', filesize:true} ))                    // list input stylesheet
 		.pipe( gulp.dest( DEST ));
 });
 
