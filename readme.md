@@ -38,8 +38,10 @@ Any remark or suggestion are welcome.
 
 
 ## known Issues
-- gulp crashes upon file deletion / renaming
+- gulp crashes upon file deletion / renaming / changing directory
+- watch may not see newly created files. Seems the cause of 'stylesFinal' task not running on first go
 - for gulp-using, file path may be confusing when changing 'dirname' from gulp-rename
+- changing a HTML partial will not rebuild the "caller" file
 
 ## Improvments ideas
 - should use plumber to prevent some crashes

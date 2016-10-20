@@ -23,17 +23,26 @@ gulp.task('_starter', () => {
 });
 
 const defaultSequence = () => {
-	return runSequence([
-		'pagesHtml',
-		'imgBitmaps',
-		'files',
-		'fonts',
-		'scripts',
-		'stylesCss',
-		'stylesScss',
-		'stylesFinal',
-		'vendors'
-	]);
+	return runSequence(
+		[
+			'files',
+			'fonts',
+			'imgBitmaps',
+			'pagesHtml',
+			'scripts',
+			'style',
+			'vendors',
+		],
+		[
+			'serveLocal',
+			'watch-files',
+			'watch-imgBitmaps',
+			'watch-pagesHtml',
+			'watch-scripts',
+			'watch-style',
+			'watch-vendors'
+		]
+	);
 }
 
 const fullSequence = () => {
@@ -45,10 +54,17 @@ const fullSequence = () => {
 			'files',
 			'fonts',
 			'scripts',
-			'stylesCss',
-			'stylesScss',
-			'stylesFinal',
+			'style',
 			'vendors'
+		],
+		[
+			'serveLocal',
+			'watch-files',
+			'watch-imgBitmaps',
+			'watch-pagesHtml',
+			'watch-scripts',
+			'watch-style',
+			'watch-vendors'
 		]
 	);
 }

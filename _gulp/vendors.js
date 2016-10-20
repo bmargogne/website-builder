@@ -1,20 +1,32 @@
+// npm packages
 const gulp = require('gulp');
 const newer = require('gulp-newer');
-const rename = require('gulp-rename');
+const runSequence = require('run-sequence');
 const using = require('gulp-using');
 const watch = require('gulp-watch');
 
+// imports
 const config = require('./_config.json');
 
-gulp.task('vendors', function () {
+// globs
+const SRC = `${config.src}/${config.vendors.src}`;
+const DEST = `${config.dest}/${config.vendors.dest}/`;
 
-	const SRC = `${config.src}/${config.vendors.src}`;
-	const DEST = `${config.dest}/${config.vendors.dest}/`;
+// task
+gulp.task('vendors', () => {
+	console.log(`Vendors copying : ${SRC} --> ${DEST}`);
 
-	console.log(`copy Vendors Assets : ${SRC} --> ${DEST}`);
-
-	return watch( SRC, { ignoreInitial: false })
+	return gulp.src( SRC, { ignoreInitial: false })
 		.pipe( newer( DEST ))
 		.pipe( using( {prefix:'[vendors] copying :', color:'red', filesize:true} ))
 		.pipe( gulp.dest( DEST ));
 });
+
+// watch
+gulp.task('watch-vendors', () => {
+	console.log(`Watching Vendors elements : ${SRC}`);
+
+	return watch( [SRC], () => {
+		runSequence('vendors', 'liveReload');
+	});
+})

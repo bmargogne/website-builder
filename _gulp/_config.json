@@ -15,7 +15,11 @@
 
 	"images": {
 		"srcBitmaps": "**/*.{jpg,png,gif}",
-		"destBitmaps": "_assets/images"
+		"destBitmaps": "_assets/images",
+
+		"srcVectors": "**/*.svg",
+		"destVectors": "_assets/spritesheet",
+		"spriteSheetFile" : "_assets/vectorSprite.svg"
 	},
 
 	"pages": {
@@ -29,18 +33,18 @@
 		"scriptfile": "script.js"
 	},
 
-	"styles": {
+	"style": {
 		"srcCss": "**/*.css",
-		"destCss": "styles",
+		"destCss": "style",
 		"cssSheet": "styleCss.css",
 
 		"srcScss": "**/*.scss",
-		"destScss": "styles",
+		"destScss": "style",
 		"scssSheet": "styleScss.css",
 
 		"srcFinalCss": "**/*.css",
-		"destFinalCss": "_assets/styles",
-		"finalCssSheet": "styles.css"
+		"destFinalCss": "_assets/style",
+		"finalCssSheet": "style.css"
 	},
 
 	"vendors": {
