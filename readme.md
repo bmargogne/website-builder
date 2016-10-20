@@ -47,3 +47,6 @@ Any remark or suggestion are welcome.
 - should integrate git functionnalities
 - should give more freedom on "vendors" location. Ex: SRC could look like '**/vendors/*', and DEST could look like '_assets/vendors' while keeping sub-tree structure
 - should (re)write some code comments
+- should be more flexible toward server/scripting
+- should be compatibile with external frameworks (Ember, Meteor...)
+- should accept typescript
