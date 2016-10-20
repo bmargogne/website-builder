@@ -18,7 +18,7 @@ gulp.task('fonts', function () {
 	return watch( [SRC, EXCLUDE], { ignoreInitial: false })
 		.pipe( rename( {dirname: ''} ))
 		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[fonts] using :', color:'gray', filesize:true} ))
+		.pipe( using( {prefix:'[fonts] copying :', color:'gray', filesize:true} ))
 		.pipe( gulp.dest( DEST ));
 });
 

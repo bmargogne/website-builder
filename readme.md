@@ -39,6 +39,7 @@ Any remark or suggestion are welcome.
 
 ## known Issues
 - gulp crashes upon file deletion / renaming
+- for gulp-using, file path may be confusing when changing 'dirname' from gulp-rename
 
 ## Improvments ideas
 - should use plumber to prevent some crashes

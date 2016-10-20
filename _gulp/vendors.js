@@ -15,6 +15,6 @@ gulp.task('vendors', function () {
 
 	return watch( SRC, { ignoreInitial: false })
 		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[vendors] using :', color:'red', filesize:true} ))
+		.pipe( using( {prefix:'[vendors] copying :', color:'red', filesize:true} ))
 		.pipe( gulp.dest( DEST ));
 });

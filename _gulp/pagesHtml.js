@@ -18,7 +18,7 @@ gulp.task('pagesHtml', function () {
 
 	return watch( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false } )
 		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[pages/html] using :', color:'cyan', filesize:true} ))
+		.pipe( using( {prefix:'[pages/html] building :', color:'cyan', filesize:true} ))
 		.pipe( fileinclude({
 			prefix: '@@',
 			basepath: config.src

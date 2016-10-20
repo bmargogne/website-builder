@@ -18,7 +18,7 @@ gulp.task('scripts', () => {
 
 	return watch( [SRC, EXCLUDE], { ignoreInitial: false })
 		.pipe( newer( DEST + SCRIPTFILE ))
-		.pipe( using( {prefix:'[scripts] using :', color:'green', filesize:true} ))
+		.pipe( using( {prefix:'[scripts] concatenating :', color:'green', filesize:true} ))
 		.pipe( concat ( SCRIPTFILE ))
 		.pipe( using( {prefix:'[scripts] done :', color:'green', filesize:true} ))
 		.pipe( gulp.dest( DEST ));

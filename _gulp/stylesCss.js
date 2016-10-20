@@ -20,7 +20,7 @@ gulp.task('stylesCss', () => {
 
 	return watch( [SRC, EXCLUDE], { ignoreInitial: false })
 		.pipe( newer( DEST + STYLESHEET ))
-		.pipe( using( {prefix:'[styles/css] using :', color:'yellow', filesize:true} ))
+		.pipe( using( {prefix:'[styles/css] concatenating :', color:'yellow', filesize:true} ))
 		.pipe( concat( STYLESHEET ))
 		.pipe( using( {prefix:'[styles/css] done :', color:'yellow', filesize:true} ))
 		.pipe( gulp.dest( DEST ));

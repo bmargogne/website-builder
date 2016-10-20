@@ -25,6 +25,7 @@ gulp.task('_starter', () => {
 const defaultSequence = () => {
 	return runSequence([
 		'pagesHtml',
+		'imgBitmaps',
 		'files',
 		'fonts',
 		'scripts',
@@ -40,6 +41,7 @@ const fullSequence = () => {
 		'clean',
 		[
 			'pagesHtml',
+			'imgBitmaps',
 			'files',
 			'fonts',
 			'scripts',

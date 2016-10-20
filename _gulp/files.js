@@ -18,6 +18,6 @@ gulp.task('files', function () {
 	return watch( [SRC, EXCLUDE], { ignoreInitial: false })
 		.pipe( rename( path => { path.dirname = ''}))
 		.pipe( newer( DEST ))
-		.pipe( using( {prefix:'[files] using :', color:'blue', filesize:true} ))
+		.pipe( using( {prefix:'[files] copying :', color:'blue', filesize:true} ))
 		.pipe( gulp.dest( DEST ));
 });

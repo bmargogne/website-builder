@@ -19,9 +19,9 @@ gulp.task('stylesScss', () => {
 
 	return watch( [SRC, EXCLUDE], { ignoreInitial: false })
 		.pipe( newer( DEST + STYLESHEET ))
-		.pipe( using( {prefix:'[styles/scss] using :', color:'yellow', filesize:true} ))
+		.pipe( using( {prefix:'[styles/scss] preprocessing :', color:'yellow', filesize:true} ))
 		.pipe( sass().on('error', sass.logError))
 		.pipe( concat( STYLESHEET ))
-		.pipe( using( {prefix:'[styles/scss] done :', color:'yellow', filesize:true} ))
+		.pipe( using( {prefix:'[styles/scss] done generating & concatenating:', color:'yellow', filesize:true} ))
 		.pipe( gulp.dest( DEST ));
 });
