@@ -9,6 +9,8 @@ const tasks = requireDir('./');
 gulp.task('_starter', () => {
 
 	if (argv) {
+		console.log (`started with option --s ${argv.s}`);
+
 		if (argv.s === 'local') {
 			console.log('[Website Builder] Running : Local Server sequence');
 			startLocalServer();

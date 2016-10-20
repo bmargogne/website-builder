@@ -39,12 +39,12 @@ gulp.task('openBrowsers', () => {
 	if (serveBrowsers) {
 		console.log('Opening multiple browsers')
 
-		const firefox = config.browsers.edge;
+		const firefox = config.browsers.firefox;
 		const chrome = config.browsers.chrome;
 
 		return gulp.src('')
-			// .pipe( _if(firefox,		open( {uri: 'http://localhost:3000', app: 'firefox'} )))
-			// .pipe( _if(chrome,		open( {uri: 'http://localhost:3000', app: 'google-chrome'} )));
+			.pipe( _if( firefox,	open( {uri: 'http://localhost:3000', app: 'firefox'} )))
+			.pipe( _if( chrome,		open( {uri: 'http://localhost:3000', app: 'google-chrome'} )));
 	}
 	return;
 });

@@ -31,7 +31,7 @@
 
 	"browsers" : {
 		"chrome":true,
-		"firefox":true
+		"firefox":false
 	},
 
 	"ConfigHint_Globs" : "all globs defining where you store you different files are set below",
