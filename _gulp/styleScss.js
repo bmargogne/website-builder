@@ -1,4 +1,5 @@
 // npm packages
+const _if = require('gulp-if');
 const concat = require('gulp-concat');
 const gulp = require('gulp');
 const newer = require('gulp-newer');
@@ -19,11 +20,14 @@ gulp.task('styleScss', () => {
 
 	console.log(`Styles SCSS Building : ${SRC} --> ${DEST}${STYLESHEET}, excluding ${EXCLUDE}`);
 
+	const isTest = config.env.isTest;
+	const isProd = config.env.isProd;
+
 	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-		.pipe( newer( DEST + STYLESHEET ))
-		.pipe( using( {prefix:'[style/scss] preprocessing :', color:'yellow', filesize:true} ))
-		.pipe( sass().on('error', sass.logError))
-		.pipe( concat( STYLESHEET ))
-		.pipe( using( {prefix:'[style/scss] done generating & concatenating:', color:'yellow', filesize:true} ))
-		.pipe( gulp.dest( DEST ));
+		.pipe(				newer( DEST + STYLESHEET ))
+		.pipe( _if( isTest,	using( {prefix:'[style/scss] preprocessing :', color:'yellow', filesize:true} )))
+		.pipe(				sass().on('error', sass.logError))
+		.pipe(				concat( STYLESHEET ))
+		.pipe( _if( isTest,	using( {prefix:'[style/scss] done generating & concatenating:', color:'yellow', filesize:true} )))
+		.pipe(				gulp.dest( DEST ));
 });

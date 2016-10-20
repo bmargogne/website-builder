@@ -30,15 +30,15 @@ gulp.task('scripts', () => {
 		console.log(`Scripts building : ${SRC} --> ${DEST}${SCRIPTFILE}, excluding ${EXCLUDE}`);
 
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-			.pipe( sourcemaps.init())
-				.pipe( plumber() )
-				.pipe( newer( DEST + SCRIPTFILE ))
-				.pipe( _if (isTest, using( {prefix:'[scripts] concatenating :', color:'green', filesize:true} )))
-				.pipe( concat ( SCRIPTFILE ))
-				.pipe( _if (isProd, uglify() ))
-				.pipe( _if (isTest, using( {prefix:'[scripts] done :', color:'green', filesize:true} )))
-			.pipe( sourcemaps.write('./'))
-			.pipe( gulp.dest( DEST ));
+			.pipe( _if( isProd,	sourcemaps.init() ))
+			.pipe(				plumber() )
+			.pipe(				newer( DEST + SCRIPTFILE ))
+			.pipe( _if( isTest,	using( {prefix:'[scripts] concatenating :', color:'green', filesize:true} )))
+			.pipe(				concat ( SCRIPTFILE ))
+			.pipe( _if( isProd,	uglify() ))
+			.pipe( _if( isTest,	using( {prefix:'[scripts] done :', color:'green', filesize:true} )))
+			.pipe( _if( isProd,	sourcemaps.write('./'))
+			.pipe(				gulp.dest( DEST ));
 	}
 	return;
 });

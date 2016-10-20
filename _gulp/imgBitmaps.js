@@ -1,4 +1,5 @@
 // npm packages
+const _if = require('gulp-if');
 const gulp = require('gulp');
 const newer = require('gulp-newer');
 const using = require('gulp-using');
@@ -15,6 +16,7 @@ const processBitmaps = config.buildingSteps.processBitmaps
 gulp.task('imgBitmaps', () => {
 	if (processBitmaps) {
 
+
 		// globs
 		const SRC = `${config.src}/${config.images.srcBitmaps}`;
 		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
@@ -22,12 +24,15 @@ gulp.task('imgBitmaps', () => {
 
 		console.log(`Images Bitmaps : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
 
+		const isTest = config.env.isTest;
+		const isProd = config.env.isProd;
+
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-			.pipe( rename( {dirname: ''}))
-			.pipe( newer( DEST ))
-			.pipe( using( {prefix:'[images/bitmaps] compressing :', color:'magenta', filesize:true} ))
-			.pipe( imagemin())
-			.pipe( gulp.dest(DEST));
+			.pipe(				rename( {dirname: ''}))
+			.pipe(				newer( DEST ))
+			.pipe( _if(isTest,	using( {prefix:'[images/bitmaps] compressing :', color:'magenta', filesize:true} )))
+			.pipe( _if(isProd,	imagemin()))
+			.pipe(				gulp.dest(DEST));
 	}
 	return;
 });

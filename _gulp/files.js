@@ -1,4 +1,5 @@
 // npm packages
+const _if = require('gulp-if');
 const gulp = require('gulp');
 const newer = require('gulp-newer');
 const rename = require('gulp-rename');
@@ -21,11 +22,13 @@ gulp.task('files', () => {
 
 		console.log(`Files simple copy: ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
 
+		const isTest = config.env.isTest;
+
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-			.pipe( rename( path => { path.dirname = ''}))
-			.pipe( newer( DEST ))
-			.pipe( using( {prefix:'[files] copying :', color:'blue', filesize:true} ))
-			.pipe( gulp.dest( DEST ));
+			.pipe(				rename( path => { path.dirname = ''}))
+			.pipe(				newer( DEST ))
+			.pipe( _if(isTest,	using( {prefix:'[files] copying :', color:'blue', filesize:true} )))
+			.pipe(				gulp.dest( DEST ));
 	}
 	return;
 });

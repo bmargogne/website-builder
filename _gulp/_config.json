@@ -1,7 +1,7 @@
 {
 	"env": {
 		"isProd": false,
-		"isTest": true
+		"isTest": false
 	},
 
 	"src": "src",

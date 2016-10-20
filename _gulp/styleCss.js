@@ -1,4 +1,5 @@
 // npm packages
+const _if = require('gulp-if');
 const concat = require('gulp-concat');
 const gulp = require('gulp');
 const newer = require('gulp-newer');
@@ -18,10 +19,12 @@ gulp.task('styleCss', () => {
 
 	console.log(`Style CSS building : ${SRC} --> ${DEST}${STYLESHEET}, excluding ${EXCLUDE}`);
 
+	const isTest = config.env.isTest;
+
 	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-		.pipe( newer( DEST + STYLESHEET ))
-		.pipe( using( {prefix:'[style/css] concatenating :', color:'yellow', filesize:true} ))
-		.pipe( concat( STYLESHEET ))
-		.pipe( using( {prefix:'[style/css] done concatenating :', color:'yellow', filesize:true} ))
-		.pipe( gulp.dest( DEST ));
+		.pipe(				newer( DEST + STYLESHEET ))
+		.pipe( _if( isTest,	using( {prefix:'[style/css] concatenating :', color:'yellow', filesize:true} )))
+		.pipe(				concat( STYLESHEET ))
+		.pipe( _if( isTest,	using( {prefix:'[style/css] done concatenating :', color:'yellow', filesize:true} )))
+		.pipe(				gulp.dest( DEST ));
 });

@@ -16,35 +16,38 @@ This is my first project... in order to improve, I welcome any remark or suggest
 
 ## Get Started
 
-- you need node & npm installed. (not sure which version, any feedback is appreciated)
+You need node & npm installed. (...not sure which version, any feedback is appreciated)
 
-`git clone https://github.com/bmargogne/website-builder.git`
-`cd website-builder`
-`npm install`
-`run 'gulp' and start working on your files`
-`open '_gulp/_config.json' to adjust the builder to your needs`
+- `git clone https://github.com/bmargogne/website-builder.git`
+- `cd website-builder`
+- `npm install`
+- `run 'gulp' and start working on your files`
+- `open '_gulp/_config.json' to adjust the builder to your needs`
 
 _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to get rid of them_
 
 ## Features 0.0.1
 
-### ** done
+### DONE
+
 - **files, fonts & vendor scripts**: raw copy for all files from source to destination, 'in _assets' directory
 - **pages**: building html using partials
-- **styles**: Sass preprocessors, minifying
+- **styles**: Sass preprocessors, minifying, sourcemaps
+- **images**: bitmaps compression, vector optimization & stylesheet generation
+- **scripts**: concatenation, minifying & sourcemaps, using plumber
 
-### ** in progress
-- **images**: compression, stylesheet generation
-- **scripts**: linting, concatenation, minifying & sourcemaps
-- **Easy config**: paths & operations, building sequences, verbose...
-- **browserify** : test your pages locally, simultaneously on multiple browsers & devices (desktops, tablets, smartphones)
+- **Easy config**: paths & operations, building sequences
 - **'light' on CPU**: applying scripts only on needed files
+- **browserify** : test your website locally, on multiple browsers & devices simultaneously (desktops, tablets, smartphones)
+- **livereload** : any change is automatically saved, and browser is refreshed
+
+### IN PROGRESS
+
 - **documentation**: links to used libraries, default structuring / naming rules on files
 
-### ** todo
-- **styles**: compatibility prefixes, minifying & sourcemaps
-- **vector graphics**: compression, stylesheet generation
-- **livereload** : any change is automatically saved, and browser is refreshed
+### TODO
+
+- **styles**: compatibility prefixes
 - **FTP deployment** : automatic upload to FTP
 - **GIT deployment** : automatic commit & push to remote
 

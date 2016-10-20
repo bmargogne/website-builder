@@ -1,4 +1,5 @@
 // npm packages
+const _if = require('gulp-if');
 const gulp = require('gulp');
 const newer = require('gulp-newer');
 const rename = require('gulp-rename');
@@ -21,11 +22,13 @@ gulp.task('fonts', () => {
 
 		console.log(`Fonts simple copy : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
 
+		const isTest = config.env.isTest;
+
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-			.pipe( rename( {dirname: ''} ))
-			.pipe( newer( DEST ))
-			.pipe( using( {prefix:'[fonts] copying :', color:'gray', filesize:true} ))
-			.pipe( gulp.dest( DEST ));
+			.pipe(				rename( {dirname: ''} ))
+			.pipe(				newer( DEST ))
+			.pipe( _if(isTest,	using( {prefix:'[fonts] copying :', color:'gray', filesize:true} )))
+			.pipe(				gulp.dest( DEST ));
 	}
 	return;
 });

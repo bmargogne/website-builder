@@ -1,4 +1,5 @@
 // npm packages
+const _if = require('gulp-if');
 const gulp = require('gulp');
 const using = require('gulp-using');
 const newer = require('gulp-newer');
@@ -56,13 +57,17 @@ gulp.task('imgVectors', function () {
 			}
 		};
 
+		const isTest = config.env.isTest;
+		const isProd = config.env.isProd;
+
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-			.pipe( newer( DEST + SPRITESHEET ))
-			.pipe( using( {prefix:'[images/vector] building spritesheet with :', color:'magenta', filesize:true} ))
-			.pipe( rename( {dirname: ''} ))
-			.pipe( svgmin( configSvgo ))
-			.pipe( svgSprite( configSprite )).on('error', error => { console.error(error); })
-			.pipe( gulp.dest( DEST));
+			.pipe(				newer( DEST + SPRITESHEET ))
+			.pipe( _if(isTest,	using( {prefix:'[images/vector] building spritesheet with :', color:'magenta', filesize:true} )))
+			.pipe(				rename( {dirname: ''} ))
+			.pipe( _if(isProd,	svgmin( configSvgo )))
+			.pipe(				svgSprite( configSprite )).on('error', error => { console.error(error); })
+			.pipe( _if(isTest,	using( {prefix:'[images/vector] spritesheet done :', color:'magenta', filesize:true} )))
+			.pipe(				gulp.dest( DEST));
 	}
 	return;
 });
