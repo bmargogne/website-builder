@@ -1,5 +1,4 @@
 const argv = require('yargs').argv;
-const exec = require('gulp-exec');
 const gulp = require('gulp');
 const requireDir = require('require-dir');
 const runSequence = require('run-sequence');
