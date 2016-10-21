@@ -1,6 +1,6 @@
 {
 	"env": {
-		"isProd": 			true,
+		"isProd": 			false,
 		"isTest": 			true,
 		"es6":				true
 	},
