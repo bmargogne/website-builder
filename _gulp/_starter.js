@@ -46,7 +46,10 @@ gulp.task('_starter', () => {
 
 const testSequence = () => {
 	return runSequence(
-		'files'
+		'clean',
+		[
+			'styleAndSpriteSheet',
+		]
 	);
 }
 
@@ -59,13 +62,14 @@ const defaultSequence = () => {
 			'imgVectors',
 			'pagesHtml',
 			'scripts',
-			'style',
+			'styleAndSpriteSheet',
 			'vendors',
 		],
 		[
 			'serveLocal',
 			'watch-files',
 			'watch-imgBitmaps',
+			'watch-imgSprite',
 			'watch-imgVectors',
 			'watch-pagesHtml',
 			'watch-scripts',
@@ -85,7 +89,7 @@ const startLocalServer = () => {
 			'files',
 			'fonts',
 			'scripts',
-			'style',
+			'styleAndSpriteSheet',
 			'vendors'
 		],
 		[

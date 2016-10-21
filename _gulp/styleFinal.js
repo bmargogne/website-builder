@@ -13,15 +13,14 @@ const config = require('./_config.json');
 // task
 gulp.task('styleFinal', () => {
 
-	const STYLESHEET = config.style.finalCssSheet;
-	const isTest = config.env.isTest;
-	const isProd = config.env.isProd;
-
 	// globs
 	const SRC = `${config.temp}/${config.style.srcFinalCss}`;
 	const DEST = `${config.dest}/${config.style.destFinalCss}/`;
-
+	const STYLESHEET = config.style.finalCssSheet;
 	console.log(`Building stylesheet from : ${SRC} --> ${DEST}${STYLESHEET}`);
+
+	const isTest = config.env.isTest;
+	const isProd = config.env.isProd;
 
 	return gulp.src( SRC , { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))

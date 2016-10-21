@@ -19,7 +19,6 @@ gulp.task('files', () => {
 		const SRC = `${config.src}/${config.files.src}`;
 		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
 		const DEST = `${config.dest}/${config.files.dest}/`;
-
 		console.log(`Files simple copy: ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
 
 		const isTest = config.env.isTest;
@@ -40,7 +39,6 @@ gulp.task('watch-files', () => {
 		// globs
 		const SRC = `${config.src}/${config.files.src}`;
 		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-
 		console.log(`Watching files : ${SRC}, except for ${EXCLUDE}`);
 
 		return watch( [SRC, EXCLUDE], (event) => {

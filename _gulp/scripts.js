@@ -1,7 +1,9 @@
 // npm packages
-const _if = require('gulp-if')
+const _if = require('gulp-if');
+const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const gulp = require('gulp');
+const minify = require('gulp-minify');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 const runSequence = require('run-sequence');
@@ -18,27 +20,29 @@ const processScripts = config.buildingSteps.processScripts;
 gulp.task('scripts', () => {
 	if (processScripts) {
 
-		const SCRIPTFILE = config.scripts.scriptfile;
-		const isProd = config.env.isProd;
-		const isTest = config.env.isTest;
-
 		// globs
 		const SRC = `${config.src}/${config.scripts.src}`;
 		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
 		const DEST = `${config.dest}/${config.scripts.dest}/`;
-
+		const SCRIPTFILE = config.scripts.scriptfile;
 		console.log(`Scripts building : ${SRC} --> ${DEST}${SCRIPTFILE}, excluding ${EXCLUDE}`);
 
+		// imports
+		const isProd = config.env.isProd;
+		const isTest = config.env.isTest;
+		const es6mode = config.env.es6;
+
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
-			.pipe( _if( isProd,	sourcemaps.init() ))
-			.pipe(				plumber() )
-			.pipe(				newer( DEST + SCRIPTFILE ))
-			.pipe( _if( isTest,	using( {prefix:'[scripts] concatenating :', color:'green', filesize:true} )))
-			.pipe(				concat ( SCRIPTFILE ))
-			.pipe( _if( isProd,	uglify() ))
-			.pipe( _if( isTest,	using( {prefix:'[scripts] done :', color:'green', filesize:true} )))
-			.pipe( _if( isProd,	sourcemaps.write('./'))
-			.pipe(				gulp.dest( DEST ));
+			.pipe( _if( isProd, sourcemaps.init() ))
+			.pipe( _if( es6mode, babel({ presets: ['es2015'] })))
+			.pipe( plumber() )
+			.pipe( newer( DEST + SCRIPTFILE ))
+			.pipe( _if( isTest, using({ prefix:'[scripts] concatenating :', color:'green', filesize:true })))
+			.pipe( concat ( SCRIPTFILE ))
+			.pipe( _if( isProd, minify({ ext: {src:'-debug.js', min:'.js'} })))
+			.pipe( _if( isTest, using({ prefix:'[scripts] done :', color:'green', filesize:true })))
+			.pipe( _if( isProd, sourcemaps.write('./')))
+			.pipe( gulp.dest( DEST ));
 	}
 	return;
 });

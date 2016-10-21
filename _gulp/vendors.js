@@ -17,7 +17,6 @@ gulp.task('vendors', () => {
 		// globs
 		const SRC = `${config.src}/${config.vendors.src}`;
 		const DEST = `${config.dest}/${config.vendors.dest}/`;
-
 		console.log(`Vendors copying : ${SRC} --> ${DEST}`);
 
 		const isTest = config.env.isTest;

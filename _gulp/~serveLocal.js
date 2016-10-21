@@ -13,9 +13,7 @@ gulp.task('serveLocal', () => {
 
 	const serveLocal = config.buildingSteps.serveLocal;
 	const browserSyncUI = config.buildingSteps.browserSyncUI;
-	let uiOptions;
-
-	uiOptions = browserSyncUI ? { port:3001 } : uiOptions = false;
+	let uiOptions; uiOptions = browserSyncUI ? { port:3001 } : uiOptions = false;
 
 	if (serveLocal) {
 		return browserSync.init({
@@ -37,8 +35,8 @@ gulp.task('openBrowsers', () => {
 	const serveBrowsers = config.buildingSteps.serveBrowsers;
 
 	if (serveBrowsers) {
-		console.log('Opening multiple browsers')
 
+		console.log('Opening multiple browsers')
 		const firefox = config.browsers.firefox;
 		const chrome = config.browsers.chrome;
 

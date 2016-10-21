@@ -21,29 +21,39 @@ You need node & npm installed. (...not sure which version, any feedback is appre
 - `git clone https://github.com/bmargogne/website-builder.git`
 - `cd website-builder`
 - `npm install`
-- `run 'gulp' and start working on your files`
-- `open '_gulp/_config.json' to adjust the builder to your needs`
+- `run 'gulp'`
+
+Now, when working in your editor, any changes will be instantly taken into account and your browser will reload.
+
+
+
+`open '_gulp/_config.json' to adjust the builder to your needs`
 
 _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to get rid of them_
 
-## Features 0.0.1
+## Features v0.1.2
 
 ### DONE
 
+#### Building steps
 - **files, fonts & vendor scripts**: raw copy for all files from source to destination, 'in _assets' directory
 - **pages**: building html using partials
 - **styles**: Sass preprocessors, minifying, sourcemaps
 - **images**: bitmaps compression, vector optimization & stylesheet generation
 - **scripts**: concatenation, minifying & sourcemaps, using plumber
 
-- **Easy config**: paths & operations, building sequences
+#### Other
+- **easy config**: paths & operations, building sequences
 - **'light' on CPU**: applying scripts only on needed files
 - **browserify** : test your website locally, on multiple browsers & devices simultaneously (desktops, tablets, smartphones)
 - **livereload** : any change is automatically saved, and browser is refreshed
 
 ### IN PROGRESS
 
-- **documentation**: links to used libraries, default structuring / naming rules on files
+- **images** : bitmap spritesheet generation
+- **scripts** : should concatenate resulting strinct in a "on document ready"
+- **style** : compatibility prefix
+- **documentation**: links to used libraries, explaining default structuring / naming rules on files
 
 ### TODO
 
@@ -57,11 +67,11 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - For gulp-using, the console log of the file path may be confusing when changing 'dirname' from gulp-rename.
 - Changing a HTML partial will not rebuild the "caller" file
 - Some elements may need two reload to properly update. (even with disable cache option)
+- gulp-minify will return a syntax error when writing ES6
 
 ## Improvments ideas
 - should use plumber to prevent some repeated crashes if any
 - should handle PHP pages
-- should give more freedom on "vendors" location. Ex: SRC could look like '**/vendors/*', and DEST could look like '_assets/vendors' while keeping sub-tree structure
 - should be able to work external frameworks (Ember, Meteor...)
 - should accept typescript
 - test if it works for server scripting ()

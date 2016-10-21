@@ -17,7 +17,6 @@ gulp.task('styleScss', () => {
 	const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
 	const DEST = `${config.temp}/${config.style.destScss}/`;
 	const STYLESHEET = config.style.scssSheet;
-
 	console.log(`Styles SCSS Building : ${SRC} --> ${DEST}${STYLESHEET}, excluding ${EXCLUDE}`);
 
 	const isTest = config.env.isTest;

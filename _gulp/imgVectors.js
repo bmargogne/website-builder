@@ -22,9 +22,8 @@ gulp.task('imgVectors', function () {
 		const SRC = `${config.src}/${config.images.srcVectors}`;
 		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
 		const DEST = `${config.dest}/${config.images.destVectors}/`;
-		const SPRITESHEET = config.images.spritesheetVector;
-
-		console.log(`Vector Spritesheet building : ${SRC} --> ${DEST}${SPRITESHEET}, excluding ${EXCLUDE}`);
+		const SPRITESHEET = config.images.vectorSpritesheet;
+		console.log(`Vector Spritesheet : ${SRC} --> ${DEST}${SPRITESHEET}, excluding ${EXCLUDE}`);
 
 		// SVG optimization parameters
 		const configSvgo = {

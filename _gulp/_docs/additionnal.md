@@ -29,6 +29,7 @@ Please ask permission for exact copy.
 - gulp-rename : https://www.npmjs.com/package/gulp-rename
 - gulp-sass : https://www.npmjs.com/package/gulp-sass
 - gulp-sourcemaps : https://www.npmjs.com/package/gulp-sourcemaps
+- gulp.spritesmith : https://www.npmjs.com/package/gulp.spritesmith
 - gulp-svgmin : https://www.npmjs.com/package/gulp-svgmin
 - gulp-svg-sprite : https://www.npmjs.com/package/gulp-svg-sprite
 - gulp-svg-uglify : https://www.npmjs.com/package/gulp-uglify
@@ -39,4 +40,5 @@ Please ask permission for exact copy.
 - browser-sync : https://www.browsersync.io/
 - run-sequence : https://www.npmjs.com/package/run-sequence
 - require-dir : https://www.npmjs.com/package/require-dir
+- vinyl-buffer : https://www.npmjs.com/package/vinyl-buffer
 - yargs : https://www.npmjs.com/package/yargs

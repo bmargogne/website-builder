@@ -20,7 +20,6 @@ gulp.task('pagesHtml', () => {
 		const EXCLUDE1 = `!${config.src}/${config.pages.partials}`;
 		const EXCLUDE2 = `!${config.src}/${config.vendors.src}`;
 		const DEST = `${config.dest}/`;
-
 		console.log(`Html Pages building : ${SRC} --> ${DEST}, excluding ${EXCLUDE1} and ${EXCLUDE2}`);
 
 		const isTest = config.env.isTest;

@@ -19,7 +19,6 @@ gulp.task('fonts', () => {
 		const SRC = `${config.src}/${config.fonts.src}`;
 		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
 		const DEST = `${config.dest}/${config.fonts.dest}/`;
-
 		console.log(`Fonts simple copy : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
 
 		const isTest = config.env.isTest;
@@ -36,9 +35,9 @@ gulp.task('fonts', () => {
 // watch
 gulp.task('watch-fonts', () => {
 	if (processFonts) {
+
 		const SRC = `${config.src}/${config.fonts.src}`;
 		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-
 		console.log(`Watching fonts : ${SRC}, except for ${EXCLUDE}`);
 
 		return watch( [SRC, EXCLUDE], (event) => {

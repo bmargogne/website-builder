@@ -1,7 +1,8 @@
 {
 	"env": {
-		"isProd": false,
-		"isTest": false
+		"isProd": 			true,
+		"isTest": 			true,
+		"es6":				true
 	},
 
 	"src": "src",
@@ -11,27 +12,29 @@
 	"ConfigHint_Building Steps" : "Building steps complements building sequence from _starter file, but have a higher priority",
 
 	"buildingSteps": {
-		"cleanDest": true,
-		"cleanTemp": false,
+		"cleanDest": 		true,
+		"cleanTemp": 		true,
+		"cleanUndefined": 	true,
 
-		"processBitmaps": true,
-		"processFiles": true,
-		"processFonts": true,
-		"processPages": true,
-		"processScripts": true,
-		"processSprite": true,
-		"processStyle": true,
-		"processVendors": true,
-		"processVectors": true,
+		"processBitmaps": 	true,
+		"processFiles": 	true,
+		"processFonts": 	true,
+		"processPages": 	true,
+		"processScripts": 	true,
+		"processSprite": 	true,
+		"processSpritesheet": true,
+		"processStyle": 	true,
+		"processVendors": 	true,
+		"processVectors": 	true,
 
-		"serveLocal": true,
-		"browserSyncUI": true,
-		"serveBrowsers": true
+		"serveLocal": 		true,
+		"browserSyncUI": 	true,
+		"serveBrowsers": 	true
 	},
 
 	"browsers" : {
-		"chrome":true,
-		"firefox":false
+		"chrome":			true,
+		"firefox":				false
 	},
 
 	"ConfigHint_Globs" : "all globs defining where you store you different files are set below",
@@ -50,9 +53,19 @@
 		"srcBitmaps": "**/*.{jpg,png,gif}",
 		"destBitmaps": "_assets/images",
 
+		"srcSprite": "**/sprite/**/*.{jpg,png,gif}",
+		"destSprite": "_assets/images",
+		"cssSpriteFile": "spriteBmp.css",
+		"tmpSubFolder": "sprite",
+		"bitmapSpritesheet": "spritesheet.png",
+
 		"srcVectors": "**/*.svg",
 		"destVectors": "_assets/images",
-		"spritesheetVector" : "spriteSvg.svg"
+		"vectorSpritesheet" : "spriteSvg.svg",
+
+    	"css": "_commons/styles/",
+		"path": "_assets/images/",
+    	"dest": "_assets/images/"
 	},
 
 	"pages": {

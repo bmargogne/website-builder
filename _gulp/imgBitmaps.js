@@ -9,25 +9,24 @@ const imagemin = require('gulp-imagemin');
 const watch = require('gulp-watch');
 
 // imports
-const config = require('./_config.json');
-const processBitmaps = config.buildingSteps.processBitmaps
+const co = require('./_config.json');
+const processBitmaps = co.buildingSteps.processBitmaps
 
 // task
 gulp.task('imgBitmaps', () => {
 	if (processBitmaps) {
 
-
 		// globs
-		const SRC = `${config.src}/${config.images.srcBitmaps}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-		const DEST = `${config.dest}/${config.images.destBitmaps}/`;
+		const SRC = `${co.src}/${co.images.srcBitmaps}`;
+		const EXCLUDE1 = `!${co.src}/${co.vendors.src}/`;
+		const EXCLUDE2 = `!${co.src}/${co.images.srcSprite}/`;
+		const DEST = `${co.dest}/${co.images.destBitmaps}/`;
+		console.log(`Images Bitmaps : ${SRC} --> ${DEST}, excluding ${EXCLUDE1} and ${EXCLUDE2}`);
 
-		console.log(`Images Bitmaps : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+		const isTest = co.env.isTest;
+		const isProd = co.env.isProd;
 
-		const isTest = config.env.isTest;
-		const isProd = config.env.isProd;
-
-		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe(				rename( {dirname: ''}))
 			.pipe(				newer( DEST ))
 			.pipe( _if(isTest,	using( {prefix:'[images/bitmaps] compressing :', color:'magenta', filesize:true} )))
@@ -42,9 +41,8 @@ gulp.task('watch-imgBitmaps', () => {
 	if (processBitmaps) {
 
 		// globs
-		const SRC = `${config.src}/${config.images.srcBitmaps}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-
+		const SRC = `${co.src}/${co.images.srcBitmaps}`;
+		const EXCLUDE = `!${co.src}/${co.vendors.src}/`;
 		console.log(`Watching bitmap images : ${SRC}, except for ${EXCLUDE}`);
 
 		return watch( [SRC, EXCLUDE], () => {
