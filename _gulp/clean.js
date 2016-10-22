@@ -1,6 +1,6 @@
 // npm packages
-const clean = require('gulp-clean');
-const gulp = require('gulp');
+const clean = require('gulp-clean');					// https://www.npmjs.com/package/gulp-clean
+const gulp = require('gulp');							// http://gulpjs.com/
 
 // task
 gulp.task('clean', () => {

@@ -1,7 +1,7 @@
 {
   "name": "websitebuilder",
-  "version": "v0.1.0",
-  "description": "Automating tools for front-end web development. Thought for simple websites around html + css + javascript technologies, not for any specific frameworks",
+  "version": "v0.2.0",
+  "description": "Automation tools for front-end web development. Thought for building optimized simple websites around html + css + javascript technologies",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test were written so far. Any contribution will be welcome !\" && exit 1"
@@ -31,6 +31,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.1.1",
+    "gulp-svg-sprite": "^1.3.6",
     "gulp-svgmin": "^1.2.3",
     "gulp-uglify": "^2.0.0",
     "gulp-using": "^0.1.1",

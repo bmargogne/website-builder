@@ -79,7 +79,7 @@
 
 	"scripts": {
 		"src": "**/*.js",
-		"dest": "_assets/scripts",
+		"dest": "_assets",
 		"scriptfile": "script.js",
 
 		"wrapper" : {
@@ -99,7 +99,7 @@
 		"scssSheet": "styleScss.css",
 
 		"srcFinalCss": "**/*.css",
-		"destFinalCss": "_assets/style",
+		"destFinalCss": "_assets",
 		"finalCssSheet": "style.css"
 	},
 

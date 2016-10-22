@@ -1,12 +1,12 @@
 // npm packages
-const _if = require('gulp-if');
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCss = require('gulp-clean-css');
-const concat = require('gulp-concat');
-const gulp = require('gulp');
-const newer = require('gulp-newer');
-const sourcemaps = require('gulp-sourcemaps');
-const using = require('gulp-using');
+const _if = require('gulp-if');								// https://www.npmjs.com/package/gulp-if
+const autoprefixer = require('gulp-autoprefixer');			// https://www.npmjs.com/package/gulp-autoprefixer
+const cleanCss = require('gulp-clean-css');					// https://www.npmjs.com/package/gulp-clean-css
+const concat = require('gulp-concat');						// https://www.npmjs.com/package/gulp-concat
+const gulp = require('gulp');								// http://gulpjs.com/
+const newer = require('gulp-newer');						// https://www.npmjs.com/package/gulp-newer
+const sourcemaps = require('gulp-sourcemaps');				// https://www.npmjs.com/package/gulp-sourcemaps
+const using = require('gulp-using');						// https://www.npmjs.com/package/gulp-using
 
 // imports
 const co = require('./_config.json');

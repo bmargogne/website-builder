@@ -1,9 +1,9 @@
 // npm packages
-const _if = require('gulp-if');
-const concat = require('gulp-concat');
-const gulp = require('gulp');
-const newer = require('gulp-newer');
-const using = require('gulp-using');
+const _if = require('gulp-if');							// https://www.npmjs.com/package/gulp-if
+const concat = require('gulp-concat');					// https://www.npmjs.com/package/gulp-concat
+const gulp = require('gulp');							// http://gulpjs.com/
+const newer = require('gulp-newer');					// https://www.npmjs.com/package/gulp-newer
+const using = require('gulp-using');					// https://www.npmjs.com/package/gulp-using
 
 // imports
 const co = require('./_config.json');

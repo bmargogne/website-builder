@@ -1,10 +1,10 @@
 // npm packages
-const _if = require('gulp-if');
-const gulp = require('gulp');
-const newer = require('gulp-newer');
-const runSequence = require('run-sequence');
-const using = require('gulp-using');
-const watch = require('gulp-watch');
+const _if = require('gulp-if');						// https://www.npmjs.com/package/gulp-if
+const gulp = require('gulp');						// http://gulpjs.com/
+const newer = require('gulp-newer');				// https://www.npmjs.com/package/gulp-newer
+const runSequence = require('run-sequence');		// https://www.npmjs.com/package/run-sequence
+const using = require('gulp-using');				// https://www.npmjs.com/package/gulp-using
+const watch = require('gulp-watch');				// https://www.npmjs.com/package/gulp-watch
 
 // imports
 const co = require('./_config.json');

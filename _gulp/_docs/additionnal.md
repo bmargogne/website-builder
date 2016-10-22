@@ -19,11 +19,16 @@ Please ask permission for exact copy.
 ## Npm packages Documentation
 
 ### Gulp Specific
+- gulp-autoprefixer : https://www.npmjs.com/package/gulp-autoprefixer
+- gulp-babel : https://www.npmjs.com/package/gulp-if
 - gulp-clean : https://www.npmjs.com/package/gulp-clean
 - gulp-concat : https://www.npmjs.com/package/gulp-concat
 - gulp-clean-css : https://www.npmjs.com/package/gulp-clean-css
 - gulp-file-include : https://www.npmjs.com/package/gulp-file-include
+- gulp-if : https://www.npmjs.com/package/gulp-if
+- gulp-imagemin : https://www.npmjs.com/package/gulp-imagemin
 - gulp-insert : https://www.npmjs.com/package/gulp-concat
+- gulp-minify : https://www.npmjs.com/package/gulp-minify
 - gulp-newer : https://www.npmjs.com/package/gulp-newer
 - gulp-open : https://www.npmjs.com/package/gulp-open
 - gulp-plumber : https://www.npmjs.com/package/gulp-plumber
@@ -39,6 +44,7 @@ Please ask permission for exact copy.
 
 ### other
 - browser-sync : https://www.browsersync.io/
+- merge-stream : https://www.npmjs.com/package/merge-stream
 - run-sequence : https://www.npmjs.com/package/run-sequence
 - require-dir : https://www.npmjs.com/package/require-dir
 - vinyl-buffer : https://www.npmjs.com/package/vinyl-buffer

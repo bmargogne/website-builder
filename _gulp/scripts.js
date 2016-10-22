@@ -1,17 +1,17 @@
 // npm packages
-const _if = require('gulp-if');
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
-const gulp = require('gulp');
-const insert = require('gulp-insert');
-const minify = require('gulp-minify');
-const newer = require('gulp-newer');
-const plumber = require('gulp-plumber');
-const runSequence = require('run-sequence');
-const sourcemaps = require('gulp-sourcemaps');
+const _if = require('gulp-if');								// https://www.npmjs.com/package/gulp-if
+const babel = require('gulp-babel');						// https://www.npmjs.com/package/gulp-babel
+const concat = require('gulp-concat');						// https://www.npmjs.com/package/gulp-concat
+const gulp = require('gulp');								// http://gulpjs.com/
+const insert = require('gulp-insert');						// https://www.npmjs.com/package/gulp-concat
+const minify = require('gulp-minify');						// https://www.npmjs.com/package/gulp-minify
+const newer = require('gulp-newer');						// https://www.npmjs.com/package/gulp-newer
+const plumber = require('gulp-plumber');					// https://www.npmjs.com/package/gulp-plumber
+const runSequence = require('run-sequence');				// https://www.npmjs.com/package/run-sequence
+const sourcemaps = require('gulp-sourcemaps');				// https://www.npmjs.com/package/gulp-sourcemaps
 const uglify = require('gulp-uglify');  					// https://www.npmjs.com/package/gulp-uglify
 const using = require('gulp-using');						// https://www.npmjs.com/package/gulp-using
-const watch = require('gulp-watch');
+const watch = require('gulp-watch');						// https://www.npmjs.com/package/gulp-watch
 
 // imports
 const co = require('./_config.json');

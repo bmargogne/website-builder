@@ -1,9 +1,9 @@
 // npm packages
-const _if = require('gulp-if');
-const gulp = require('gulp');
-const requireDir = require('require-dir');
-const runSequence = require('run-sequence');
-const watch = require('gulp-watch');
+const _if = require('gulp-if');						// https://www.npmjs.com/package/gulp-if
+const gulp = require('gulp');						// http://gulpjs.com/
+const requireDir = require('require-dir');			// https://www.npmjs.com/package/require-dir
+const runSequence = require('run-sequence');		// https://www.npmjs.com/package/run-sequence
+const watch = require('gulp-watch');				// https://www.npmjs.com/package/gulp-watch
 
 // imports
 const co = require('./_config.json');

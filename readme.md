@@ -31,7 +31,7 @@ Now, when working in your editor, any changes will be instantly taken into accou
 
 _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to get rid of them_
 
-## Features v0.1.3
+## Features v0.2
 
 ### DONE
 
@@ -40,7 +40,7 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - **pages**: building html using partials
 - **styles**: Sass preprocessors, minifying, sourcemaps, compatibility prefixes
 - **images**: bitmaps compression, vector optimized spritesheet, bitmap optimized spritesheet
-- **scripts**: concatenation, minifying & sourcemaps, using plumber
+- **scripts**: concatenation, minifying & sourcemaps, code wrapping, using plumber
 
 #### Other
 - **easy config**: paths & operations, building sequences
@@ -48,23 +48,29 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - **browserify** : test your website locally, on multiple browsers & devices simultaneously (desktops, tablets, smartphones)
 - **livereload** : any change is automatically saved, and browser is refreshed
 
-### IN PROGRESS
-- **scripts** : should concatenate resulting strict in a "on document ready"
-- **documentation**: links to used libraries, explaining default structuring / naming rules on files
 
-### TODO
+
+### IN PROGRESS
+
+### FOR FUTURE RELEASES
+
+## Feature v0.3
 - **FTP deployment** : automatic upload to FTP
+- **uncss* : clean generated CSS pages from unused selectors (beware of dynamically generated selectors...)
+
 
 ## known Issues
-- Watchers may miss newly created folders and their content. However creating files in existing directory is watched correctly.
-- For gulp-using, the console log of the file path may be confusing when changing 'dirname' from gulp-rename.
+- Watchers may miss newly created folders and their content. Just force the reload by saving the type of file concerned.
+- For 'gulp-using', the console log of the file path is confusing. This is necessary to keep the 'gulp-newer' check working.
 - Changing a HTML partial will not rebuild the "caller" file, unless the "newer" package is deactivated on this task
 - Some elements may need two reload to properly update. (ex: stylesheet built in two steps)
 
 ## Improvments ideas
+- Solving the known issues (any hint / help is welcome!)
 - should handle PHP pages
 - should be able to work external frameworks (Ember, Meteor...)
 - should accept typescript
 - test if it works for server scripting
 - add the link to package documentation directly in code
-- git automatic commit & push to remote
+- **git integration** with creating/initiating and/or automatic commit & push to remote
+- **up-to-date documentation**: links to used libraries, explaining default structuring / naming rules on files

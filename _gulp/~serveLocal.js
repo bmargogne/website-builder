@@ -1,9 +1,9 @@
 // npm packages
-const gulp = require('gulp');
-const _if = require('gulp-if')
-const browserSync = require('browser-sync').create();
-const open = require('gulp-open')
-const watch = require('gulp-watch');
+const gulp = require('gulp');							// http://gulpjs.com/
+const _if = require('gulp-if')							// https://www.npmjs.com/package/gulp-if
+const browserSync = require('browser-sync').create();	// https://www.browsersync.io/
+const open = require('gulp-open')						// https://www.npmjs.com/package/gulp-open
+const watch = require('gulp-watch');					// https://www.npmjs.com/package/gulp-watch
 
 // imports
 const config = require('./_config.json');
