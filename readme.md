@@ -1,8 +1,7 @@
 # Website builder
 ================
 
-v0.1.3
-by Bertrand Margogne.
+v0.3 - by Bertrand Margogne.
 
 
 ## Overview
@@ -33,7 +32,7 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 
 ## Features v0.2
 
-### DONE
+### *** DONE
 
 #### Building steps
 - **files, fonts & vendor scripts**: raw copy for all files from source to destination, 'in _assets' directory
@@ -50,22 +49,24 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 
 
 
-### IN PROGRESS
 
-### FOR FUTURE RELEASES
 
-## Feature v0.3
+### *** FOR FUTURE RELEASES
+
+#### Feature v0.3
 - **FTP deployment** : automatic upload to FTP
 - **uncss** : clean generated CSS pages from unused selectors (beware of dynamically generated selectors...)
 
 
-## known Issues
+## Notes
+
+### known Issues
 - Watchers may miss newly created folders and their content. Just force the reload by saving the type of file concerned.
 - For 'gulp-using', the console log of the file path is confusing. This is necessary to keep the 'gulp-newer' check working.
 - Changing a HTML partial will not rebuild the "caller" file, unless the "newer" package is deactivated on this task
 - Some elements may need two reload to properly update. (ex: stylesheet built in two steps)
 
-## Improvments ideas
+### Improvments ideas
 - Solving the known issues (any hint / help is welcome!)
 - should handle PHP pages
 - should be able to work external frameworks (Ember, Meteor...)
