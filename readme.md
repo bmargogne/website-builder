@@ -56,7 +56,7 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 
 ## Feature v0.3
 - **FTP deployment** : automatic upload to FTP
-- **uncss* : clean generated CSS pages from unused selectors (beware of dynamically generated selectors...)
+- **uncss** : clean generated CSS pages from unused selectors (beware of dynamically generated selectors...)
 
 
 ## known Issues
