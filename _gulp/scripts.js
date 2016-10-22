@@ -3,6 +3,7 @@ const _if = require('gulp-if');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const gulp = require('gulp');
+const insert = require('gulp-insert');
 const minify = require('gulp-minify');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
@@ -15,6 +16,8 @@ const watch = require('gulp-watch');
 // imports
 const co = require('./_config.json');
 const processScripts = co.buildingSteps.processScripts;
+const wrapIt = co.buildingSteps.processScripts;
+const mini = co.buildingSteps.minifyScript;
 
 // task
 gulp.task('scripts', () => {
@@ -33,18 +36,21 @@ gulp.task('scripts', () => {
 		const isTest = co.env.isTest;
 		const es6mode = co.env.es6;
 
+		console.log(wrapIt);
+
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
-			.pipe( _if( isProd, sourcemaps.init() ))
-			.pipe( _if( es6mode, babel({ presets: ['es2015'] })))
-			.pipe( plumber() )
-			.pipe( newer( DEST + SCRIPTFILE ))
+			.pipe( _if( mini,	sourcemaps.init() ))
+			.pipe( _if( es6mode,babel({ presets: ['es2015'] })))
+			.pipe( 				plumber() )
+			.pipe( 				newer( DEST + SCRIPTFILE ))
 			.pipe( _if( isTest, using({ prefix:'[scripts] concatenating :', color:'green', filesize:true })))
-			.pipe( concat ( SCRIPTFILE ))
-			.pipe( _if( isProd, minify({ ext: {src:'-debug.js', min:'.js'} })))
-			.pipe( _if( isTest, using({ prefix:'[scripts] done :', color:'green', filesize:true })))
-			.pipe( _if( isProd, sourcemaps.write('./')))
-			.pipe( plumber.stop() )
-			.pipe( gulp.dest( DEST ));
+			.pipe( 				concat ( SCRIPTFILE ))
+			.pipe( _if( wrapIt,	insert.wrap( co.scripts.wrapper.before, co.scripts.wrapper.after )))
+			.pipe( _if( mini,	minify({ ext: {src:'-debug.js', min:'.js'} })))
+			.pipe( _if( isTest,	using({ prefix:'[scripts] done :', color:'green', filesize:true })))
+			.pipe( _if( mini,	sourcemaps.write('./')))
+			.pipe(				plumber.stop() )
+			.pipe(				gulp.dest( DEST ));
 	}
 	return;
 });
@@ -65,3 +71,4 @@ gulp.task('watch-scripts', () => {
 	}
 	return;
 });
+

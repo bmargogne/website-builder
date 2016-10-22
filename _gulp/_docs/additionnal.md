@@ -23,6 +23,7 @@ Please ask permission for exact copy.
 - gulp-concat : https://www.npmjs.com/package/gulp-concat
 - gulp-clean-css : https://www.npmjs.com/package/gulp-clean-css
 - gulp-file-include : https://www.npmjs.com/package/gulp-file-include
+- gulp-insert : https://www.npmjs.com/package/gulp-concat
 - gulp-newer : https://www.npmjs.com/package/gulp-newer
 - gulp-open : https://www.npmjs.com/package/gulp-open
 - gulp-plumber : https://www.npmjs.com/package/gulp-plumber

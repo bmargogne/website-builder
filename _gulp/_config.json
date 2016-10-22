@@ -1,8 +1,8 @@
 {
 	"env": {
-		"isProd": 			false,
-		"isTest": 			true,
-		"es6":				true
+		"isProd": 					false,
+		"isTest": 				true,
+		"es6":					true
 	},
 
 	"src": "src",
@@ -12,29 +12,31 @@
 	"ConfigHint_Building Steps" : "Building steps complements building sequence from _starter file, but have a higher priority",
 
 	"buildingSteps": {
-		"cleanDest": 		true,
-		"cleanTemp": 		true,
-		"cleanUndefined": 	true,
+		"cleanDest": 			true,
+		"cleanTemp": 			true,
+		"cleanUndefined": 		true,
 
-		"processBitmaps": 	true,
-		"processFiles": 	true,
-		"processFonts": 	true,
-		"processPages": 	true,
-		"processScripts": 	true,
-		"processSprite": 	true,
-		"processSpritesheet": true,
-		"processStyle": 	true,
-		"processVendors": 	true,
-		"processVectors": 	true,
+		"processBitmaps": 		true,
+		"processFiles": 		true,
+		"processFonts": 		true,
+		"processPages": 		true,
+		"processScripts": 		true,
+			"wrapScript":		true,
+			"minifyScript":			false,
+		"processSprite": 		true,
+		"processSpritesheet": 	true,
+		"processStyle": 		true,
+		"processVendors": 		true,
+		"processVectors": 		true,
 
-		"serveLocal": 		true,
-		"browserSyncUI": 	true,
-		"serveBrowsers": 	true
+		"serveLocal": 			true,
+		"browserSyncUI": 		true,
+		"serveBrowsers": 		true
 	},
 
 	"browsers" : {
-		"chrome":			true,
-		"firefox":				false
+		"chrome":				true,
+		"firefox":				true
 	},
 
 	"ConfigHint_Globs" : "all globs defining where you store you different files are set below",
@@ -78,7 +80,12 @@
 	"scripts": {
 		"src": "**/*.js",
 		"dest": "_assets/scripts",
-		"scriptfile": "script.js"
+		"scriptfile": "script.js",
+
+		"wrapper" : {
+			"before":"$(document).ready(() => {",
+			"after":"});"
+		}
 	},
 
 	"style": {
