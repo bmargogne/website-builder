@@ -43,6 +43,7 @@ gulp.task('scripts', () => {
 			.pipe( _if( isProd, minify({ ext: {src:'-debug.js', min:'.js'} })))
 			.pipe( _if( isTest, using({ prefix:'[scripts] done :', color:'green', filesize:true })))
 			.pipe( _if( isProd, sourcemaps.write('./')))
+			.pipe( plumber.stop() )
 			.pipe( gulp.dest( DEST ));
 	}
 	return;

@@ -3,6 +3,7 @@ const _if = require('gulp-if');
 const gulp = require('gulp');
 const fileinclude = require('gulp-file-include');
 const newer = require('gulp-newer');
+const plumber = require('gulp-plumber');
 const runSequence = require('run-sequence');
 const using = require('gulp-using');
 const watch = require('gulp-watch');
@@ -30,7 +31,9 @@ gulp.task('pagesHtml', () => {
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], { ignoreInitial: false } )
 			.pipe( _if(!forceRebuild,	newer( DEST )))
 			.pipe( _if(isTest,			using( {prefix:'[pages/html] building :', color:'cyan', filesize:true} )))
+			.pipe( plumber() )
 			.pipe(						fileinclude({ prefix: '@@', basepath: co.src }))
+			.pipe( plumber.stop() )
 			.pipe(						gulp.dest( DEST ));
 	}
 	return;

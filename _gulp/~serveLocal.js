@@ -49,5 +49,7 @@ gulp.task('openBrowsers', () => {
 
 // task triggered by every watch task
 gulp.task('liveReload', () => {
-	browserSync.reload();
+
+	setTimeout(() => { browserSync.reload(); }, 1000);
+
 });
