@@ -86,6 +86,7 @@
 		"destCss": "style",
 		"cssSheet": "styleCss.css",
 
+		"scssDefaultRoot": "_commons/styles",
 		"srcScss": "**/*.scss",
 		"destScss": "style",
 		"scssSheet": "styleScss.css",

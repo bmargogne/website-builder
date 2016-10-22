@@ -1,7 +1,7 @@
 # Website builder
 ================
 
-v0.0.1
+v0.1.3
 by Bertrand Margogne.
 
 
@@ -31,14 +31,14 @@ Now, when working in your editor, any changes will be instantly taken into accou
 
 _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to get rid of them_
 
-## Features v0.1.2
+## Features v0.1.3
 
 ### DONE
 
 #### Building steps
 - **files, fonts & vendor scripts**: raw copy for all files from source to destination, 'in _assets' directory
 - **pages**: building html using partials
-- **styles**: Sass preprocessors, minifying, sourcemaps
+- **styles**: Sass preprocessors, minifying, sourcemaps, compatibility prefixes
 - **images**: bitmaps compression, vector optimized spritesheet, bitmap optimized spritesheet
 - **scripts**: concatenation, minifying & sourcemaps, using plumber
 
@@ -49,29 +49,22 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - **livereload** : any change is automatically saved, and browser is refreshed
 
 ### IN PROGRESS
-
 - **scripts** : should concatenate resulting strict in a "on document ready"
-- **style** : compatibility prefix
 - **documentation**: links to used libraries, explaining default structuring / naming rules on files
 
 ### TODO
-
-- **styles**: compatibility prefixes
 - **FTP deployment** : automatic upload to FTP
-- **GIT deployment** : automatic commit & push to remote
-
 
 ## known Issues
 - Watchers may miss newly created folders and their content. However creating files in existing directory is watched correctly.
 - For gulp-using, the console log of the file path may be confusing when changing 'dirname' from gulp-rename.
-- Changing a HTML partial will not rebuild the "caller" file
-- Some elements may need two reload to properly update. (even with disable cache option)
-- gulp-minify will return a syntax error when writing ES6
+- Changing a HTML partial will not rebuild the "caller" file, unless the "newer" package is deactivated on this task
+- Some elements may need two reload to properly update. (ex: stylesheet built in two steps)
 
 ## Improvments ideas
-- should use plumber to prevent some repeated crashes if any
 - should handle PHP pages
 - should be able to work external frameworks (Ember, Meteor...)
 - should accept typescript
-- test if it works for server scripting ()
+- test if it works for server scripting
 - add the link to package documentation directly in code
+- git automatic commit & push to remote

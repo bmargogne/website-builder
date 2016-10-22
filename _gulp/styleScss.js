@@ -22,11 +22,17 @@ gulp.task('styleScss', () => {
 
 	const isTest = co.env.isTest;
 	const isProd = co.env.isProd;
+	const scssDefault = co.style.scssDefaultRoot;
+
+	console.log(`${co.src}/${scssDefault}`);
+
 
 	return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))
 		.pipe( _if( isTest,	using( {prefix:'[style/scss] preprocessing :', color:'yellow', filesize:true} )))
-		.pipe(				sass().on('error', sass.logError))
+		.pipe(				sass({
+								includePaths: `${co.src}/${scssDefault}`
+							}).on('error', sass.logError))
 		.pipe(				concat( STYLESHEET ))
 		.pipe( _if( isTest,	using( {prefix:'[style/scss] done generating & concatenating:', color:'yellow', filesize:true} )))
 		.pipe(				gulp.dest( DEST ));
