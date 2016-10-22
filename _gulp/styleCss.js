@@ -6,21 +6,22 @@ const newer = require('gulp-newer');
 const using = require('gulp-using');
 
 // imports
-const config = require('./_config.json');
+const co = require('./_config.json');
 
 // task
 gulp.task('styleCss', () => {
 
 	// globs
-	const SRC = `${config.src}/${config.style.srcCss}`;
-	const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-	const DEST = `${config.temp}/${config.style.destCss}/`;
-	const STYLESHEET = config.style.cssSheet;
-	console.log(`Style CSS building : ${SRC} --> ${DEST}${STYLESHEET}, excluding ${EXCLUDE}`);
+	const SRC = `${co.src}/${co.style.srcCss}`;
+	const EXCLUDE1 = `!${co.src}/${co.exclude}/`
+	const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+	const DEST = `${co.temp}/${co.style.destCss}/`;
+	const STYLESHEET = co.style.cssSheet;
+	console.log(`Style CSS building : [${SRC}] --> [${DEST}${STYLESHEET}], excluding [${EXCLUDE1}], and [${EXCLUDE2}]`);
 
-	const isTest = config.env.isTest;
+	const isTest = co.env.isTest;
 
-	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+	return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))
 		.pipe( _if( isTest,	using( {prefix:'[style/css] concatenating :', color:'yellow', filesize:true} )))
 		.pipe(				concat( STYLESHEET ))

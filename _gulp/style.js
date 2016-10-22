@@ -6,8 +6,8 @@ const runSequence = require('run-sequence');
 const watch = require('gulp-watch');
 
 // imports
-const config = require('./_config.json');
-const processStyle = config.buildingSteps.processStyle;
+const co = require('./_config.json');
+const processStyle = co.buildingSteps.processStyle;
 
 // task
 gulp.task('styleAndSpriteSheet', () => {
@@ -25,14 +25,14 @@ gulp.task('styleAndSpriteSheet', () => {
 });
 
 // watch
-gulp.task('watch-style', () => {
+gulp.task('watch-styleAndSpriteSheet', () => {
 	if (processStyle) {
 
 		// globs
-		const CSS =  `${config.src}/${config.style.srcCss}/`;
-		const SCSS =  `${config.src}/${config.style.srcScss}/`;
-		const SPRITEFILES = `${config.src}/${config.images.srcSprite}/` // generating a bitmap spritesheet also generates a definition CSS
-		console.log(`Watching styles : ${CSS} and ${SCSS}`);
+		const CSS =  `${co.src}/${co.style.srcCss}/`;
+		const SCSS =  `${co.src}/${co.style.srcScss}/`;
+		const SPRITEFILES = `${co.src}/${co.images.srcSprite}/` // generating a bitmap spritesheet also generates a definition CSS
+		console.log(`Watching styles : [${CSS}], [${SCSS}] and [${SPRITEFILES}]`);
 
 		return watch( [CSS, SCSS, SPRITEFILES], (event) => {
 			runSequence('styleAndSpriteSheet', 'liveReload');

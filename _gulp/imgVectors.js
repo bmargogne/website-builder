@@ -10,8 +10,8 @@ const svgSprite = require('gulp-svg-sprite');
 const watch = require('gulp-watch');
 
 // imports
-const config = require('./_config.json');
-const processVectors = config.buildingSteps.processVectors;
+const co = require('./_config.json');
+const processVectors = co.buildingSteps.processVectors;
 
 
 // task
@@ -19,11 +19,12 @@ gulp.task('imgVectors', function () {
 	if (processVectors) {
 
 		// globs & variables
-		const SRC = `${config.src}/${config.images.srcVectors}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-		const DEST = `${config.dest}/${config.images.destVectors}/`;
-		const SPRITESHEET = config.images.vectorSpritesheet;
-		console.log(`Vector Spritesheet : ${SRC} --> ${DEST}${SPRITESHEET}, excluding ${EXCLUDE}`);
+		const SRC = `${co.src}/${co.images.srcVectors}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		const DEST = `${co.dest}/${co.images.destVectors}/`;
+		const SPRITESHEET = co.images.vectorSpritesheet;
+		console.log(`Vector Spritesheet : [${SRC}] --> [${DEST}${SPRITESHEET}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
 		// SVG optimization parameters
 		const configSvgo = {
@@ -56,10 +57,10 @@ gulp.task('imgVectors', function () {
 			}
 		};
 
-		const isTest = config.env.isTest;
-		const isProd = config.env.isProd;
+		const isTest = co.env.isTest;
+		const isProd = co.env.isProd;
 
-		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe(				newer( DEST + SPRITESHEET ))
 			.pipe( _if(isTest,	using( {prefix:'[images/vector] building spritesheet with :', color:'magenta', filesize:true} )))
 			.pipe(				rename( {dirname: ''} ))
@@ -75,12 +76,12 @@ gulp.task('imgVectors', function () {
 gulp.task('watch-imgVectors', () => {
 	if (processVectors) {
 
-		const SRC = `${config.src}/${config.images.srcVectors}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
+		const SRC = `${co.src}/${co.images.srcVectors}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		console.log(`Watching Vector images : [${SRC}], except for [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-		console.log(`Watching Vector images : ${SRC}, except for ${EXCLUDE}`);
-
-		return watch( [SRC, EXCLUDE], () => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2], () => {
 			runSequence('imgVectors', 'liveReload');
 		});
 	}

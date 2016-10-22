@@ -18,15 +18,16 @@ gulp.task('imgBitmaps', () => {
 
 		// globs
 		const SRC = `${co.src}/${co.images.srcBitmaps}`;
-		const EXCLUDE1 = `!${co.src}/${co.vendors.src}/`;
-		const EXCLUDE2 = `!${co.src}/${co.images.srcSprite}/`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		const EXCLUDE3 = `!${co.src}/${co.images.srcSprite}/`;
 		const DEST = `${co.dest}/${co.images.destBitmaps}/`;
-		console.log(`Images Bitmaps : ${SRC} --> ${DEST}, excluding ${EXCLUDE1} and ${EXCLUDE2}`);
+		console.log(`Images Bitmaps : [${SRC}] --> [${DEST}], excluding [${EXCLUDE1}], [${EXCLUDE2}] and [${EXCLUDE3}]`);
 
 		const isTest = co.env.isTest;
 		const isProd = co.env.isProd;
 
-		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
+		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], { ignoreInitial: false })
 			.pipe(				rename( {dirname: ''}))
 			.pipe(				newer( DEST ))
 			.pipe( _if(isTest,	using( {prefix:'[images/bitmaps] compressing :', color:'magenta', filesize:true} )))
@@ -42,10 +43,12 @@ gulp.task('watch-imgBitmaps', () => {
 
 		// globs
 		const SRC = `${co.src}/${co.images.srcBitmaps}`;
-		const EXCLUDE = `!${co.src}/${co.vendors.src}/`;
-		console.log(`Watching bitmap images : ${SRC}, except for ${EXCLUDE}`);
+		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		const EXCLUDE3 = `!${co.src}/${co.images.srcSprite}/`;
+		console.log(`Watching bitmap images : [${SRC}], except for [${EXCLUDE1}], [${EXCLUDE2}] and [${EXCLUDE3}]`);
 
-		return watch( [SRC, EXCLUDE], () => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], () => {
 			runSequence('imgBitmaps', 'liveReload');
 		});
 	}

@@ -39,7 +39,7 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - **files, fonts & vendor scripts**: raw copy for all files from source to destination, 'in _assets' directory
 - **pages**: building html using partials
 - **styles**: Sass preprocessors, minifying, sourcemaps
-- **images**: bitmaps compression, vector optimization & stylesheet generation
+- **images**: bitmaps compression, vector optimized spritesheet, bitmap optimized spritesheet
 - **scripts**: concatenation, minifying & sourcemaps, using plumber
 
 #### Other
@@ -50,8 +50,7 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 
 ### IN PROGRESS
 
-- **images** : bitmap spritesheet generation
-- **scripts** : should concatenate resulting strinct in a "on document ready"
+- **scripts** : should concatenate resulting strict in a "on document ready"
 - **style** : compatibility prefix
 - **documentation**: links to used libraries, explaining default structuring / naming rules on files
 

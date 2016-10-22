@@ -7,22 +7,23 @@ const sass = require('gulp-sass');
 const using = require('gulp-using');
 
 // imports
-const config = require('./_config.json');
+const co = require('./_config.json');
 
 // task
 gulp.task('styleScss', () => {
 
 	// globs
-	const SRC = `${config.src}/${config.style.srcScss}`;
-	const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-	const DEST = `${config.temp}/${config.style.destScss}/`;
-	const STYLESHEET = config.style.scssSheet;
-	console.log(`Styles SCSS Building : ${SRC} --> ${DEST}${STYLESHEET}, excluding ${EXCLUDE}`);
+	const SRC = `${co.src}/${co.style.srcScss}`;
+	const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+	const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+	const DEST = `${co.temp}/${co.style.destScss}/`;
+	const STYLESHEET = co.style.scssSheet;
+	console.log(`Styles SCSS Building : [${SRC}] --> [${DEST}${STYLESHEET}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-	const isTest = config.env.isTest;
-	const isProd = config.env.isProd;
+	const isTest = co.env.isTest;
+	const isProd = co.env.isProd;
 
-	return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+	return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))
 		.pipe( _if( isTest,	using( {prefix:'[style/scss] preprocessing :', color:'yellow', filesize:true} )))
 		.pipe(				sass().on('error', sass.logError))

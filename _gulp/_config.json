@@ -39,6 +39,8 @@
 
 	"ConfigHint_Globs" : "all globs defining where you store you different files are set below",
 
+	"exclude": "**/exclude/**.*",
+
 	"files": {
 		"src": "**/files/**/*.*",
 		"dest": "_assets/files"

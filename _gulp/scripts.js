@@ -13,26 +13,27 @@ const using = require('gulp-using');						// https://www.npmjs.com/package/gulp-
 const watch = require('gulp-watch');
 
 // imports
-const config = require('./_config.json');
-const processScripts = config.buildingSteps.processScripts;
+const co = require('./_config.json');
+const processScripts = co.buildingSteps.processScripts;
 
 // task
 gulp.task('scripts', () => {
 	if (processScripts) {
 
 		// globs
-		const SRC = `${config.src}/${config.scripts.src}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-		const DEST = `${config.dest}/${config.scripts.dest}/`;
-		const SCRIPTFILE = config.scripts.scriptfile;
-		console.log(`Scripts building : ${SRC} --> ${DEST}${SCRIPTFILE}, excluding ${EXCLUDE}`);
+		const SRC = `${co.src}/${co.scripts.src}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		const DEST = `${co.dest}/${co.scripts.dest}/`;
+		const SCRIPTFILE = co.scripts.scriptfile;
+		console.log(`Scripts building : [${SRC}] --> [${DEST}${SCRIPTFILE}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
 		// imports
-		const isProd = config.env.isProd;
-		const isTest = config.env.isTest;
-		const es6mode = config.env.es6;
+		const isProd = co.env.isProd;
+		const isTest = co.env.isTest;
+		const es6mode = co.env.es6;
 
-		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe( _if( isProd, sourcemaps.init() ))
 			.pipe( _if( es6mode, babel({ presets: ['es2015'] })))
 			.pipe( plumber() )
@@ -52,12 +53,12 @@ gulp.task('watch-scripts', () => {
 	if (processScripts) {
 
 		// globs
-		const SRC = `${config.src}/${config.scripts.src}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
+		const SRC = `${co.src}/${co.scripts.src}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		console.log(`Watching scripts : [${SRC}], except for [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-		console.log(`Watching scripts : ${SRC}, except for ${EXCLUDE}`);
-
-		return watch( [SRC, EXCLUDE], () => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2], () => {
 			runSequence('scripts', 'liveReload');
 		});
 	}

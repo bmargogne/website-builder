@@ -8,22 +8,23 @@ const using = require('gulp-using');
 const watch = require('gulp-watch');
 
 // imports
-const config = require('./_config.json');
-const processFonts = config.buildingSteps.processFonts;
+const co = require('./_config.json');
+const processFonts = co.buildingSteps.processFonts;
 
 // task
 gulp.task('fonts', () => {
 	if (processFonts) {
 
 		// globs
-		const SRC = `${config.src}/${config.fonts.src}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-		const DEST = `${config.dest}/${config.fonts.dest}/`;
-		console.log(`Fonts simple copy : ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+		const SRC = `${co.src}/${co.fonts.src}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}`;
+		const DEST = `${co.dest}/${co.fonts.dest}/`;
+		console.log(`Fonts simple copy : [${SRC}] --> [${DEST}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-		const isTest = config.env.isTest;
+		const isTest = co.env.isTest;
 
-		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe(				rename( {dirname: ''} ))
 			.pipe(				newer( DEST ))
 			.pipe( _if(isTest,	using( {prefix:'[fonts] copying :', color:'gray', filesize:true} )))
@@ -36,11 +37,12 @@ gulp.task('fonts', () => {
 gulp.task('watch-fonts', () => {
 	if (processFonts) {
 
-		const SRC = `${config.src}/${config.fonts.src}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-		console.log(`Watching fonts : ${SRC}, except for ${EXCLUDE}`);
+		const SRC = `${co.src}/${co.fonts.src}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}`;
+		console.log(`Watching fonts : [${SRC}], except for [${EXCLUDE}]`);
 
-		return watch( [SRC, EXCLUDE], (event) => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2], (event) => {
 			runSequence('fonts', 'liveReload');
 		});
 	}

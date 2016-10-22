@@ -8,22 +8,23 @@ const using = require('gulp-using');
 const watch = require('gulp-watch');
 
 // imports
-const config = require('./_config.json');
-const processFiles = config.buildingSteps.processFiles;
+const co = require('./_config.json');
+const processFiles = co.buildingSteps.processFiles;
 
 // task
 gulp.task('files', () => {
 	if (processFiles) {
 
 		// globs
-		const SRC = `${config.src}/${config.files.src}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-		const DEST = `${config.dest}/${config.files.dest}/`;
-		console.log(`Files simple copy: ${SRC} --> ${DEST}, excluding ${EXCLUDE}`);
+		const SRC = `${co.src}/${co.files.src}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}`;
+		const DEST = `${co.dest}/${co.files.dest}/`;
+		console.log(`Files simple copy: [${SRC}] --> [${DEST}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-		const isTest = config.env.isTest;
+		const isTest = co.env.isTest;
 
-		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe(				rename( path => { path.dirname = ''}))
 			.pipe(				newer( DEST ))
 			.pipe( _if(isTest,	using( {prefix:'[files] copying :', color:'blue', filesize:true} )))
@@ -37,11 +38,12 @@ gulp.task('watch-files', () => {
 	if (processFiles) {
 
 		// globs
-		const SRC = `${config.src}/${config.files.src}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}`;
-		console.log(`Watching files : ${SRC}, except for ${EXCLUDE}`);
+		const SRC = `${co.src}/${co.files.src}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}`;
+		console.log(`Watching files : [${SRC}], except for [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-		return watch( [SRC, EXCLUDE], (event) => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2], (event) => {
 			runSequence('files', 'liveReload');
 		});
 	}

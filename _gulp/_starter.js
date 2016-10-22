@@ -54,29 +54,7 @@ const testSequence = () => {
 }
 
 const defaultSequence = () => {
-	return runSequence(
-		[
-			'files',
-			'fonts',
-			'imgBitmaps',
-			'imgVectors',
-			'pagesHtml',
-			'scripts',
-			'styleAndSpriteSheet',
-			'vendors',
-		],
-		[
-			'serveLocal',
-			'watch-files',
-			'watch-imgBitmaps',
-			'watch-imgSprite',
-			'watch-imgVectors',
-			'watch-pagesHtml',
-			'watch-scripts',
-			'watch-style',
-			'watch-vendors',
-		]
-	);
+	startLocalServer();
 }
 
 const startLocalServer = () => {
@@ -100,7 +78,7 @@ const startLocalServer = () => {
 			'watch-imgVectors',
 			'watch-pagesHtml',
 			'watch-scripts',
-			'watch-style',
+			'watch-styleAndSpriteSheet',
 			'watch-vendors'
 		]
 	);

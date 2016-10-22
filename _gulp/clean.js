@@ -6,28 +6,28 @@ const gulp = require('gulp');
 gulp.task('clean', () => {
 
 	// imports
-	const config = require('./_config.json')
-	const cleanDest = config.buildingSteps.cleanDest;
-	const cleanTemp = config.buildingSteps.cleanTemp;
-	const cleanUndef = config.buildingSteps.cleanUndefined;
+	const co = require('./_config.json')
+	const cleanDest = co.buildingSteps.cleanDest;
+	const cleanTemp = co.buildingSteps.cleanTemp;
+	const cleanUndef = co.buildingSteps.cleanUndefined;
 
 	let globs = [];
 
 	if (cleanDest) {
-		const DEST = `${config.dest}`;
-		console.log(`Cleaning folder : ${DEST}`);
+		const DEST = `${co.dest}`;
+		console.log(`Cleaning folder : [${DEST}]`);
 
 		globs.push(DEST);
 	}
 	if (cleanTemp) {
-		const TMP = `${config.temp}`;
-		console.log(`Cleaning folder : ${TMP}`);
+		const TMP = `${co.temp}`;
+		console.log(`Cleaning folder : [${TMP}]`);
 
 		globs.push(TMP)
 	}
 	if (cleanUndef) {
 		const UNDEF = 'undefined';
-		console.log(`Cleaning folder : ${UNDEF}`);
+		console.log(`Cleaning folder : [${UNDEF}]`);
 
 		globs.push( UNDEF );
 	}

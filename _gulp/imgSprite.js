@@ -12,26 +12,28 @@ const imagemin = require('gulp-imagemin');
 const watch = require('gulp-watch');
 
 // imports
-const config = require('./_config.json');
-const processSprite = config.buildingSteps.processSprite
+const co = require('./_config.json');
+const processSprite = co.buildingSteps.processSprite
 
+// task
 gulp.task('imgSprite', () => {
 	if (processSprite) {
 
 		// globs
-		const SRC = `${config.src}/${config.images.srcSprite}`;
-		const EXCLUDE = `!${config.src}/${config.vendors.src}/`;
-		const DEST = `${config.dest}/${config.images.destSprite}/`;
-		const DESTCSS = `${config.temp}/${config.images.tmpSubFolder}/`; // definition CSS will be concatenated with other SCSS & CSS
-		const SPRITESHEET = config.images.bitmapSpritesheet;
-		const CSSFILE = config.images.cssSpriteFile;
-		console.log(`Bitmap Spritesheet : [${SRC}] --> [${DEST}${SPRITESHEET}] + [${DESTCSS}${CSSFILE}], excluding [${EXCLUDE}]`);
+		const SRC = `${co.src}/${co.images.srcSprite}`;
+		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
+		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		const DEST = `${co.dest}/${co.images.destSprite}/`;
+		const DESTCSS = `${co.temp}/${co.images.tmpSubFolder}/`; // definition CSS will be concatenated with other SCSS & CSS
+		const SPRITESHEET = co.images.bitmapSpritesheet;
+		const CSSFILE = co.images.cssSpriteFile;
+		console.log(`Bitmap Spritesheet : [${SRC}] --> [${DEST}${SPRITESHEET}] + [${DESTCSS}${CSSFILE}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
 		// imports
-		const isProd = config.env.isProd;
-		const isTest = config.env.isTest;
+		const isProd = co.env.isProd;
+		const isTest = co.env.isTest;
 
-		const spriteData = gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
+		const spriteData = gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe( _if( isProd, newer( DEST + SPRITESHEET )))
 			.pipe( _if( isTest,
 				using({
@@ -68,3 +70,5 @@ gulp.task('imgSprite', () => {
 	return;
 });
 
+// watch
+// the file watching is done together with "style"
