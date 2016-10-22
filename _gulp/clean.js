@@ -15,19 +15,19 @@ gulp.task('clean', () => {
 
 	if (cleanDest) {
 		const DEST = `${co.dest}`;
-		console.log(`Cleaning folder : [${DEST}]`);
+		console.log(`Cleaning folder : ${DEST}`);
 
 		globs.push(DEST);
 	}
 	if (cleanTemp) {
 		const TMP = `${co.temp}`;
-		console.log(`Cleaning folder : [${TMP}]`);
+		console.log(`Cleaning folder : ${TMP}`);
 
 		globs.push(TMP)
 	}
 	if (cleanUndef) {
 		const UNDEF = 'undefined';
-		console.log(`Cleaning folder : [${UNDEF}]`);
+		console.log(`Cleaning folder : ${UNDEF}`);
 
 		globs.push( UNDEF );
 	}
