@@ -1,0 +1,15 @@
+.std-title {
+	@include font(nevo-bold, normal, normal);
+	font-size: $xxl;
+	text-align: center;
+	font-weight:bold;
+	color:red;
+}
+
+.std-title1 {
+	@include font(nevo-bold, normal, normal);
+	font-size: $xxl;
+	text-align: right;
+	font-weight: bold;
+	color:blue;
+}

@@ -1,0 +1,35 @@
+.std-page-row {
+	@extend .std-row;
+	background-color:$neutral-ll;
+	margin-left: $stdOffset;
+	margin-right: $stdOffset;
+
+	&:nth-child(2n) {
+		background-color:$neutral-lll;
+	}
+	&:last-of-type {
+		border-bottom:1px solid black
+	}
+}
+
+.std-page-list {
+	@extend .std-list;
+}
+
+.std-page-welcome {
+	@include fitSize(min-height, 500px, 300px, 700px);
+	text-align:center;
+	position:relative;
+
+	& > .center-block {
+		margin:0;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}
+}
+
+.std-page-title {
+	@extend .std-title;
+}

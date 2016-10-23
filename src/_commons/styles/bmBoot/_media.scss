@@ -1,0 +1,16 @@
+$min-screen:320px;
+$small-screen: 768px;
+$medium-screen: 1024px;;
+$max-screen:1600px;
+
+@mixin fitSize($property, $sizeM, $sizeS: $sizeM * 0.75, $sizeL: $sizeM * 1.25) {
+
+	#{$property}: $sizeS;
+
+	@media (min-width: $small-screen)  {
+		#{$property}: $sizeM;
+	}
+	@media (min-width: $medium-screen)  {
+		#{$property}: $sizeL
+	}
+}

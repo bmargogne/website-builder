@@ -1,0 +1,45 @@
+// here, colors themes are defined and prepare any intersting color association.
+
+html {
+	background-color:$neutral-l;
+}
+
+body {
+	background-color: $neutral-lll;
+}
+
+h1 {
+	color: $neutral-ddd;
+}
+
+h2 {
+	color: $neutral-dd;
+}
+
+h3 {
+	color: $neutral-d;
+}
+
+.p-color-static {
+	background-color: $primary;
+	color: $primary-d;
+	fill: $primary-d;
+}
+
+.p-color-dynamic {
+	@extend .p-color-static;
+
+	&:hover {
+		background-color: $primary-l;
+		color: $primary-dd;
+		fill: $primary-dd;
+		cursor: pointer;
+	}
+
+	&:active {
+		background-color: $primary-l;
+		color: $secondary-d;
+		fill: $secondary-d;
+	}
+}
+

@@ -1,0 +1,28 @@
+// Standard text
+@each $font-face in opensans, opensans-light, nevo-bold, nevo-regular {
+  @font-face {
+    font-family: $font-face;
+    font-style: normal;
+    font-weight: normal;
+
+	// ../fonts = _assets/fonts, relative to //_assets/style
+    src: url('../fonts/#{$font-face}.eot');
+    src: url('../fonts/#{$font-face}.eot?') format('eot'),
+    url('../fonts/#{$font-face}.woff') format('woff'),
+    url('../fonts/#{$font-face}.ttf') format('truetype');
+  }
+}
+
+body {
+  @include font(opensans-light, normal, normal);
+  font-size: $s;
+  @media (min-width: $small-screen) { &{ font-size: $m; }}
+  @media (min-width: $medium-screen) { &{ font-size: $l; }}
+}
+
+.hidden-list {
+	padding-left:0px;
+	list-style-type: none;
+	margin-top:0;
+	margin-bottom:0;
+}

@@ -1,0 +1,38 @@
+$navbar-height: 60px;
+$navbar-icon-padding: 13px;
+$navbar-icon-size: $navbar-height - (2 * $navbar-icon-padding);
+
+.std-navbar {
+	@extend .std-row;
+	@include fitSize(height, $navbar-height);
+	@include fitSize(line-height, $navbar-height);
+	background-color: $primary;
+	text-align: center;
+
+	& > .left-group {
+		@extend .hidden-list;
+		float: left;
+		height: 100%;
+	}
+
+	& > .right-group {
+		@extend .hidden-list;
+		float: right;
+		height: 100%;
+	}
+}
+
+.std-navbar-block {
+	@extend .std-block;
+	@extend .p-color-dynamic;
+	@include fitSize(height, $navbar-height);
+
+	&.icon {
+		@include fitSize(padding, $navbar-icon-padding)
+	}
+}
+
+.std-navbar-icon {
+	@include fitSize(height, $navbar-icon-size);
+	@include fitSize(width, $navbar-icon-size);
+}

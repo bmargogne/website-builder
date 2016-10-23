@@ -1,0 +1,43 @@
+$stdOffset: 15px;
+
+.centered-padded-div {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: $stdOffset;
+	padding-right: $stdOffset;
+}
+
+.std-row {
+	@extend .centered-padded-div;
+	height:100%;
+	min-width:$min-screen;
+
+	& > .left-group {
+		@extend .hidden-list;
+		float: left;
+		height: 100%;
+	}
+
+	& > .right-group {
+		@extend .hidden-list;
+		float: right;
+		height: 100%;
+	}
+}
+
+.std-list {
+	@extend .centered-padded-div;
+	&:first-child{
+		margin-top: $stdOffset;
+	}
+	&:last-of-type {
+		margin-bottom: $stdOffset;
+	}
+}
+
+.std-block {
+	display:inline-block;
+	padding-right: $stdOffset;
+	padding-left: $stdOffset;
+	height: 100%;
+}

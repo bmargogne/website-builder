@@ -1,0 +1,26 @@
+// Here, colors Scheme can be defined (primary, secondary, tertiary, neutral colors ...)
+// any color should refer to the colors from _color.scss
+
+$neutral-lll: 	$coldgrey-lll;
+$neutral-ll: 	$coldgrey-ll;
+$neutral-l: 	$coldgrey-l;
+$neutral: 		$coldgrey;
+$neutral-d: 	$coldgrey-d;
+$neutral-dd: 	$coldgrey-dd;
+$neutral-ddd: 	$coldgrey-ddd;
+
+$primary-lll: 	$pastelblue-lll;
+$primary-ll: 	$pastelblue-ll;
+$primary-l: 	$pastelblue-l;
+$primary: 		$pastelblue;
+$primary-d: 	$pastelblue-d;
+$primary-dd: 	$pastelblue-dd;
+$primary-ddd: 	$pastelblue-ddd;
+
+$secondary-lll:	$yellow-lll;
+$secondary-ll:	$yellow-ll;
+$secondary-l:	$yellow-l;
+$secondary:		$yellow;
+$secondary-d:	$yellow-d;
+$secondary-dd:	$yellow-dd;
+$secondary-ddd:	$yellow-ddd;

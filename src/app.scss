@@ -1,0 +1,24 @@
+// Common variables & elements
+// @import 'bmBoot/bmBoot';
+
+// following should be placed in bmBoot ideally
+// Be aware of dependencies, and load in the right order !
+@import 'bmBoot/reset';
+@import 'bmBoot/media';
+
+@import 'bmBoot/color/palette';
+@import 'bmBoot/color/scheme';
+@import 'bmBoot/color/theme';
+
+@import 'bmBoot/text/fonts';
+@import 'bmBoot/text/text';
+@import 'bmBoot/text/title';
+
+@import 'bmBoot/container/background';
+@import 'bmBoot/container/body';
+@import 'bmBoot/container/row';
+@import '_commons/_partials/navbar/navbar';
+@import 'site/page';
+
+// Page specific styles
+@import 'index';

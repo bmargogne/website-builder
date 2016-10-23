@@ -1,0 +1,13 @@
+$xxs: 8px;
+$xs: 10px;
+$s: 12px;
+$m: 14px;
+$l: 18px;
+$xl: 24px;
+$xxl: 32px;
+
+@mixin font($font, $style: normal, $weight: normal) {
+  font-family: $font;
+  font-style: $style;
+  font-weight: $weight;
+}
