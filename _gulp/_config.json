@@ -34,9 +34,18 @@
 		"serveBrowsers": 		true
 	},
 
-	"browsers" : {
-		"chrome":				true,
-		"firefox":				true
+	"serve" : {
+		"localport":3000,
+		"localurl": "http://localhost:3000",
+		"browsers" : {
+			"chrome":			true,
+			"chromewin":		true,
+			"iexplore":			true,
+			"edge":					false,
+			"firefox":			true,
+			"safari":			true,
+			"opera":			true
+		}
 	},
 
 	"ConfigHint_Globs" : "all globs defining where you store you different files are set below",

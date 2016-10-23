@@ -6,21 +6,22 @@ const open = require('gulp-open')						// https://www.npmjs.com/package/gulp-ope
 const watch = require('gulp-watch');					// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const config = require('./_config.json');
+const co = require('./_config.json');
 
 // tasks
 gulp.task('serveLocal', () => {
 
-	const serveLocal = config.buildingSteps.serveLocal;
-	const browserSyncUI = config.buildingSteps.browserSyncUI;
+	const serveLocal = co.buildingSteps.serveLocal;
+	const browserSyncUI = co.buildingSteps.browserSyncUI;
 	let uiOptions; uiOptions = browserSyncUI ? { port:3001 } : uiOptions = false;
+	let localPort = co.serve.localport;
 
 	if (serveLocal) {
 		return browserSync.init({
 			server:{
-				baseDir : config.dest
+				baseDir : co.dest
 			},
-			port: 3000,
+			port: localPort,
 			ui: uiOptions,
 			open: false
 		});
@@ -32,17 +33,29 @@ gulp.task('serveLocal', () => {
 gulp.task('openBrowsers', () => {
 
 	// imports
-	const serveBrowsers = config.buildingSteps.serveBrowsers;
+	const serveBrowsers = co.buildingSteps.serveBrowsers;
 
 	if (serveBrowsers) {
 
-		console.log('Opening multiple browsers')
-		const firefox = config.browsers.firefox;
-		const chrome = config.browsers.chrome;
+		const localurl = co.serve.localurl;
+
+		const chrome = co.serve.browsers.chrome;		
+		const chromewin = co.serve.browsers.chromewin;
+		const iexplore = co.serve.browsers.iexplore;
+		const edge = co.serve.browsers.iexplore;
+		const firefox = co.serve.browsers.firefox;
+		const safari = co.serve.browsers.safari;
+		const opera = co.serve.browsers.opera;
+		console.log('Serving locally, opening multiple browsers')
 
 		return gulp.src('')
-			.pipe( _if( firefox,	open( {uri: 'http://localhost:3000', app: 'firefox'} )))
-			.pipe( _if( chrome,		open( {uri: 'http://localhost:3000', app: 'google-chrome'} )));
+			.pipe( _if( chrome,		open( {uri: localurl, app: 'google-chrome'} )))
+			.pipe( _if( chromewin,	open( {uri: localurl, app: 'chrome'} )))
+			.pipe( _if( iexplore,	open( {uri: localurl, app: 'iexplore'} )))
+			.pipe( _if( edge,		open( {uri: localurl, app: 'MicrosoftEdge'} )))
+			.pipe( _if( firefox,	open( {uri: localurl, app: 'firefox'} )))
+			.pipe( _if( safari,		open( {uri: localurl, app: 'google-chrome'} )))
+			.pipe( _if( opera,		open( {uri: localurl, app: 'opera'} )));
 	}
 	return;
 });
