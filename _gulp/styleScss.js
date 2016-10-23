@@ -21,11 +21,7 @@ gulp.task('styleScss', () => {
 	console.log(`Styles SCSS Building : [${SRC}] --> [${DEST}${STYLESHEET}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
 	const isTest = co.env.isTest;
-	const isProd = co.env.isProd;
 	const scssDefault = co.style.scssDefaultRoot;
-
-	console.log(`${co.src}/${scssDefault}`);
-
 
 	return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))

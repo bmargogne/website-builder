@@ -25,7 +25,7 @@ gulp.task('files', () => {
 		const isTest = co.env.isTest;
 
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
-			.pipe(				rename( path => { path.dirname = ''}))
+			.pipe(				rename( path => { path.dirname = ''; }))
 			.pipe(				newer( DEST ))
 			.pipe( _if(isTest,	using( {prefix:'[files] copying :', color:'blue', filesize:true} )))
 			.pipe(				gulp.dest( DEST ));
@@ -43,9 +43,9 @@ gulp.task('watch-files', () => {
 		const EXCLUDE2 = `!${co.src}/${co.vendors.src}`;
 		console.log(`Watching files : [${SRC}], except for [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-		return watch( [SRC, EXCLUDE1, EXCLUDE2], (event) => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2], () => {
 			runSequence('files', 'liveReload');
 		});
 	}
 	return;
-})
+});

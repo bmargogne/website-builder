@@ -10,7 +10,7 @@ const watch = require('gulp-watch');					// https://www.npmjs.com/package/gulp-w
 
 // imports
 const co = require('./_config.json');
-const processBitmaps = co.buildingSteps.processBitmaps
+const processBitmaps = co.buildingSteps.processBitmaps;
 
 // task
 gulp.task('imgBitmaps', () => {
@@ -53,4 +53,4 @@ gulp.task('watch-imgBitmaps', () => {
 		});
 	}
 	return;
-})
+});

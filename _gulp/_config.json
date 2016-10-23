@@ -28,23 +28,22 @@
 		"processStyle": 		true,
 		"processVendors": 		true,
 		"processVectors": 		true,
-
 		"serveLocal": 			true,
-		"browserSyncUI": 		true,
 		"serveBrowsers": 		true
 	},
 
 	"serve" : {
+		"browserSyncUI": 		true,
 		"localport":3000,
 		"localurl": "http://localhost:3000",
 		"browsers" : {
-			"chrome":			true,
+			"chrome":				false,
 			"chromewin":		true,
-			"iexplore":			true,
+			"iexplore":				false,
 			"edge":					false,
-			"firefox":			true,
-			"safari":			true,
-			"opera":			true
+			"firefox":				false,
+			"safari":				false,
+			"opera":				false
 		}
 	},
 

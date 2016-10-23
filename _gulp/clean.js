@@ -6,7 +6,7 @@ const gulp = require('gulp');							// http://gulpjs.com/
 gulp.task('clean', () => {
 
 	// imports
-	const co = require('./_config.json')
+	const co = require('./_config.json');
 	const cleanDest = co.buildingSteps.cleanDest;
 	const cleanTemp = co.buildingSteps.cleanTemp;
 	const cleanUndef = co.buildingSteps.cleanUndefined;
@@ -23,7 +23,7 @@ gulp.task('clean', () => {
 		const TMP = `${co.temp}`;
 		console.log(`Cleaning folder : ${TMP}`);
 
-		globs.push(TMP)
+		globs.push(TMP);
 	}
 	if (cleanUndef) {
 		const UNDEF = 'undefined';

@@ -40,11 +40,11 @@ gulp.task('watch-fonts', () => {
 		const SRC = `${co.src}/${co.fonts.src}`;
 		const EXCLUDE1 = `!${co.src}/${co.exclude}`;
 		const EXCLUDE2 = `!${co.src}/${co.vendors.src}`;
-		console.log(`Watching fonts : [${SRC}], except for [${EXCLUDE}]`);
+		console.log(`Watching fonts : [${SRC}], except for [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
-		return watch( [SRC, EXCLUDE1, EXCLUDE2], (event) => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2], () => {
 			runSequence('fonts', 'liveReload');
 		});
 	}
 	return;
-})
+});

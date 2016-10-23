@@ -13,7 +13,7 @@ gulp.task('styleCss', () => {
 
 	// globs
 	const SRC = `${co.src}/${co.style.srcCss}`;
-	const EXCLUDE1 = `!${co.src}/${co.exclude}/`
+	const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
 	const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
 	const DEST = `${co.temp}/${co.style.destCss}/`;
 	const STYLESHEET = co.style.cssSheet;

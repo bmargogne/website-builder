@@ -44,4 +44,4 @@ gulp.task('watch-vendors', () => {
 		});
 	}
 	return;
-})
+});

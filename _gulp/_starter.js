@@ -3,8 +3,7 @@ const gulp = require('gulp');
 const requireDir = require('require-dir');
 const runSequence = require('run-sequence');
 
-const config = require('./_config.json');
-const tasks = requireDir('./');
+const tasks = requireDir('./'); // eslint-disable-line
 
 gulp.task('_starter', () => {
 
@@ -21,16 +20,16 @@ gulp.task('_starter', () => {
 		}
 
 		else if (argv.s === 'ftp') {
-			console.log('[Website Builder] should upload necessary files to ftp and delete unnecessary files from ftp. Any hint/suggestion is welcome')
+			console.log('[Website Builder] should upload necessary files to ftp and delete unnecessary files from ftp. Any hint/suggestion is welcome');
 		}
 
 		else if (argv.s === 'test') {
-			console.log('[Website Builder] Running : Test sequence')
+			console.log('[Website Builder] Running : Test sequence');
 			testSequence();
 		}
 
 		else {
-			console.log('[Website Builder] Running : Quick Build sequence')
+			console.log('[Website Builder] Running : Quick Build sequence');
 			defaultSequence();
 		}
 	}
@@ -51,11 +50,11 @@ const testSequence = () => {
 			'styleAndSpriteSheet',
 		]
 	);
-}
+};
 
 const defaultSequence = () => {
 	startLocalServer();
-}
+};
 
 const startLocalServer = () => {
 	return runSequence(
@@ -82,4 +81,4 @@ const startLocalServer = () => {
 			'watch-vendors'
 		]
 	);
-}
+};

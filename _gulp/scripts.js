@@ -9,7 +9,6 @@ const newer = require('gulp-newer');						// https://www.npmjs.com/package/gulp-
 const plumber = require('gulp-plumber');					// https://www.npmjs.com/package/gulp-plumber
 const runSequence = require('run-sequence');				// https://www.npmjs.com/package/run-sequence
 const sourcemaps = require('gulp-sourcemaps');				// https://www.npmjs.com/package/gulp-sourcemaps
-const uglify = require('gulp-uglify');  					// https://www.npmjs.com/package/gulp-uglify
 const using = require('gulp-using');						// https://www.npmjs.com/package/gulp-using
 const watch = require('gulp-watch');						// https://www.npmjs.com/package/gulp-watch
 
@@ -32,7 +31,6 @@ gulp.task('scripts', () => {
 		console.log(`Scripts building : [${SRC}] --> [${DEST}${SCRIPTFILE}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
 
 		// imports
-		const isProd = co.env.isProd;
 		const isTest = co.env.isTest;
 		const es6mode = co.env.es6;
 

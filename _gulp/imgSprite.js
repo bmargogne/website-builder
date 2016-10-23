@@ -5,15 +5,12 @@ const gulp = require('gulp');						// http://gulpjs.com/
 const imagemin = require('gulp-imagemin');			// https://www.npmjs.com/package/gulp-imagemin
 const merge = require('merge-stream');				// https://www.npmjs.com/package/merge-stream
 const newer = require('gulp-newer');				// https://www.npmjs.com/package/gulp-newer
-const rename = require('gulp-rename');				// https://www.npmjs.com/package/gulp-rename
-const runSequence = require('run-sequence');		// https://www.npmjs.com/package/run-sequence
 const spritesmith = require('gulp.spritesmith');	// https://www.npmjs.com/package/gulp.spritesmith
 const using = require('gulp-using');				// https://www.npmjs.com/package/gulp-using
-const watch = require('gulp-watch');				// https://www.npmjs.com/package/gulp-watch
 
 // imports
 const co = require('./_config.json');
-const processSprite = co.buildingSteps.processSprite
+const processSprite = co.buildingSteps.processSprite;
 
 // task
 gulp.task('imgSprite', () => {

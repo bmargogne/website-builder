@@ -1,9 +1,8 @@
 // npm packages
 const gulp = require('gulp');							// http://gulpjs.com/
-const _if = require('gulp-if')							// https://www.npmjs.com/package/gulp-if
+const _if = require('gulp-if');							// https://www.npmjs.com/package/gulp-if
 const browserSync = require('browser-sync').create();	// https://www.browsersync.io/
-const open = require('gulp-open')						// https://www.npmjs.com/package/gulp-open
-const watch = require('gulp-watch');					// https://www.npmjs.com/package/gulp-watch
+const open = require('gulp-open');						// https://www.npmjs.com/package/gulp-open
 
 // imports
 const co = require('./_config.json');
@@ -12,7 +11,7 @@ const co = require('./_config.json');
 gulp.task('serveLocal', () => {
 
 	const serveLocal = co.buildingSteps.serveLocal;
-	const browserSyncUI = co.buildingSteps.browserSyncUI;
+	const browserSyncUI = co.serve.browserSyncUI;
 	let uiOptions; uiOptions = browserSyncUI ? { port:3001 } : uiOptions = false;
 	let localPort = co.serve.localport;
 
@@ -46,7 +45,7 @@ gulp.task('openBrowsers', () => {
 		const firefox = co.serve.browsers.firefox;
 		const safari = co.serve.browsers.safari;
 		const opera = co.serve.browsers.opera;
-		console.log('Serving locally, opening multiple browsers')
+		console.log('Serving locally, opening multiple browsers');
 
 		return gulp.src('')
 			.pipe( _if( chrome,		open( {uri: localurl, app: 'google-chrome'} )))
