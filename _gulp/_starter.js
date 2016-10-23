@@ -48,7 +48,8 @@ const testSequence = () => {
 		'clean',
 		[
 			'styleAndSpriteSheet',
-		]
+		],
+		'watch-styleAndSpriteSheet'
 	);
 };
 

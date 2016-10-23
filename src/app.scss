@@ -17,7 +17,11 @@
 @import 'bmBoot/container/background';
 @import 'bmBoot/container/body';
 @import 'bmBoot/container/row';
+
+@import 'bmBoot/images/decoration';
+
 @import '_commons/_partials/navbar/navbar';
+@import '_commons/_partials/footer/footer';
 @import 'site/page';
 
 // Page specific styles

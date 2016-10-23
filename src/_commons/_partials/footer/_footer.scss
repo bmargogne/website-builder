@@ -1,0 +1,20 @@
+$footbar-height: 60px;
+// $footbar-icon-padding: 13px;
+// $navbar-icon-size: $navbar-height - (2 * $navbar-icon-padding);
+
+.footer {
+	background-color: $primary-dd;
+	@include fitSize(height, $footbar-height);
+	@include fitSize(line-height, $footbar-height);
+};
+
+.footer-menu {
+	@extend .hidden-list;
+	padding: 0 ($std-offset * 2);	
+	float:right;
+}; 
+
+.footer-menu-item {
+	@extend .std-block;
+	@extend .color-dark-dynamic;
+}

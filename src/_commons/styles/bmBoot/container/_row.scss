@@ -1,10 +1,10 @@
-$stdOffset: 15px;
+$std-offset: 15px;
 
 .centered-padded-div {
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: $stdOffset;
-	padding-right: $stdOffset;
+	padding-left: $std-offset;
+	padding-right: $std-offset;
 }
 
 .std-row {
@@ -27,17 +27,18 @@ $stdOffset: 15px;
 
 .std-list {
 	@extend .centered-padded-div;
-	&:first-child{
-		margin-top: $stdOffset;
+	border: 1px solid blue;
+	&:first-of-type {
+		margin-top: $std-offset;
 	}
 	&:last-of-type {
-		margin-bottom: $stdOffset;
+		margin-bottom: $std-offset;
 	}
 }
 
 .std-block {
 	display:inline-block;
-	padding-right: $stdOffset;
-	padding-left: $stdOffset;
+	padding-right: $std-offset;
+	padding-left: $std-offset;
 	height: 100%;
 }

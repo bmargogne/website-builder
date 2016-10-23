@@ -1,0 +1,9 @@
+$defaut-circle-size: 150px;
+$default-image: 'default.jpg';
+
+@mixin circularImage ($size: $defaut-circle-size, $imageName: $default-image) {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	background: url(`_assets/images/#{$imageName}`) no-repeat;
+}

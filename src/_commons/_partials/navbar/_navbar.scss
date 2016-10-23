@@ -24,7 +24,7 @@ $navbar-icon-size: $navbar-height - (2 * $navbar-icon-padding);
 
 .std-navbar-block {
 	@extend .std-block;
-	@extend .p-color-dynamic;
+	@extend .color-p-dynamic;
 	@include fitSize(height, $navbar-height);
 
 	&.icon {
@@ -35,4 +35,10 @@ $navbar-icon-size: $navbar-height - (2 * $navbar-icon-padding);
 .std-navbar-icon {
 	@include fitSize(height, $navbar-icon-size);
 	@include fitSize(width, $navbar-icon-size);
+}
+
+.std-navbar-title {
+	display: inline-block;
+	color: $primary-ll;
+	font-weight:bold;
 }

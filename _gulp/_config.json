@@ -33,9 +33,10 @@
 	},
 
 	"serve" : {
-		"browserSyncUI": 		true,
 		"localport":3000,
 		"localurl": "http://localhost:3000",
+		"browserSyncUI": 		true,
+
 		"browsers" : {
 			"chrome":				false,
 			"chromewin":		true,
@@ -49,7 +50,7 @@
 
 	"ConfigHint_Globs" : "all globs defining where you store you different files are set below",
 
-	"exclude": "**/exclude/**.*",
+	"exclude": "**/exclude/**/*.*",
 
 	"files": {
 		"src": "**/files/**/*.*",
