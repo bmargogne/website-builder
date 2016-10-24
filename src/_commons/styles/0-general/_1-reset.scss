@@ -2,13 +2,7 @@
 App reset by Ben Frain @benfrain / benfrain.com
 Latest: https://github.com/benfrain/app-reset
 An opinionated set of resets suitable for building web applications.
-
-## Accessibility Notes
-These resets target HTML elements that typically receive styling defaults by User Agents that I always need to 'undo'.
-Be aware that some of these resets have a negative impact on the default usability and accessibility of a web page.
-Therefore, ensure you add an equivalent accessible style back that matches your project aesthetic.
-## You'll want to run this through Autoprefixer You'll typically need to run this through (https://github.com/postcss/autoprefixer) for production.
-Only essential prefixes are added here (e.g. proprietary property value/pairs) and you'll need to set prefixing relative to your desired browser support matrix.
+**** modified by Bertrand Margogne
 */
 
 /*Hat tip to @thierrykoblentz for this approach: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
@@ -24,13 +18,6 @@ html {
     -webkit-tap-highlight-color: rgba(255,255,255,0);
     /*Older Androids need this instead*/
     -webkit-tap-highlight-color: transparent;
-    /* Most devs find border-box easier to reason about. However by inheriting we can mix box-sizing approaches.*/
-    box-sizing: inherit;
-}
-
-*:before,
-*:after {
-    box-sizing: inherit;
 }
 
 /* Switching user-select on for inputs and contenteditable specifically for Safari (see bug link above)*/
@@ -72,9 +59,11 @@ i {
 }
 
 /*Mozilla adds a dotted outline around a tags when they receive tab focus. This removes it. Be aware this is a backwards accessibilty step!*/
-a:focus {
-    outline: 0;
-}
+// a:focus {
+//     outline: 0;
+// }
+
+/* now any element can be listed through ul / li */
 
 input,
 fieldset {
@@ -95,9 +84,9 @@ input::-ms-clear {
 }
 
 /*This switches the default outline off when an input receives focus (really important for users tabbing through with a keyboard) so ensure you put something decent in for your input focus instead!!*/
-input:focus {
-    outline: 0;
-}
+// input:focus {
+//     outline: 0;
+// }
 
 input[type="number"] {
     /*Mozilla shows the spinner UI on number inputs unless we use this:*/
@@ -111,9 +100,9 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /*SVG defaults to inline display which I dislike*/
-svg {
-    display: inline-flex;
-}
+// svg {
+//     display: inline-flex;
+// }
 
 img {
     /*Make images behave responsively. Here they will scale up to 100% of their natural size*/

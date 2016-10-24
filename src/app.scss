@@ -1,26 +1,26 @@
 // Be aware of dependencies, and load in the right order !
-// @import 'reset';
-@import 'media';
-@import 'mixin';
+@import '0-general/1-reset';
+@import '0-general/2-media';
+@import '0-general/3-fix';
 
 @import '1-position/1-common';
 @import '1-position/2-layout';
 @import '1-position/3-row';
 
-@import '2-color/1-mixin';
-@import '2-color/2-swatch';
-@import '2-color/3-scheme';
-@import '2-color/4-theme';
- 
-@import 'themes/1-mixin';
-@import 'themes/components';
-// @import 'text/fonts';
-// @import 'text/text';
-// @import 'text/title';
+@import '2-text/1-fonts';
+@import '2-text/2-effects';
 
+@import '3-color/1-swatch';
+@import '3-color/2-scheme';
+@import '3-color/3-theme';
 
-// @import 'images/background';
-// @import 'images/decoration';
+@import '4-images/1-background';
+@import '4-images/2-decoration'; 
+
+@import '5-themes/1-text';
+@import '5-themes/2-boxes';
+
+@import '6-pages/page'
 
 // @import '_partials/navbar/navbar';
 // @import '_partials/navbar/navbar-ghost';
@@ -29,5 +29,5 @@
 // @import 'pages/page';
 
 // // Page specific styles
-@import 'start';
+// @import 'start';
 // @import 'pages/index';

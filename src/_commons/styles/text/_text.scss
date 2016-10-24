@@ -1,8 +1,0 @@
-
-body {
-  @include font(opensans-light, normal, normal);
-  font-size: $s;
-  @media (min-width: $small-screen) { &{ font-size: $m; }}
-  @media (min-width: $medium-screen) { &{ font-size: $l; }}
-}
-

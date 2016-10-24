@@ -8,7 +8,7 @@ const co = require('../config.json');
 const processStyle = co.buildingSteps.processStyle;
 
 // task
-gulp.task('styleAndSpriteSheet', () => {
+gulp.task('style', () => {
 	if (processStyle) {
 		return runSequence(
 			[
@@ -23,7 +23,7 @@ gulp.task('styleAndSpriteSheet', () => {
 });
 
 // watch
-gulp.task('watch-styleAndSpriteSheet', () => {
+gulp.task('watch-style', () => {
 	if (processStyle) {
 
 		// globs
@@ -33,7 +33,7 @@ gulp.task('watch-styleAndSpriteSheet', () => {
 		console.log(`Watching styles : [${CSS}], [${SCSS}] and [${SPRITEFILES}]`);
 
 		return watch( [CSS, SCSS, SPRITEFILES], () => {
-			runSequence('styleAndSpriteSheet', 'liveReload');
+			runSequence('style', 'liveReload');
 		});
 	}
 });

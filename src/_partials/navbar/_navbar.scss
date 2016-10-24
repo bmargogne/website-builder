@@ -5,23 +5,23 @@ $navbar-icon-size: $navbar-height * 0.8;
 //// Navbar for start page - only limited information
 .navbar-start-block {
 	@extend .std-block;
-	@include fitSize(height, $navbar-height);	
-	@include fitSize(margin-top, $navbar-margin * 2);
-	@include fitSize(margin-left, $navbar-margin);	
-	@include fitSize(margin-right, $navbar-margin);
+	@include responsive-3(height, $navbar-height);	
+	@include responsive-3(margin-top, $navbar-margin * 2);
+	@include responsive-3(margin-left, $navbar-margin);	
+	@include responsive-3(margin-right, $navbar-margin);
 
 	& > .navbar-start-title {
 		$icon-ratio : 100/20; // recovered from image dimension
 		border:1px solid red;
 		fill: $primary;
-		@include fitSize(height, $navbar-icon-size);
-		@include fitSize(width, $navbar-icon-size * $icon-ratio);
+		@include responsive-3(height, $navbar-icon-size);
+		@include responsive-3(width, $navbar-icon-size * $icon-ratio);
 	}
 
 	& > .navbar-start-icon {
 		fill: $primary;
-		@include fitSize(height, $navbar-icon-size);
-		@include fitSize(width, $navbar-icon-size);
+		@include responsive-3(height, $navbar-icon-size);
+		@include responsive-3(width, $navbar-icon-size);
 	}
 }
 
@@ -34,8 +34,8 @@ $navbar-icon-size: $navbar-height * 0.8;
 }
 
 .std-navbar-icon {
-	@include fitSize(height, $navbar-icon-size);
-	@include fitSize(width, $navbar-icon-size);
+	@include responsive-3(height, $navbar-icon-size);
+	@include responsive-3(width, $navbar-icon-size);
 }
 
 
@@ -43,10 +43,10 @@ $navbar-icon-size: $navbar-height * 0.8;
 .std-navbar-block {
 	@extend .std-block;
 	@extend .color-p-dynamic;
-	@include fitSize(height, $navbar-height);
+	@include responsive-3(height, $navbar-height);
 
 	&.icon {
-		@include fitSize(padding, $navbar-margin)
+		@include responsive-3(padding, $navbar-margin)
 	}
 
 	&.title-icon {
@@ -58,8 +58,8 @@ $navbar-icon-size: $navbar-height * 0.8;
 .navbar-start {	
 	background-color: transparent;
 
-	@include fitSize(height, $navbar-height);
-	@include fitSize(line-height, $navbar-height);
+	@include responsive-3(height, $navbar-height);
+	@include responsive-3(line-height, $navbar-height);
 
 	& > .left-group {
 		@extend .hidden-list;

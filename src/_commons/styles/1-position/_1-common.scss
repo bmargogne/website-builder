@@ -2,17 +2,15 @@
 $offset-u: 25px;
 $ex-width-u: 100px;
 
+@mixin reset-bounding-box($margin-size: 0, $padding-size: 0, $border-weight: 0, $border-color: transparent) {
+	margin: $margin-side;
+	padding: $padding-side;
+	border: $border-weight solid $border-color;
+}
+
 .centered {
 	margin-right: auto;
 	margin-left: auto;
-}
-
-// <ul> fix : removes usual characteristics. Every listed elements can easily be in <li> tags (list of icons, list of articles, list of blocks, etc...)
-.hidden-list {
-	padding-left:0;
-	list-style-type: none;
-	margin-top:0;
-	margin-bottom:0;
 }
 
 .centered-box {

@@ -1,8 +1,8 @@
 .std-page-row {
 	@extend .std-row;
 	background-color:$neutral-lll;
-	margin-left: $std-offset;
-	margin-right: $std-offset;
+	margin-left: $offset-u;
+	margin-right: $offset-u;
 
 	&:nth-child(2n) {
 		background-color:$neutral-ll;
@@ -17,7 +17,7 @@
 }
 
 .std-page-welcome {
-	@include fitSize(min-height, 500px, 300px, 700px);
+	@include responsive-3(min-height, 300px);
 	text-align:center;
 	position:relative;
 
@@ -38,4 +38,3 @@
 
 	@include circularImage( 150px, 'default.jpg');
 }
-

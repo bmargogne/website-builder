@@ -1,10 +1,10 @@
-$xxs: 8px;
-$xs: 10px;
-$s: 12px;
-$m: 14px;
-$l: 18px;
-$xl: 24px;
-$xxl: 32px;
+$txt-xxs: 8px;
+$txt-xs: 10px;
+$txt-s: 12px;
+$txt-m: 14px;
+$txt-l: 18px;
+$txt-xl: 24px;
+$txt-xxl: 32px;
 
 @mixin font($font, $style: normal, $weight: normal) {
   font-family: $font;

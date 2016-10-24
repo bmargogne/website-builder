@@ -1,3 +1,5 @@
+$test:1;
+
 @mixin fullBackground($imageName) {
 
 $rootUrl:'/_assets/images/#{$imageName}';
@@ -51,4 +53,3 @@ $jpg: '.jpg';
 		}
 	}
 }
-

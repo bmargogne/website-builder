@@ -1,5 +1,11 @@
 // here, colors themes are defined and prepare any intersting color association.
 
+@mixin linear-gradient($direction, $color-stops...) {
+
+	background: nth(nth($color-stops, 1), 1);
+	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	background: linear-gradient($direction, $color-stops);
+}
 
 
 // Context selectors use scheme variables and can be reused as common items 

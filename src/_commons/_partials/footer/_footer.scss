@@ -1,11 +1,11 @@
-$footbar-height: 60px;
+$footbar-height: 40px;
 // $footbar-icon-padding: 13px;
 // $navbar-icon-size: $navbar-height - (2 * $navbar-icon-padding);
 
 .footer {
 	background-color: $primary-dd;
-	@include fitSize(height, $footbar-height);
-	@include fitSize(line-height, $footbar-height);
+	@include responsive-3(height, $footbar-height);
+	@include responsive-3(line-height, $footbar-height);
 
 	& > .footer-right-block {
 		float: right;
