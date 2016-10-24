@@ -3,29 +3,33 @@
 @import '0-general/2-media';
 @import '0-general/3-fix';
 
-@import '1-position/1-common';
-@import '1-position/2-layout';
-@import '1-position/3-row';
+@import '1-colors/1-swatch';
+@import '1-colors/2-scheme';
+@import '1-colors/3-theme';
 
-@import '2-text/1-fonts';
-@import '2-text/2-effects';
+@import '2-boxes/1-position';
+@import '2-boxes/2-layout';
+@import '2-boxes/3-size';
+@import '2-boxes/4-shape';
+@import '2-boxes/5-dynamic';
 
-@import '3-color/1-swatch';
-@import '3-color/2-scheme';
-@import '3-color/3-theme';
+@import '3-images/1-background';
+@import '3-images/2-decoration'; 
 
-@import '4-images/1-background';
-@import '4-images/2-decoration'; 
+@import '4-texts/1-fonts';
+@import '4-texts/2-effects';
+@import '4-texts/3-decoration';
 
-@import '5-themes/1-text';
-@import '5-themes/2-boxes';
+@import '5-pages/1-page';
+@import '5-pages/2-row';
 
-@import '6-pages/page';
+// website specific styles
+@import 'themes/1-text';
+@import 'themes/2-box';
 
 @import '_partials/navbar/navbar';
 @import '_partials/navbar/navbar-ghost';
 @import '_partials/footer/footer';
 
-// Page specific styles
 @import 'start';
 @import 'pages/index';

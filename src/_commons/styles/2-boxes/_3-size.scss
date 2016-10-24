@@ -1,0 +1,21 @@
+@mixin reset-bounding-box($margin-size: 0, $padding-size: 0, $border-weight: 0, $border-color: transparent) {
+	margin: $margin-side;
+	padding: $padding-side;
+	border: $border-weight solid $border-color;
+}
+
+
+@mixin boxSize(	$width: $size-u, $height: $size-u,
+				$minwidth: $width, $minheight: $height,
+				$maxwidth: $width, $maxheight: $height) {
+	
+	min-width: $minwidth;
+	width: $width;
+	max-width: $maxwidth;
+
+	min-height: $minheight;
+	height: $height;
+	max-height: $maxheight;
+
+	overflow:auto;
+}

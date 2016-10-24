@@ -7,13 +7,13 @@ $txt-xl: 2em;
 $txt-xxl: 3em;
 
 @mixin font($font, $style: normal, $weight: normal) {
-  font-family: $font, Verdana, sans-serif;
-  font-style: $style;
-  font-weight: $weight;
+	font-family: $font, Verdana, sans-serif;
+	font-style: $style;
+	font-weight: $weight; 
 }
 
 // define used fonts
-$myfonts : opensans, opensans-light, nevo-bold, nevo-regular, SquareBox, LearningCurveProRegular;
+$myfonts : opensans, opensans-light, nevo-bold, nevo, SquareBox, LearningCurve;
 @each $myfont in $myfonts {
 	@font-face {
 		// ../fonts = _assets/fonts, relative to //_assets/style

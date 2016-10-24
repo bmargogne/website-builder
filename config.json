@@ -42,7 +42,7 @@
 			"chromewin":		true,
 			"iexplore":				false,
 			"edge":					false,
-			"firefox":				false,
+			"firefox":				true,
 			"safari":				false,
 			"opera":				false
 		}

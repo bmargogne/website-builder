@@ -1,0 +1,7 @@
+@mixin dynamic-border($size: 2px, $color: $primary, $style: solid) {
+	border-style:hidden;
+
+	&:hover {
+		border: $size $style $primary;	
+	}
+}

@@ -1,16 +1,60 @@
-.welcome-box {
+.start-container {
 	@extend .centered-box;
+	@include fullBackground(bgMain); 
+	@include boxSize(800px,600px);
+		
+	// position:relative;
+	box-shadow: 6px 6px 6px $neutral-dd;
+}
+
+.mainmenu {
+	@extend .mybox;
+	position:absolute;
+	@include boxSize(300px, 300px);
+	background-color:red;
+}
+
+.welcome-box {
+	position:absolute;
+	right:0px;
 	@include roundedBox(150px);
-	background-color:white;
+	@include font(LearningCurve);
+	@include dynamic-border();
+
+
+	background-color:$primary-l;
+	color: white;
+	font-size: $txt-l;
+	text-shadow: 2px 2px 4px black;
+
+	&:hover {
+		@include boxSize(300px,300px);
+	}
 }
 
 .second-box {
-	position:absolute;	
-	@include roundedBox(250px);	
+	position:absolute;
+	bottom:0px;
+	@include roundedBox(200px);	
 	background-color: $neutral-l;
+} 
+
+.third-box {
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	@include boxSize(200px, 400px);
+	background-color: $neutral-dd;
+	color:white;	
 }
 
-.start-container {
+img {
+	border: 1px solid black;
+}
 
-
+.test {
+	
+}
+.clear {
+	clear:both;
 }

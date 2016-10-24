@@ -76,3 +76,4 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - be able to prepare one subset of scripts / style for landing page (used to have a very quick first load)
 - **git integration** with creating/initiating and/or automatic commit & push to remote
 - **up-to-date documentation**: links to used libraries, explaining default structuring / naming rules on files
+- should automate bitmap image resizing (ex: for background)

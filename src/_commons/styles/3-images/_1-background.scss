@@ -1,0 +1,24 @@
+$test:1;
+
+@mixin fullBackground($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
+
+$rootUrl:'/_assets/images/#{$imageName}';
+$small: 's';
+$medium: 'm';
+$large: 'l';
+$landscape: 'L';
+$portrait: 'P';
+
+	@media (orientation: landscape) {
+		@media (min-width: $min-screen)		{ & { background: url(#{$rootUrl}-#{$landscape}#{$small}.jpg) $fixed no-repeat $origin-v $origin-h / cover; }} 
+		@media (min-width: $small-screen)	{ & { background: url(#{$rootUrl}-#{$landscape}#{$medium}.jpg) $fixed no-repeat $origin-v $origin-h / cover;}}
+		@media (min-width: $medium-screen)	{ & { background: url(#{$rootUrl}-#{$landscape}#{$large}.jpg) $fixed no-repeat $origin-v $origin-h / cover; }
+		}
+	}
+
+	@media (orientation: portrait) {
+		@media (min-width: $min-screen)		{ & { background: url(#{$rootUrl}-#{$portrait}#{$small}.jpg) $fixed no-repeat $origin-v $origin-h  / cover; }}
+		@media (min-width: $small-screen)	{ & { background: url(#{$rootUrl}-#{$portrait}#{$medium}.jpg) $fixed no-repeat $origin-v $origin-h  / cover;}}
+		@media (min-width: $medium-screen)  { & { background: url(#{$rootUrl}-#{$portrait}#{$large}.jpg) $fixed no-repeat $origin-v $origin-h  / cover;}}
+	}
+}
