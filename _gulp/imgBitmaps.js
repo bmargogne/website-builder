@@ -9,7 +9,7 @@ const using = require('gulp-using');					// https://www.npmjs.com/package/gulp-u
 const watch = require('gulp-watch');					// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const co = require('./_config.json');
+const co = require('../config.json');
 const processBitmaps = co.buildingSteps.processBitmaps;
 
 // task

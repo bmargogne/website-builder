@@ -7,7 +7,7 @@ const using = require('gulp-using');				// https://www.npmjs.com/package/gulp-us
 const watch = require('gulp-watch');				// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const co = require('./_config.json');
+const co = require('../config.json');
 const processVendors = co.buildingSteps.processVendors;
 
 // task

@@ -1,28 +1,33 @@
-// Common variables & elements
-// @import 'bmBoot/bmBoot';
-
-// following should be placed in bmBoot ideally
 // Be aware of dependencies, and load in the right order !
-@import 'bmBoot/reset';
-@import 'bmBoot/media';
+// @import 'reset';
+@import 'media';
+@import 'mixin';
 
-@import 'bmBoot/color/palette';
-@import 'bmBoot/color/scheme';
-@import 'bmBoot/color/theme';
+@import '1-position/1-common';
+@import '1-position/2-layout';
+@import '1-position/3-row';
 
-@import 'bmBoot/text/fonts';
-@import 'bmBoot/text/text';
-@import 'bmBoot/text/title';
+@import '2-color/1-mixin';
+@import '2-color/2-swatch';
+@import '2-color/3-scheme';
+@import '2-color/4-theme';
+ 
+@import 'themes/1-mixin';
+@import 'themes/components';
+// @import 'text/fonts';
+// @import 'text/text';
+// @import 'text/title';
 
-@import 'bmBoot/container/background';
-@import 'bmBoot/container/body';
-@import 'bmBoot/container/row';
 
-@import 'bmBoot/images/decoration';
+// @import 'images/background';
+// @import 'images/decoration';
 
-@import '_commons/_partials/navbar/navbar';
-@import '_commons/_partials/footer/footer';
-@import 'site/page';
+// @import '_partials/navbar/navbar';
+// @import '_partials/navbar/navbar-ghost';
+// @import '_partials/footer/footer';
 
-// Page specific styles
-@import 'index';
+// @import 'pages/page';
+
+// // Page specific styles
+@import 'start';
+// @import 'pages/index';

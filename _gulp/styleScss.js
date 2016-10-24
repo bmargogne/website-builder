@@ -7,7 +7,7 @@ const sass = require('gulp-sass');								// https://www.npmjs.com/package/gulp-
 const using = require('gulp-using');							// https://www.npmjs.com/package/gulp-using
 
 // imports
-const co = require('./_config.json');
+const co = require('../config.json');
 
 // task
 gulp.task('styleScss', () => {

@@ -11,8 +11,8 @@
 
 // GREYS
 $grey : #a4a4a4;
-$grey-lll: lighten($grey, 80);
-$grey-ll: lighten($grey, 40);
+$grey-lll: lighten($grey, 50);
+$grey-ll: lighten($grey, 30);
 $grey-l: lighten($grey, 20);
 $grey-d: darken($grey, 20);
 $grey-dd: darken($grey, 40);
@@ -52,20 +52,42 @@ $pastelblue-d: darken($pastelblue, 10);
 $pastelblue-dd: darken($pastelblue, 30);
 $pastelblue-ddd: darken($pastelblue, 80);
 
+$technoblue : #0099AD;
+$technoblue-lll: lighten($technoblue, 80);
+$technoblue-ll: lighten($technoblue, 30);
+$technoblue-l: lighten($technoblue, 10);
+$technoblue-d: darken($technoblue, 10);
+$technoblue-dd: darken($technoblue, 30);
+$technoblue-ddd: darken($technoblue, 80);
+
+
+
+
+
+
+// ORANGES
+// BLUES
+$orange : #CE7013;
+$orange-lll: lighten($orange, 80);
+$orange-ll: lighten($orange, 30);
+$orange-l: lighten($orange, 10);
+$orange-d: darken($orange, 10);
+$orange-dd: darken($orange, 30);
+$orange-ddd: darken($orange, 80);
+
 
 
 // ** manual way with existing color schemes
 
 // RED
-$red: #F44336;
-$red-D: #FF8A80;
-$red-S: #FF1744;
-$red-H: #D50000;
-//
 $red-lll: #FFEBEE;
 $red-ll: #EF9A9A;
 $red-l: #EF5350;
+$red: #F44336;
 $red-d: #E53935;
 $red-dd: #D32F2F;
 $red-ddd: #B71C1C;
-
+//
+$red-D: #FF8A80;
+$red-S: #FF1744;
+$red-H: #D50000;

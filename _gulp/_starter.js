@@ -1,4 +1,4 @@
-const argv = require('yargs').argv;
+const argv = require('yargs').argv;								// https://www.npmjs.com/package/yargs
 const gulp = require('gulp');
 const requireDir = require('require-dir');
 const runSequence = require('run-sequence');
@@ -10,20 +10,20 @@ gulp.task('_starter', () => {
 	if (argv) {
 		console.log (`started with option --s ${argv.s}`);
 
-		if (argv.s === 'local') {
+		if (argv.local) {
 			console.log('[Website Builder] Running : Local Server sequence');
 			startLocalServer();
 		}
 
-		else if (argv.s === 'git') {
+		else if (argv.git === 'git') {
 			console.log('[Website Builder] should initiate or commit & push to remote - not implemented yet. Any hint/suggestion is welcome');
 		}
 
-		else if (argv.s === 'ftp') {
+		else if (argv.ftp === 'ftp') {
 			console.log('[Website Builder] should upload necessary files to ftp and delete unnecessary files from ftp. Any hint/suggestion is welcome');
 		}
 
-		else if (argv.s === 'test') {
+		else if (argv.test === 'test') {
 			console.log('[Website Builder] Running : Test sequence');
 			testSequence();
 		}
@@ -48,8 +48,7 @@ const testSequence = () => {
 		'clean',
 		[
 			'styleAndSpriteSheet',
-		],
-		'watch-styleAndSpriteSheet'
+		]
 	);
 };
 

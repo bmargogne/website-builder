@@ -9,7 +9,7 @@ const spritesmith = require('gulp.spritesmith');	// https://www.npmjs.com/packag
 const using = require('gulp-using');				// https://www.npmjs.com/package/gulp-using
 
 // imports
-const co = require('./_config.json');
+const co = require('../config.json');
 const processSprite = co.buildingSteps.processSprite;
 
 // task

@@ -1,0 +1,47 @@
+html {
+	height:100%;
+}
+
+body {
+	min-width:$min-screen;
+	max-width: $max-screen;
+	min-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position:relative;
+	display:flex;
+}
+
+.group {
+	@extend .hidden-list;
+	height: 100%;
+}
+
+.group-left{
+	@extend .group;
+	float: left;
+	height: 100%;
+}
+
+.group-right {
+	@extend .group;
+	float: right;
+	height: 100%;
+}
+
+
+.std-row {
+	@extend .centered;
+	height:100%;
+
+	& > .left {
+		@extend .group-left;
+	}
+
+	& > .right {
+		@extend .group-left;
+	}
+}
+
+
+

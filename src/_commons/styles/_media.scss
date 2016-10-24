@@ -1,0 +1,12 @@
+$min-screen:		320px;
+$small-screen: 		768px;
+$medium-screen: 	1024px;
+$max-screen:		1600px;
+
+@mixin responsive-3($property, $coef, $sizeS, $sizeM: $sizeS * (1 + $coef), $sizeL: $sizeM * (1 + $coef)) {
+
+	#{$property}: $sizeS; // + invisible ?	
+	@media (min-width: $small-screen) 	{ #{$property}: $sizeM; }
+	@media (min-width: $medium-screen)  { #{$property}: $sizeL } 
+}
+

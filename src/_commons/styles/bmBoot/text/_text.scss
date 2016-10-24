@@ -1,15 +1,3 @@
-// Standard text
-@each $font-face in opensans, opensans-light, nevo-bold, nevo-regular {
-	@font-face {
-		font-family: $font-face;
-
-	// ../fonts = _assets/fonts, relative to //_assets/style
-	src:	url('fonts/#{$font-face}.eot');
-	src:	url('fonts/#{$font-face}.eot?') format('eot'),
-			url('fonts/#{$font-face}.woff') format('woff'),
-			url('fonts/#{$font-face}.ttf') format('truetype');
-	}
-}
 
 body {
   @include font(opensans-light, normal, normal);

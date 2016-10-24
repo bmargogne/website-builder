@@ -1,0 +1,7 @@
+@mixin roundedBox( $radius ){
+	width: $radius;
+	height: $radius;
+	border-radius: $radius;
+	text-align:center;
+	line-height: $radius;
+}

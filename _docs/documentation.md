@@ -4,14 +4,14 @@
 version : from the 2016-10-23
 Documentation may not be up to date...
 
-**Important :** All quoted globs and directory are thoses set by default. Various elements can be configured in the `_config.json` file.
+**Important :** All quoted globs and directory are thoses set by default. Various elements can be configured in the `config.json` file.
 
 
 ## How to use
 
 ### settings
 
-All settings are done through the `_config.json` file. If the possibilities are not enough for your need, adjust the source code to your needs !
+All settings are done through the `config.json` file. If the possibilities are not enough for your need, adjust the source code to your needs !
 
 ### init
 
@@ -131,12 +131,14 @@ ex: wrap in `$(document).ready( () => { ** generated script file ** })`
 **note** : you can use the "svg4everybody" script in your header for compatibility with IE8
 
 All found SVG files will be "cleaned and optimized" (removing some informations, rounding the precision) in order to generated
-a SVG spritesheet. The current settings allow a smooth process :
-- work on illustrator. Your file (anywhere in your project SRC directory) can contain all needed vector graphics in separated named artboards
-- extract all vector graphics in separate svg files.
-- the builder tool generates a vector spriteSheet
-- call your SVG in your html with `<svg class="myclass" title="myTitle" role="img"><use xlink:href="/_assets/images/spriteSvg.svg#artBoardName"></use></svg>`
-- you can even target them for css manipulation using their id (check export options from illustrator. color should be 0,0,0 ... not the default Illustrator black)
+a SVG spritesheet. The following workflow is smooth and works for me :
+- Work on illustrator. Your ai file(s) contains multiple artboards with explicit names (ex: `menu-dark`). One for each vector graphic you need.
+- When finished, click on 'save under' -> 'name.svg' + 'use artboards'. This will export files named like `name_menu-dark.svg`.
+- (On export options, choose 'SVG Tiny 1.2' profile, incorporate image position, vectorise fonts, rounding to 1 decimal, and tick 'reactive' option)
+- The watcher will automatically detect new svg files and compile all source SVG into a SVG spritesheet.
+- In HTML, you can know call your graphics using  `<svg class="myClass" title="myTitle" role="img"><use xlink:href="/myPath/spritesheet.svg#name_menu-dark"></use></svg>`
+- In CSS, you can dynamically change the colors (using the `fill` property on `myClass`) and size of your SVG using CSS.
+- (note that CSS coloring only work with shapes filled with the 'magic black' : #000000
 
 
 ### Bitmap Images
@@ -153,7 +155,6 @@ However, you should not use similar filenames when naming your files
 
 
 ### Bitmap Sprites
-
 
 ### Styles
 
@@ -197,14 +198,14 @@ Some mistakes & solutions based on my own experience... Your feedbacks can compl
 
 ### Some of my building steps are not running ??
 if a building sequence seems incomplete :
-- check if the building step is activated in the _config.json
+- check if the building step is activated in the config.json
 - ensure the building step is referenced in the building sequence you are calling
 - call just the single problematic task
 - read the source code, as you may find some bugs
 
 ### What can I configure ?
 - Building steps of the sequence can be (de)activated separately for testing purpose or targeted work
-- All globs, path, and file names are stored in _config.json. feel free to adapt it for your needs
+- All globs, path, and file names are stored in config.json. feel free to adapt it for your needs
 - set 'isProd' environnement for additional building steps (ex: compressing images or minifying files & generating sourcemaps)
 - set 'isTest' for a (very) verbose build tools, allowing you to understand what is going on.
 - set 'es6' to force usage of babel transpilation (you write 'new' ES6 javascript, he converts to 'old' ES5 javascript)

@@ -1,0 +1,45 @@
+// @mixin generate-shades( $color,
+// 						$ddd: 50, $dd: 30, $d: 10,  
+// 						$l: 10, $ll: 30,  $lll: 50) {
+
+// 	// color rules for text & svg icons
+// 	&.ddd {	color: darken($color, $ddd); }    
+// 	&.dd {		color: darken($color, $dd); }
+// 	.#{$color}-d {		color: darken($color, $d); }
+// 	.#{$color} {		color: $color; }
+// 	.#{$color}-l {		color: lighten($color, $l); }
+// 	.#{$color}-ll {		color: lighten($color, $ll); }
+// 	.#{$color}-lll {	color: lighten($color, $lll); }
+
+// 	// color rules for backgrounds
+// 	.#{$color}-bg-ddd {	background-color: darken($color, $ddd); }    
+// 	.#{$color}-bg-dd {	background-color: darken($color, $dd); }
+// 	.#{$color}-bg-d {	background-color: darken($color, $d); }
+// 	.#{$color}-bg {		background-color: $color; }
+// 	.#{$color}-bg-l {	background-color: lighten($color, $l); }
+// 	.#{$color}-bg-ll {	background-color: lighten($color, $ll); }
+// 	.#{$color}-bg-lll {	background-color: lighten($color, $lll); }
+// }
+
+// @mixin generate-states( $color, $selected: #AAAAAA, $highlighted: #FFFFFF,
+// 						$fade-coef: 0.5, $select-strength: 0.5, $higlight-strength: 0.5) {
+
+// 	// color rules for text & svg icons
+// 	.#{$color}-D { 		color: fade-out($primary, $fade-coef);}
+// 	.#{$color}-S { 		color: mix($color, $selected, $select-strength); }
+// 	.#{$color}-H { 		color: mix($color, $highlighted, $select-strength); }
+
+// 	// color rules for text & svg icons
+// 	.#{$color}-bg-D { 		background-color: fade-out($primary, $fade-coef);}
+// 	.#{$color}-bg-S { 		background-color: mix($color, $selected, $select-strength); }
+// 	.#{$color}-bg-H { 		background-color: mix($color, $highlighted, $select-strength); }
+// }
+
+@mixin linear-gradient($direction, $color-stops...) {
+
+	background: nth(nth($color-stops, 1), 1);
+	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	background: linear-gradient($direction, $color-stops);
+}
+
+

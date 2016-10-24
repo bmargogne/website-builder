@@ -1,0 +1,12 @@
+@mixin hoverText {
+
+	@if & {
+		&:hover {			
+			color: red;
+		}
+	} @else {
+		a {
+			color: red;
+		}
+	}
+}

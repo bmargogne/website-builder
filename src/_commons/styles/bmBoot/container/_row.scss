@@ -38,7 +38,11 @@ $std-offset: 15px;
 
 .std-block {
 	display:inline-block;
-	padding-right: $std-offset;
-	padding-left: $std-offset;
 	height: 100%;
+	&:first-of-type {
+		padding-right: $std-offset;
+	}
+	&:last-of-type {
+		padding-left: $std-offset;
+	}
 }

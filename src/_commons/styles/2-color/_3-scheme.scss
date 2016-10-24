@@ -1,0 +1,47 @@
+// Scheme variables helps restraining to some colors from the swatch throughout the building of the website
+// use mixins to generate elements for you, or write each variables manually.
+
+// SHADE SUFFIX (ex: $primary-dd) : ddd, dd, d, l, ll, lll from very dark to very light
+// with 7 levels of shades, it allows to cover most general needs.
+
+// STATE SUFFIX (ex: primary-H) : H for highlight, D for disable, S for selected
+// these special states represents particular situations in UX design (ex: clicked), and may use a different tone. 
+
+$neutral: $coldgrey;
+$primary: $technoblue;
+
+	// config default for shades
+	$ddd:50;
+	$dd:30;
+	$d:10;
+	$l:10;
+	$ll:30;
+	$lll:50;
+	// config default for states
+	$disable-strength:0.5;
+	$selected:#AAAAAA;
+	$select-strength:0.5;
+	$highlighted:#FFFFFF;
+	$highlight-strength:0.5;
+
+
+// building shades & staes
+$neutral-lll: 	lighten($neutral, $lll);
+$neutral-ll: 	lighten($neutral, $ll);
+$neutral-l: 	lighten($neutral, $l);
+$neutral-d: 	darken($neutral, $d);
+$neutral-dd: 	darken($neutral, $dd);
+$neutral-ddd: 	darken($neutral, $ddd);
+$neutral-D: 		fade-out($neutral, $disable-strength);
+$neutral-S: 		mix($neutral, $selected, $select-strength);
+$neutral-H: 		mix($neutral, $highlighted, $highlight-strength);
+
+$primary-lll: 	lighten($primary, $lll);
+$primary-ll: 	lighten($primary, $ll);
+$primary-l: 	lighten($primary, $l);
+$primary-d: 	darken($primary, $d);
+$primary-dd: 	darken($primary, $dd);
+$primary-ddd: 	darken($primary, $ddd);
+$primary-D: 		fade-out($primary, $disable-strength);
+$primary-S: 		mix($primary, $selected, $select-strength);
+$primary-H: 		mix($primary, $highlighted, $highlight-strength);

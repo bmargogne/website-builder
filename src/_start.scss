@@ -1,0 +1,11 @@
+.welcome-box {
+	@extend .centered-box;
+	@include roundedBox(150px);
+	background-color:white;
+}
+
+.second-box {
+	position:absolute;	
+	@include roundedBox(250px);
+	background-color: $neutral-l;
+}

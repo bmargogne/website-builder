@@ -13,10 +13,10 @@ const using = require('gulp-using');						// https://www.npmjs.com/package/gulp-
 const watch = require('gulp-watch');						// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const co = require('./_config.json');
+const co = require('../config.json');
 const processScripts = co.buildingSteps.processScripts;
 const wrapIt = co.buildingSteps.processScripts;
-const mini = co.buildingSteps.minifyScript;
+let mini = co.buildingSteps.minifyScript;
 
 // task
 gulp.task('scripts', () => {
@@ -34,7 +34,7 @@ gulp.task('scripts', () => {
 		const isTest = co.env.isTest;
 		const es6mode = co.env.es6;
 
-		console.log(wrapIt);
+		mini = false; // override 
 
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe( _if( mini,	sourcemaps.init() ))

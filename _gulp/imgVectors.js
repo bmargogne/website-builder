@@ -10,7 +10,7 @@ const svgSprite = require('gulp-svg-sprite');		// https://www.npmjs.com/package/
 const watch = require('gulp-watch');				// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const co = require('./_config.json');
+const co = require('../config.json');
 const processVectors = co.buildingSteps.processVectors;
 
 

@@ -1,0 +1,44 @@
+
+@mixin linear-gradient($direction, $color-stops...) {
+
+	background: nth(nth($color-stops, 1), 1);
+	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	background: linear-gradient($direction, $color-stops);
+}
+
+@mixin createPrimaryTheme(
+							$basecolor,
+							$light-l : ligthen($basecolor, 10),
+							$verylight-ll : lighten($basecolor,30),
+							$extralight-lll : lighten($basecolor,50),
+							$dark-l : darken($basecolor,10),
+							$verydark-dd : darken($basecolor,30),
+							$extradark-ddd : darken($basecolor,30)
+						) {
+	$primary-ddd : $basecolor;
+	$primary-dd : $basecolor;
+	$primary-d : $basecolor;
+	$primary : $basecolor;
+	$primary : $basecolor;
+	$primary : $basecolor;
+	$primary : $basecolor;
+
+
+
+
+
+}
+
+
+
+@mixin fitSize($property, $sizeM, $sizeS: $sizeM * 0.75, $sizeL: $sizeM * 1.25) {
+
+	#{$property}: $sizeS;
+
+	@media (min-width: $small-screen)  {
+		#{$property}: $sizeM;
+	}
+	@media (min-width: $medium-screen)  {
+		#{$property}: $sizeL
+	} 
+}

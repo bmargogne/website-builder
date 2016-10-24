@@ -1,0 +1,81 @@
+// here, colors themes are defined and prepare any intersting color association.
+
+
+
+// Context selectors use scheme variables and can be reused as common items 
+// when building themes
+
+html {	
+	background-color: $neutral-l; 
+}
+body {		
+	background-color: $neutral-lll;
+}
+#start-body {
+	background-image: linear-gradient($neutral-ll, $neutral)
+}
+
+
+.error {	color:$primary}
+
+
+// // Primary to Neutral
+// .color-static {
+// 	color: $primary;
+// 	fill: $primary;
+// 	background-color: $primary-dd;
+
+// }
+
+
+
+
+// .color-dark-static {
+// 	background-color: $primary-dd;
+// 	color: $primary;
+// 	fill: $primary;
+// }
+
+// .color-dark-dynamic {
+// 	@extend .color-dark-static;
+
+// 	&:hover {
+// 		background-color: $primary-d;
+// 		color: $primary-l;
+// 		fill: $primary-l;
+// 		cursor: pointer; 
+// 	}
+
+// 	&:active {
+// 		background-color: $neutral-d;
+// 		color: $secondary-d;
+// 		fill: $secondary-d;
+// 	}
+// }
+
+
+
+
+// .color-p-static {
+// 	background-color: $primary;
+// 	color: $primary-d;
+// 	fill: $primary-d;
+// }
+
+// .color-p-dynamic {
+// 	@extend .color-p-static;
+
+// 	&:hover {
+// 		background-color: $primary-l;
+// 		color: $primary-dd;
+// 		fill: $primary-dd;
+// 		cursor: pointer;
+// 	}
+
+// 	&:active {
+// 		background-color: $primary-l;
+// 		color: $secondary-d;
+// 		fill: $secondary-d;
+// 	}
+// }
+
