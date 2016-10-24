@@ -2,25 +2,37 @@
 	margin:auto;
 	@include fullBackground(bgMain); 
 	@include boxSize(95%,95%);
-		
 	position:relative;
 	box-shadow: 6px 6px 6px $neutral-dd;
 }
 
-.menu-icon {
-	fill:$primary;
-	@include boxSize(100px,100px);
-}
-
-$mainmenu-width: 200px;
-
-.mainmenu {
-	float:right;
-	right:0px;	
+$mainmenu-width: 160px;
+.mainmenu {		
+	position:absolute;
+	right:0px;
+	padding: 20px;
+	text-align:center;
 	background-color:$neutral-dd;
 	color: white;
 	@include boxSize($mainmenu-width, 100%);
+
+	& > menu-icon {
+		margin:auto;
+	}
 }
+
+.menu-icon {
+	display:inline-block;
+	@include boxSize(100px,100px);
+	margin:auto;
+	fill:$primary;
+}
+
+#menu-logo {
+	
+}
+
+$mainmenu-width: 200px;
 
 .welcome-box {
 	position:absolute;
@@ -29,7 +41,6 @@ $mainmenu-width: 200px;
 	@include roundedBox(150px);
 	@include font(LearningCurve);
 	@include test-border();
-
 
 	background-color:$primary-l;
 	color: white;
@@ -41,54 +52,29 @@ $mainmenu-width: 200px;
 	}
 }
 
-.second-box {
-	position:absolute;
-	bottom:0px;
-	@include roundedBox(200px);	
-	background-color: $neutral-l;
-} 
-
-.third-box {
-	position:absolute;
-	bottom:0px;
-	right:0px;
-	@include boxSize(200px, 400px);
-	background-color: $neutral-dd;
-	color:white;	
-}
-
-img {
-	border: 1px solid black;
-}
-
-.testcontainer {	
-	margin-left: $offset-u * 2;
+.enigma {
+	margin-left: 40px;
 	margin-top: $offset-u * 2;
 	padding-top: $offset-u / 3;
 	padding-left: $offset-u;
-	// @include dynamic-gradient();
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: baseline;
-	height:65%;
-	overflow:visible;
-	width: 20%;
+	justify-content: flex-end;
+	align-items: flex-end;
+	height:60%;
+	width: 60%;
 }
 
-.testelement {
+.pixel {
 	padding: $offset-u;
-	margin:2px;
+	margin: 2px;
 	font-size:$txt-xxs;
-	max-height:80px;
-	@include dynamic-transparency($primary-l);
-	@include hover($secondary-ll);
-	&:hover {
-		flex:3;
-	}
+	box-shadow: 4px 3px 4px 1px rgba($primary-d, 0.5);
+	@include boxSize(35px, 35px);	
+	@extend .primary-button2;
 }
 
-.clear {
-	clear:both;
+.page-previews{
+
 }

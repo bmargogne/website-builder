@@ -2,34 +2,41 @@
 <!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 50 25" overflow="auto" xml:space="preserve">
-<g id="background">
+<g id="background" display="none">
+	<rect x="-21.1" y="-61.4" display="inline" fill="#FFFFFF" width="133.9" height="246.9"/>
+	<rect x="-18.2" y="-59.1" display="inline" fill="#A6A8AA" width="297.7" height="257.3"/>
+	<rect x="-29.7" y="-66.3" fill="#4291AD" width="301.2" height="255.2"/>
 </g>
 <g id="examples">
 </g>
 <g id="logo">
 	<g>
-		<path d="M3.4,4.4V4.2h0.5v0.2v7.5h3.7V4.4V4.2h1.2v0.2v7.7v0.2H8.5H3.7H3.4v-0.2V4.4z"/>
-		<path fill="#35353D" d="M10.9,12v0.2h-0.5V12V6.9V6.7h0.2h3.9h0.2v0.2V12v0.2h-0.5V12V7.1h-3.4V12z"/>
-		<path fill="#35353D" d="M16.5,9.3l2.8-1.9l0.1,0h0.8l-0.6,0.4l-2.9,2l2.9,2l0.6,0.4h-0.8l-0.1,0l-2.8-1.9V12v0.2H16V12V9.9V9.6
-			V3.5V3.3h0.5v0.2V9.3z"/>
-		<path fill="#35353D" d="M21.6,12v0.2h-0.5V12V6.9V6.7h0.2h3.9h0.2v0.2V12v0.2H25V12V7.1h-3.4V12z"/>
-		<path fill="#35353D" d="M26.9,6.9V6.7h0.2H31h0.2v0.2V12v0.2H31h-3.9h-0.2V12V6.9z M27.4,7.1v4.6h3.4V7.1H27.4z"/>
-		<path fill="#35353D" d="M32.7,6.9V6.7h0.5v0.2v4.8h2.1V6.9V6.7h0.5v0.2v4.8h3.4V6.9V6.7h0.5v0.2V12v0.2h-0.2h-3.6h-0.5H33h-0.2V12
-			V6.9z"/>
-		<path fill="#35353D" d="M41.5,12v0.2h-0.5V12V6.9V6.7h0.2h3.9h0.2v0.2V12v0.2h-0.5V12V7.1h-3.4V12z"/>
+		<g>
+			<path d="M4,4.2V4h0.5v0.2v7.5h3.7V4.2V4h1.2v0.2v7.7v0.2H9.1H4.2H4v-0.2V4.2z"/>
+			<path fill="#3D3535" d="M11.5,11.8V12H11v-0.2V6.7V6.5h0.2h3.9h0.2v0.2v5.1V12h-0.5v-0.2V6.9h-3.4V11.8z"/>
+			<path fill="#3D3535" d="M17.1,9.1l2.8-1.9l0.1,0h0.8l-0.6,0.4l-2.9,2l2.9,2l0.6,0.4h-0.8l-0.1,0L17.1,10v1.8V12h-0.5v-0.2V9.7
+				V9.4V3.3V3.1h0.5v0.2V9.1z"/>
+			<path fill="#3D3535" d="M22.2,11.8V12h-0.5v-0.2V6.7V6.5h0.2h3.9h0.2v0.2v5.1V12h-0.5v-0.2V6.9h-3.4V11.8z"/>
+			<path fill="#3D3535" d="M27.5,6.7V6.5h0.2h3.9h0.2v0.2v5.1V12h-0.2h-3.9h-0.2v-0.2V6.7z M28,6.9v4.6h3.4V6.9H28z"/>
+			<path fill="#3D3535" d="M33.3,6.7V6.5h0.5v0.2v4.8h2.1V6.7V6.5h0.5v0.2v4.8h3.4V6.7V6.5h0.5v0.2v5.1V12h-0.2h-3.6h-0.5h-2.3h-0.2
+				v-0.2V6.7z"/>
+			<path fill="#3D3535" d="M42.1,11.8V12h-0.5v-0.2V6.7V6.5h0.2h3.9H46v0.2v5.1V12h-0.5v-0.2V6.9h-3.4V11.8z"/>
+		</g>
+		<g>
+			<path d="M15.2,13.7h0.2v0.4h-0.2h-3v6h3h0.2v0.4h-0.2h-3.9H11v-0.2v-6.3v-0.2h0.2H15.2z"/>
+			<path fill="#3D3535" d="M16.7,16v-0.2h0.2h3.2h0.2V16v4.2v0.2h-0.2h-3.2h-0.2v-0.2V16z M17.1,16.2V20h2.8v-3.8H17.1z"/>
+			<path fill="#3D3535" d="M21.9,20.2v0.2h-0.4v-0.2V16v-0.2h0.2h2.3h0.4h2.5h0.2V16v4.2v0.2h-0.4v-0.2v-4h-2.3v4v0.2h-0.4v-0.2v-4
+				h-2.1V20.2z"/>
+			<path fill="#3D3535" d="M28.6,21.8v0.2h-0.4v-0.2V16v-0.2h0.2h3.2h0.2V16v4.2v0.2h-0.2H29h-0.2V20H29h2.4v-3.8h-2.8V21.8z"/>
+			<path fill="#3D3535" d="M33.2,16.2H33v-0.4h0.2h3.2h0.2V16v4.2v0.2h-0.2h-3.2H33v-0.2v-1.6v-0.2h0.2h2.6h0.2v0.4h-0.2h-2.4V20
+				h2.8v-3.8H33.2z"/>
+			<path fill="#3D3535" d="M38.1,20.2v0.2h-0.4v-0.2V16v-0.2h0.2h3.2h0.2V16v4.2v0.2h-0.4v-0.2v-4h-2.8V20.2z"/>
+			<path fill="#3D3535" d="M42.4,16v-0.2h0.4V16v4h2.8v-4v-0.2H46V16v4v0.4v0.9v0.2h-0.2h-3.2h-0.2v-0.4h0.2h3v-0.7h-3h-0.2v-0.2V16
+				z"/>
+		</g>
 	</g>
-	<g>
-		<path d="M14.6,13.9h0.2v0.4h-0.2h-3v6h3h0.2v0.4h-0.2h-3.9h-0.2v-0.2v-6.3v-0.2h0.2H14.6z"/>
-		<path fill="#35353D" d="M16.2,16.2V16h0.2h3.2h0.2v0.2v4.2v0.2h-0.2h-3.2h-0.2v-0.2V16.2z M16.5,16.4v3.8h2.8v-3.8H16.5z"/>
-		<path fill="#35353D" d="M21.3,20.4v0.2h-0.4v-0.2v-4.2V16h0.2h2.3h0.4h2.5h0.2v0.2v4.2v0.2h-0.4v-0.2v-4h-2.3v4v0.2h-0.4v-0.2v-4
-			h-2.1V20.4z"/>
-		<path fill="#35353D" d="M28.1,22v0.2h-0.4V22v-5.8V16h0.2H31h0.2v0.2v4.2v0.2H31h-2.6h-0.2v-0.4h0.2h2.4v-3.8h-2.8V22z"/>
-		<path fill="#35353D" d="M32.6,16.4h-0.2V16h0.2h3.2h0.2v0.2v4.2v0.2h-0.2h-3.2h-0.2v-0.2v-1.6v-0.2h0.2h2.6h0.2V19h-0.2h-2.4v1.2
-			h2.8v-3.8H32.6z"/>
-		<path fill="#35353D" d="M37.5,20.4v0.2h-0.4v-0.2v-4.2V16h0.2h3.2h0.2v0.2v4.2v0.2h-0.4v-0.2v-4h-2.8V20.4z"/>
-		<path fill="#35353D" d="M41.9,16.2V16h0.4v0.2v4H45v-4V16h0.4v0.2v4v0.4v0.9v0.2h-0.2h-3.2h-0.2v-0.4h0.2h3v-0.7h-3h-0.2v-0.2
-			V16.2z"/>
-	</g>
+</g>
+<g id="logoDark_1_">
 </g>
 <g id="repères">
 </g>

@@ -22,11 +22,57 @@ body {
 	background-color: $neutral-lll;
 }
 #start-body {
-	background-image: linear-gradient($neutral-ll, $neutral)
+	background-image: linear-gradient($neutral-lll, $neutral)
 }
 
+::selection {
+	background-color: $secondary-ll;
+	color: $secondary-lll;		
+}
 
 .error {	color:$primary}
+
+
+
+@mixin dynamic-button(	$bg: $primary, $txt: $primary-l,
+						$bg-hover: $primary-l, $txt-hover: $primary-ll,
+						$bg-active: $primary-d, $txt-active: $primary-ll,
+						$bg-visited: $neutral-d, $txt-visited: $neutral-ll,
+						$bg-slection: $neutral-ll, $txt-selection: $primary) {
+	
+	background-color: $bg;
+	color: $txt;
+	fill: $txt; // for svg files
+
+	&:hover {
+		background-color: $bg-hover;
+		color: $txt-hover;
+		fill: $txt-hover;
+	}
+
+	// add style for "on" button
+
+	&:active {
+		background-color: $bg-active;
+		color: $txt-active;
+		fill: $txt-active;
+	}
+
+	a:visited {
+		background-color: $bg-visited;
+		color: $txt-visited;
+		fill: $txt-visited;
+	}
+}
+
+.primary-button1 {
+	@include dynamic-button();
+}
+
+.primary-button2 {
+	@include dynamic-button($neutral, $primary-dd);
+}
+
 
 
 // // Primary to Neutral

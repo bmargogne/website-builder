@@ -12,6 +12,11 @@ gulp.task('_starter', () => {
 		startLocalServer();
 	}
 
+	if (argv.test) {
+		console.log('[Website Builder] Running : Local Server sequence + Open Multiple Browsers');
+		serveAndOpenBrowsers();
+	}
+
 	else if (argv.git) {
 		console.log('[Website Builder] should initiate or commit & push to remote - not implemented yet. Any hint/suggestion is welcome');
 	}
@@ -51,6 +56,33 @@ const defaultSequence = () => {
 };
 
 const startLocalServer = () => {
+	return runSequence(
+		'clean',
+		[
+			'pagesHtml',
+			'imgBitmaps',
+			'imgVectors',
+			'files',
+			'fonts',
+			'scripts',
+			'style',
+			'vendors'
+		],
+		[
+			'openBrowsers',
+			'serveLocal',
+			'watch-files',
+			'watch-imgBitmaps',
+			'watch-imgVectors',
+			'watch-pagesHtml',
+			'watch-scripts',
+			'watch-style',
+			'watch-vendors'
+		]
+	);
+};
+
+const serveAndOpenBrowsers = () => {
 	return runSequence(
 		'clean',
 		[

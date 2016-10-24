@@ -2,33 +2,40 @@
 <!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 50 10" overflow="auto" xml:space="preserve">
-<g id="background">
+<g id="background" display="none">
+	<rect x="-21.1" y="-46.4" display="inline" fill="#FFFFFF" width="133.9" height="246.9"/>
+	<rect x="-18.2" y="-44.1" display="inline" fill="#A6A8AA" width="297.7" height="257.3"/>
+	<rect x="-29.7" y="-51.3" fill="#4291AD" width="301.2" height="255.2"/>
 </g>
 <g id="examples">
 </g>
 <g id="logo">
 	<g>
-		<path d="M1.9,2.7V2.6h0.3v0.1v4h2v-4V2.6h0.6v0.1v4.1V7H4.6H2.1H1.9V6.8V2.7z"/>
-		<path fill="#35353D" d="M5.9,6.7v0.1H5.7V6.7V4.1V3.9h0.1h2.1H8v0.1v2.7v0.1H7.7V6.7V4.2H5.9V6.7z"/>
-		<path fill="#35353D" d="M8.9,5.3l1.5-1l0,0h0.4l-0.3,0.2L9,5.6l1.5,1.1l0.3,0.2h-0.4l0,0l-1.5-1v0.9v0.1H8.6V6.7V5.6V5.5V2.3V2.1
-			h0.3v0.1V5.3z"/>
-		<path fill="#35353D" d="M11.6,6.7v0.1h-0.3V6.7V4.1V3.9h0.1h2.1h0.1v0.1v2.7v0.1h-0.3V6.7V4.2h-1.8V6.7z"/>
-		<path fill="#35353D" d="M14.4,4.1V3.9h0.1h2.1h0.1v0.1v2.7v0.1h-0.1h-2.1h-0.1V6.7V4.1z M14.7,4.2v2.4h1.8V4.2H14.7z"/>
-		<path fill="#35353D" d="M17.5,4.1V3.9h0.3v0.1v2.6h1.1V4.1V3.9h0.3v0.1v2.6h1.8V4.1V3.9h0.3v0.1v2.7v0.1H21h-1.9h-0.3h-1.2h-0.1
-			V6.7V4.1z"/>
-		<path fill="#35353D" d="M22.1,6.7v0.1h-0.3V6.7V4.1V3.9H22h2.1h0.1v0.1v2.7v0.1h-0.3V6.7V4.2h-1.8V6.7z"/>
+		<g>
+			<path d="M1.9,2.7V2.6h0.3v0.1v4h2v-4V2.6h0.6v0.1v4.1V7H4.6H2.1H1.9V6.8V2.7z"/>
+			<path fill="#3D3535" d="M5.9,6.7v0.1H5.7V6.7V4.1V3.9h0.1h2.1H8v0.1v2.7v0.1H7.7V6.7V4.2H5.9V6.7z"/>
+			<path fill="#3D3535" d="M8.9,5.3l1.5-1l0,0h0.4l-0.3,0.2L9,5.6l1.5,1.1l0.3,0.2h-0.4l0,0l-1.5-1v0.9v0.1H8.6V6.7V5.6V5.5V2.3V2.1
+				h0.3v0.1V5.3z"/>
+			<path fill="#3D3535" d="M11.6,6.7v0.1h-0.3V6.7V4.1V3.9h0.1h2.1h0.1v0.1v2.7v0.1h-0.3V6.7V4.2h-1.8V6.7z"/>
+			<path fill="#3D3535" d="M14.4,4.1V3.9h0.1h2.1h0.1v0.1v2.7v0.1h-0.1h-2.1h-0.1V6.7V4.1z M14.7,4.2v2.4h1.8V4.2H14.7z"/>
+			<path fill="#3D3535" d="M17.5,4.1V3.9h0.3v0.1v2.6h1.1V4.1V3.9h0.3v0.1v2.6h1.8V4.1V3.9h0.3v0.1v2.7v0.1H21h-1.9h-0.3h-1.2h-0.1
+				V6.7V4.1z"/>
+			<path fill="#3D3535" d="M22.1,6.7v0.1h-0.3V6.7V4.1V3.9H22h2.1h0.1v0.1v2.7v0.1h-0.3V6.7V4.2h-1.8V6.7z"/>
+		</g>
+		<g>
+			<path d="M28.6,2.7h0.1V3h-0.1h-1.9v3.8h1.9h0.1V7h-0.1h-2.5H26V6.8v-4V2.7h0.1H28.6z"/>
+			<path fill="#3D3535" d="M29.6,4.1V4h0.1h2h0.1v0.1v2.6v0.1h-0.1h-2h-0.1V6.8V4.1z M29.9,4.2v2.4h1.7V4.2H29.9z"/>
+			<path fill="#3D3535" d="M32.8,6.8v0.1h-0.2V6.8V4.1V4h0.1h1.4h0.2H36h0.1v0.1v2.6v0.1h-0.2V6.8V4.2h-1.5v2.5v0.1h-0.2V6.8V4.2
+				h-1.3V6.8z"/>
+			<path fill="#3D3535" d="M37.1,7.8v0.1h-0.2V7.8V4.1V4H37h2h0.1v0.1v2.6v0.1H39h-1.6h-0.1V6.6h0.1h1.5V4.2h-1.7V7.8z"/>
+			<path fill="#3D3535" d="M40,4.2h-0.1V4H40h2h0.1v0.1v2.6v0.1H42h-2h-0.1V6.8v-1V5.6H40h1.6h0.1v0.3h-0.1h-1.5v0.7h1.7V4.2H40z"/>
+			<path fill="#3D3535" d="M43.1,6.8v0.1h-0.2V6.8V4.1V4H43h2h0.1v0.1v2.6v0.1h-0.2V6.8V4.2h-1.7V6.8z"/>
+			<path fill="#3D3535" d="M45.8,4.1V4h0.2v0.1v2.5h1.7V4.1V4h0.2v0.1v2.5v0.3v0.6v0.1h-0.1h-2h-0.1V7.3h0.1h1.9V6.9h-1.9h-0.1V6.8
+				V4.1z"/>
+		</g>
 	</g>
-	<g>
-		<path d="M28.6,2.7h0.1V3h-0.1h-1.9v3.8h1.9h0.1V7h-0.1h-2.5H26V6.8v-4V2.7h0.1H28.6z"/>
-		<path fill="#35353D" d="M29.6,4.1V4h0.1h2h0.1v0.1v2.6v0.1h-0.1h-2h-0.1V6.8V4.1z M29.9,4.2v2.4h1.7V4.2H29.9z"/>
-		<path fill="#35353D" d="M32.8,6.8v0.1h-0.2V6.8V4.1V4h0.1h1.4h0.2H36h0.1v0.1v2.6v0.1h-0.2V6.8V4.2h-1.5v2.5v0.1h-0.2V6.8V4.2
-			h-1.3V6.8z"/>
-		<path fill="#35353D" d="M37.1,7.8v0.1h-0.2V7.8V4.1V4H37h2h0.1v0.1v2.6v0.1H39h-1.6h-0.1V6.6h0.1h1.5V4.2h-1.7V7.8z"/>
-		<path fill="#35353D" d="M40,4.2h-0.1V4H40h2h0.1v0.1v2.6v0.1H42h-2h-0.1V6.8v-1V5.6H40h1.6h0.1v0.3h-0.1h-1.5v0.7h1.7V4.2H40z"/>
-		<path fill="#35353D" d="M43.1,6.8v0.1h-0.2V6.8V4.1V4H43h2h0.1v0.1v2.6v0.1h-0.2V6.8V4.2h-1.7V6.8z"/>
-		<path fill="#35353D" d="M45.8,4.1V4h0.2v0.1v2.5h1.7V4.1V4h0.2v0.1v2.5v0.3v0.6v0.1h-0.1h-2h-0.1V7.3h0.1h1.9V6.9h-1.9h-0.1V6.8
-			V4.1z"/>
-	</g>
+</g>
+<g id="logoDark_1_">
 </g>
 <g id="repères">
 </g>
