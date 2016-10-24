@@ -62,13 +62,11 @@ $navbar-icon-size: $navbar-height * 0.8;
 	@include responsive-3(line-height, $navbar-height);
 
 	& > .left-group {
-		@extend .hidden-list;
 		float: left;
 		height: 100%;
 	}
 
 	& > .right-group {
-		@extend .hidden-list;
 		float: right;
 		height: 100%;
 	}

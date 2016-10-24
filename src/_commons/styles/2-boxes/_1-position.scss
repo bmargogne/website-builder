@@ -2,41 +2,5 @@
 $offset-u: 25px;
 $size-u: 100px;
 
-html {
-	height:100%;
-}
-
-body {
-	@extend .centered;
-	min-width:$min-screen;
-	max-width: $max-screen;
-	min-height: 100%;
-	height:100%;	
-	position:relative;
-	display:flex;
-}
-
-.centered {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.centered-box {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.centered-v {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%); 
-}
-
-.centered-h {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%); 
-}
+// mixin to generate properties for elements with typical positionning properties.
 

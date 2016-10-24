@@ -1,5 +1,5 @@
 .std-list {
-	@extend .centered;
+	margin:auto 0;
 	&:first-of-type {
 		margin-top: $offset-u;
 	}

@@ -13,7 +13,6 @@ $footbar-height: 40px;
 };
 
 .footer-menu {
-	@extend .hidden-list;
 	padding: 0 ($std-offset * 2);	
 }; 
 

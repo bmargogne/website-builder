@@ -1,13 +1,38 @@
 $test:1;
 
+
+
 @mixin fullBackground($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
 
-$rootUrl:'/_assets/images/#{$imageName}';
-$small: 's';
-$medium: 'm';
-$large: 'l';
-$landscape: 'L';
-$portrait: 'P';
+	$rootUrl:'/_assets/images/#{$imageName}';
+	background: url(#{$rootUrl}.jpg) $fixed no-repeat $origin-v $origin-h  / cover;
+}
+
+
+
+
+@mixin fullResponsiveBackground($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
+
+	$rootUrl:'/_assets/images/#{$imageName}';
+	$small: 's';
+	$medium: 'm';
+	$large: 'l';
+
+	@media (min-width: $min-screen)		{ & { background: url(#{$rootUrl}-#{$small}.jpg) $fixed no-repeat $origin-v $origin-h  / cover; }}
+	@media (min-width: $small-screen)	{ & { background: url(#{$rootUrl}-#{$medium}.jpg) $fixed no-repeat $origin-v $origin-h  / cover;}}
+	@media (min-width: $medium-screen)  { & { background: url(#{$rootUrl}-#{$large}.jpg) $fixed no-repeat $origin-v $origin-h  / cover;}}
+}
+
+
+
+@mixin fullOrientedBackground($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
+
+	$rootUrl:'/_assets/images/#{$imageName}';
+	$small: 's';
+	$medium: 'm';
+	$large: 'l';
+	$landscape: 'L';
+	$portrait: 'P';
 
 	@media (orientation: landscape) {
 		@media (min-width: $min-screen)		{ & { background: url(#{$rootUrl}-#{$landscape}#{$small}.jpg) $fixed no-repeat $origin-v $origin-h / cover; }} 
