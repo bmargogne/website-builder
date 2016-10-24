@@ -58,7 +58,7 @@
 	},
 
 	"fonts": {
-		"src": "**/*.{eot,otf,ttf,woff,woff2}",
+		"src": "**/fonts/**/*.{eot,otf,svg,ttf,woff,woff2}",
 		"dest": "_assets/fonts"
 	},
 

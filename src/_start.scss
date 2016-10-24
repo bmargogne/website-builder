@@ -6,6 +6,11 @@
 
 .second-box {
 	position:absolute;	
-	@include roundedBox(250px);
+	@include roundedBox(250px);	
 	background-color: $neutral-l;
+}
+
+.start-container {
+
+
 }

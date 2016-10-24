@@ -71,7 +71,8 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - should handle PHP pages
 - should be able to work external frameworks (Ember, Meteor...)
 - should accept typescript
-- test if it works for server scripting
-- add the link to package documentation directly in code
+- include server globs scripting
+- be able to keep subfolder structure when copying elements found with **/{name} /**/*.*
+- be able to prepare one subset of scripts / style for landing page (used to have a very quick first load)
 - **git integration** with creating/initiating and/or automatic commit & push to remote
 - **up-to-date documentation**: links to used libraries, explaining default structuring / naming rules on files

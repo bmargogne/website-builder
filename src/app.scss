@@ -20,14 +20,12 @@
 @import '5-themes/1-text';
 @import '5-themes/2-boxes';
 
-@import '6-pages/page'
+@import '6-pages/page';
 
-// @import '_partials/navbar/navbar';
-// @import '_partials/navbar/navbar-ghost';
-// @import '_partials/footer/footer';
+@import '_partials/navbar/navbar';
+@import '_partials/navbar/navbar-ghost';
+@import '_partials/footer/footer';
 
-// @import 'pages/page';
-
-// // Page specific styles
-// @import 'start';
-// @import 'pages/index';
+// Page specific styles
+@import 'start';
+@import 'pages/index';

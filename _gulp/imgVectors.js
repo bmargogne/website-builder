@@ -22,9 +22,10 @@ gulp.task('imgVectors', function () {
 		const SRC = `${co.src}/${co.images.srcVectors}`;
 		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
 		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
+		const EXCLUDE3 = `!${co.src}/${co.fonts.src}/`;
 		const DEST = `${co.dest}/${co.images.destVectors}/`;
 		const SPRITESHEET = co.images.vectorSpritesheet;
-		console.log(`Vector Spritesheet : [${SRC}] --> [${DEST}${SPRITESHEET}], excluding [${EXCLUDE1}] and [${EXCLUDE2}]`);
+		console.log(`Vector Spritesheet : [${SRC}] --> [${DEST}${SPRITESHEET}], excluding [${EXCLUDE1}], [${EXCLUDE2}] and [${EXCLUDE3}]`);
 
 		// SVG optimization parameters
 		const configSvgo = {
@@ -60,7 +61,7 @@ gulp.task('imgVectors', function () {
 		const isTest = co.env.isTest;
 		const isProd = co.env.isProd;
 
-		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
+		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], { ignoreInitial: false })
 			.pipe(				newer( DEST + SPRITESHEET ))
 			.pipe( _if(isTest,	using( {prefix:'[images/vector] building spritesheet with :', color:'magenta', filesize:true} )))
 			.pipe(				rename( {dirname: ''} ))
@@ -79,9 +80,10 @@ gulp.task('watch-imgVectors', () => {
 		const SRC = `${co.src}/${co.images.srcVectors}`;
 		const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
 		const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
-		console.log(`Watching Vector images : [${SRC}], except for [${EXCLUDE1}] and [${EXCLUDE2}]`);
+		const EXCLUDE3 = `!${co.src}/${co.fonts.src}/`;
+		console.log(`Watching Vector images : [${SRC}], except for [${EXCLUDE1}], [${EXCLUDE2}] and [${EXCLUDE3}]`);
 
-		return watch( [SRC, EXCLUDE1, EXCLUDE2], () => {
+		return watch( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], () => {
 			runSequence('imgVectors', 'liveReload');
 		});
 	}

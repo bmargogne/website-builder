@@ -1,26 +1,29 @@
-$txt-xxs: 8px;
-$txt-xs: 10px;
-$txt-s: 12px;
-$txt-m: 14px;
-$txt-l: 18px;
-$txt-xl: 24px;
-$txt-xxl: 32px;
+$txt-xxs: 0.7em;
+$txt-xs: 0.8em;
+$txt-s: 0.9em;
+$txt-m: 1em;
+$txt-l: 1.5em;
+$txt-xl: 2em;
+$txt-xxl: 3em;
 
 @mixin font($font, $style: normal, $weight: normal) {
-  font-family: $font;
+  font-family: $font, Verdana, sans-serif;
   font-style: $style;
   font-weight: $weight;
 }
 
 // define used fonts
-@each $font-face in opensans, opensans-light, nevo-bold, nevo-regular, SquareBox {
+$myfonts : opensans, opensans-light, nevo-bold, nevo-regular, SquareBox, LearningCurveProRegular;
+@each $myfont in $myfonts {
 	@font-face {
-		font-family: $font-face;
-
-	// ../fonts = _assets/fonts, relative to //_assets/style
-	src:	url('fonts/#{$font-face}.eot');
-	src:	url('fonts/#{$font-face}.eot?') format('eot'),
-			url('fonts/#{$font-face}.woff') format('woff'),
-			url('fonts/#{$font-face}.ttf') format('truetype');
+		// ../fonts = _assets/fonts, relative to //_assets/style
+		font-family: $myfont;
+		src:	url('fonts/#{$myfont}.eot');
+		src:	url('fonts/#{$myfont}.eot?') format('eot'),
+				url('fonts/#{$myfont}.woff2') format('woff'),
+				url('fonts/#{$myfont}.woff') format('woff'),
+				url('fonts/#{$myfont}.ttf') format('truetype'),
+				url('fonts/#{$myfont}.svg') format('svg');;
 	}
 }
+
