@@ -78,3 +78,4 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - **up-to-date documentation**: links to used libraries, explaining default structuring / naming rules on files
 - should automate bitmap image resizing (ex: for background)
 - improve rebuild of scss to prevent having to include partials in.
+- "assets" folder should be reduced as _components grows : _components is like a component

@@ -66,12 +66,12 @@ HTML files are either pages, either partials. By default partials' name start wi
 Partials are typically used for reusable elements of a HTML page : header, footer, navBar ...
 in order to include partials in a page, use following command in HTML :
 
-			@@include('_partials/subpath/to/partials/_partial.html')
+			@@include('_components/subpath/to/partials/_partial.html')
 
 You may pass variables from the page, to be used when generating the partial.
 
 Ex:(in the HTML page )
-`@@include('_partials/header/_header.html', {`
+`@@include('_components/header/_header.html', {`
 `	"title": "My awesome site - Homepage",`
 `	"description": "This description will be visible in some particular situation"`
 `})`

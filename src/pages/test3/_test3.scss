@@ -1,5 +1,5 @@
 .test3-container {
-	@include boxSize(90%, 90%);
+	@include setBoxSize(90%, 90%);
 	margin:auto;
 	overflow:scroll; 
 	background-color: $neutral-ll;

@@ -1,0 +1,36 @@
+@mixin setBoxSize(	$width: $size-u, $height: $size-u,
+					$minwidth: $width, $minheight: $height,
+					$maxwidth: $width, $maxheight: $height) {
+	
+	min-width: $minwidth;
+	width: $width;
+	max-width: $maxwidth;
+
+	min-height: $minheight;
+	height: $height;
+	max-height: $maxheight;	
+}
+
+@mixin resetBoxSpacing($padding: 0, $margin: 0, $type: 'all') {
+
+	@if $type == 'vertical' {
+		padding-top: $padding;
+		padding-bottom: $padding;
+		margin-top: $margin;
+		margin-bottom: $margin;
+	}
+
+	@if $type == 'horizontal' {
+		padding-left: $padding;
+		padding-right: $padding;
+		margin-left: $margin;
+		margin-right: $margin;
+	}
+
+	@if $type == 'all' {
+		padding: $padding;
+		padding: $padding;
+		margin: $margin;
+		margin: $margin;
+	}
+}

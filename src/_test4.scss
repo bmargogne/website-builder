@@ -1,0 +1,7 @@
+.test4 {
+
+	border:1px solid black;
+	@include setBoxSize(90%, 90%);
+	@include resetBoxSpacing(20px);
+	margin:auto;
+}

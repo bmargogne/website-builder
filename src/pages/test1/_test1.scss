@@ -1,7 +1,7 @@
 .start-container {
 	margin:auto;
 	@include fullBackground(bgMain); 
-	@include boxSize(95%,95%);
+	@include setBoxSize(95%,95%);
 	position:relative;
 	box-shadow: 6px 6px 6px $neutral-dd;
 }
@@ -14,7 +14,7 @@ $mainmenu-width: 160px;
 	text-align:center;
 	background-color:$neutral-dd;
 	color: white;
-	@include boxSize($mainmenu-width, 100%);
+	@include setBoxSize($mainmenu-width, 100%);
 
 	& > menu-icon {
 		margin:auto;
@@ -23,7 +23,7 @@ $mainmenu-width: 160px;
 
 .menu-icon {
 	display:inline-block;
-	@include boxSize(100px,100px);
+	@include setBoxSize(100px,100px);
 	margin:auto;
 	fill:$primary;
 }
@@ -46,7 +46,7 @@ $mainmenu-width: 160px;
 	text-shadow: 2px 2px 4px black;
 
 	&:hover {
-		@include boxSize(300px,300px);
+		@include setBoxSize(300px,300px);
 	}
 }
 
@@ -69,7 +69,7 @@ $mainmenu-width: 160px;
 	margin: 2px;
 	font-size:$txt-xxs;
 	box-shadow: 4px 3px 4px 1px rgba($primary-d, 0.5);
-	@include boxSize(35px, 35px);	
+	@include setBoxSize(35px, 35px);	
 	@extend .primary-button2;
 }
 
