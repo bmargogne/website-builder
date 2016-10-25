@@ -84,5 +84,6 @@ It mostly depends on personal needs and spare time !
 - should keep a copy of all exploded collection (`**/{name}/**/*.*`) in the temp directory (... and use it as a reference to check what is there)
 - should improve variable declarations in gulp to have a dryer code 
 
-- "assets" folder should be emptied as _components grows: most common things should be thought as components. 
+- `assets` folder should be emptied as `_components` are created: most common things should be thought as components.
+	Eventually, the assets are kept to minimal, as specific assets are better stored in the related folder, together with html, script and style. 
 - more comprehensive documentation

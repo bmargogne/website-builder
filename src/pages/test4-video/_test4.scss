@@ -1,0 +1,30 @@
+
+$video-radio:16/9;
+.test4 {
+	position:relative;
+	$width: 50%;
+	width: $width;
+	height: $width;	
+	border: 3px solid red;
+	@include resetBoxSpacing();
+	z-index: 0;
+}
+
+
+.test4-video {
+	position:absolute;
+	border:1px solid blue;
+	top:10px;
+	left:10px;	
+	width:100%;
+	z-index:2;
+}
+
+.test4-tile {
+	position:absolute;
+	color:white;
+	border:1px solid blue;
+	margin:auto;
+	width:100%;
+	z-index:2;
+}
