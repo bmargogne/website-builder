@@ -5,7 +5,7 @@ const browserSync = require('browser-sync').create();	// https://www.browsersync
 const open = require('gulp-open');						// https://www.npmjs.com/package/gulp-open
 
 // imports
-const co = require('../config.json');
+const co = require('./_config.json');
 
 // tasks
 gulp.task('serveLocal', () => {
@@ -22,7 +22,7 @@ gulp.task('serveLocal', () => {
 			},
 			port: localPort,
 			ui: uiOptions,
-			open: false
+			open: true
 		});
 	}
 	return;

@@ -1,6 +1,7 @@
 // npm packages
 const _if = require('gulp-if');								// https://www.npmjs.com/package/gulp-if
 const babel = require('gulp-babel');						// https://www.npmjs.com/package/gulp-babel
+const buffer = require('vinyl-buffer');
 const concat = require('gulp-concat');						// https://www.npmjs.com/package/gulp-concat
 const gulp = require('gulp');								// http://gulpjs.com/
 const insert = require('gulp-insert');						// https://www.npmjs.com/package/gulp-concat
@@ -9,14 +10,13 @@ const newer = require('gulp-newer');						// https://www.npmjs.com/package/gulp-
 const plumber = require('gulp-plumber');					// https://www.npmjs.com/package/gulp-plumber
 const runSequence = require('run-sequence');				// https://www.npmjs.com/package/run-sequence
 const sourcemaps = require('gulp-sourcemaps');				// https://www.npmjs.com/package/gulp-sourcemaps
+const uglify = require('gulp-uglify');						// https://www.npmjs.com/package/gulp-uglify
 const using = require('gulp-using');						// https://www.npmjs.com/package/gulp-using
 const watch = require('gulp-watch');						// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const co = require('../config.json');
+const co = require('./_config.json');
 const processScripts = co.buildingSteps.processScripts;
-const wrapIt = co.buildingSteps.processScripts;
-let mini = co.buildingSteps.minifyScript;
 
 // task
 gulp.task('scripts', () => {
@@ -33,22 +33,27 @@ gulp.task('scripts', () => {
 		// imports
 		const isTest = co.env.isTest;
 		const es6mode = co.env.es6;
+		let isProd = co.env.isProd;
+		const plumbing = co.buildingSteps.plumbing; 
+		const before = co.scripts.wrapper.before;
+		const after  = co.scripts.wrapper.after;
 
-		mini = false; // override 
 
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
-			.pipe( _if( mini,	sourcemaps.init() ))
-			.pipe( _if( es6mode,babel({ presets: ['es2015'] })))
-			.pipe( 				plumber() )
-			.pipe( 				newer( DEST + SCRIPTFILE ))
-			.pipe( _if( isTest, using({ prefix:'[scripts] concatenating :', color:'green', filesize:true })))
-			.pipe( 				concat ( SCRIPTFILE ))
-			.pipe( _if( wrapIt,	insert.wrap( co.scripts.wrapper.before, co.scripts.wrapper.after )))
-			.pipe( _if( mini,	minify({ ext: {src:'-debug.js', min:'.js'} })))
-			.pipe( _if( isTest,	using({ prefix:'[scripts] done :', color:'green', filesize:true })))
-			.pipe( _if( mini,	sourcemaps.write('./')))
-			.pipe(				plumber.stop() )
-			.pipe(				gulp.dest( DEST ));
+			.pipe( _if( plumbing,	plumber() ))
+			.pipe(					newer( DEST + SCRIPTFILE ))
+			.pipe( _if( isTest, 	using({ prefix:'[scripts] concatenating :', color:'green', filesize:true })))
+			
+			.pipe( _if( isProd,		sourcemaps.init() ))
+			.pipe(					concat ( SCRIPTFILE ))
+			.pipe(					insert.wrap( before, after ))
+			.pipe( _if( es6mode,	babel({ presets: ['es2015'] })))
+			.pipe( _if( isProd,		minify({ ext:{src:'.nomin.js', min:'.js', noSource:true} })))
+			.pipe( _if( isProd,		sourcemaps.write('./')))
+			
+			.pipe( _if( isTest,		using({ prefix:'[scripts] done :', color:'green', filesize:true })))
+			.pipe( _if( plumbing,	plumber.stop() ))
+			.pipe(					gulp.dest( DEST ));
 	}
 	return;
 });

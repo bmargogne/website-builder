@@ -30,16 +30,14 @@ Now, when working in your editor, any changes will be instantly taken into accou
 
 _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to get rid of them_
 
-## Features v0.2
-
-### *** DONE
+## Features completed
 
 #### Building steps
 - **files, fonts & vendor scripts**: raw copy for all files from source to destination, 'in _assets' directory
 - **pages**: building html using partials
 - **styles**: Sass preprocessors, minifying, sourcemaps, compatibility prefixes
 - **images**: bitmaps compression, vector optimized spritesheet, bitmap optimized spritesheet
-- **scripts**: concatenation, minifying & sourcemaps, code wrapping, using plumber
+- **scripts**: concatenation, minifying, code wrapping, using plumber
 
 #### Other
 - **easy config**: paths & operations, building sequences
@@ -48,34 +46,35 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 - **livereload** : any change is automatically saved, and browser is refreshed
 
 
-
-
-
-### *** FOR FUTURE RELEASES
-
-#### Feature v0.3
-- **FTP deployment** : automatic upload to FTP
-- **uncss** : clean generated CSS pages from unused selectors (beware of dynamically generated selectors...)
-
-
-## Notes
+## Work in Progress
 
 ### known Issues
 - Watchers may miss newly created folders and their content. Just force the reload by saving the type of file concerned.
+- Also, some elements may need two reloads to properly update. (ex: stylesheet built in two steps)
 - For 'gulp-using', the console log of the file path is confusing. This is necessary to keep the 'gulp-newer' check working.
 - Changing a HTML partial will not rebuild the "caller" file, unless the "newer" package is deactivated on this task
-- Some elements may need two reload to properly update. (ex: stylesheet built in two steps)
+- sourcemaps are created, but on the uncompressed files.
 
 ### Improvments ideas
-- Solving the known issues (any hint / help is welcome!)
-- should handle PHP pages
-- should be able to work external frameworks (Ember, Meteor...)
+
+#### version 0.3
+- should handle FTP deployment : automatic upload new files to FTP, delete unused files. 
+- should clean generated CSS pages of unused selectors with gulp uncss (beware of dynamically generated selectors...)
+
+#### version ...who knows ??
+- should solve known issues (any hint / help is welcome!)
+- should handle server scripting (ex: using globs such as `**/server/**/*.*`)
+- should handle PHP pages (both server and client)
+- should be able to be compatible with some external frameworks (Ember, Meteor...)
 - should accept typescript
-- include server globs scripting
-- be able to keep subfolder structure when copying elements found with **/{name} /**/*.*
-- be able to prepare one subset of scripts / style for landing page (used to have a very quick first load)
-- **git integration** with creating/initiating and/or automatic commit & push to remote
-- **up-to-date documentation**: links to used libraries, explaining default structuring / naming rules on files
-- should automate bitmap image resizing (ex: for background)
-- improve rebuild of scss to prevent having to include partials in.
+- should be able to keep subfolder structure when copying elements
+		(ex: from `**/{name}/**/*.*` to `{name}/**/*.*` rather than from `**/{name}/**/*.*` to `{name}/*.*`)  
+- should be able to have specific smaller style & scripts files, for a quicker loading of landing page 
+- should integrate git common tasks : creating/initiating repo, commit & push to remote
+- should improve scss watching ( _why can't I exclude the partials?_ )
+- should automate bitmap image resizing (ex: for optimzed webresponsive background)
+- should keep a copy of all exploded collection (`**/{name}/**/*.*`) in the temp directory (... and use it as a reference to check what is there)
+- should improve variable declarations in gulp to have a dryer code 
+
 - "assets" folder should be emptied as _components grows: most common things should be thought as components. 
+- more comprehensive documentation

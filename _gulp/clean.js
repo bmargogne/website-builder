@@ -6,7 +6,7 @@ const gulp = require('gulp');							// http://gulpjs.com/
 gulp.task('clean', () => {
 
 	// imports
-	const co = require('../config.json');
+	const co = require('./_config.json');
 	const cleanDest = co.buildingSteps.cleanDest;
 	const cleanTemp = co.buildingSteps.cleanTemp;
 	const cleanUndef = co.buildingSteps.cleanUndefined;

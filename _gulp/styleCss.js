@@ -6,7 +6,7 @@ const newer = require('gulp-newer');					// https://www.npmjs.com/package/gulp-n
 const using = require('gulp-using');					// https://www.npmjs.com/package/gulp-using
 
 // imports
-const co = require('../config.json');
+const co = require('./_config.json');
 
 // task
 gulp.task('styleCss', () => {

@@ -10,7 +10,7 @@ const using = require('gulp-using');					// https://www.npmjs.com/package/gulp-u
 const watch = require('gulp-watch');					// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const co = require('../config.json');
+const co = require('./_config.json');
 const processPages = co.buildingSteps.processPages;
 
 // task
@@ -27,16 +27,17 @@ gulp.task('pagesHtml', () => {
 
 		const isTest = co.env.isTest;
 		const isProd = co.env.isTest;
+		const plumbing = co.buildingSteps.plumbing;
 		const forceRebuild = true; 	// if true, every change on HTML will rebuild everything.
 									// disable for higher performance, and/or when partials are not modified often.
 
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], { ignoreInitial: false } )
 			.pipe( _if(!forceRebuild,	newer( DEST )))
 			.pipe( _if(isTest,			using( {prefix:'[pages/html] building :', color:'cyan', filesize:true} )))
-			.pipe( plumber() )
+			.pipe( _if(plumbing,		plumber() ))
 			.pipe(						fileinclude({ prefix: '@@', basepath: co.src }))
 			.pipe( _if(isProd,			htmlmin({collapseWhitespace: true})))
-			.pipe( plumber.stop() )
+			.pipe( _if(plumbing,		plumber.stop() ))
 			.pipe(						gulp.dest( DEST ));
 	}
 	return;

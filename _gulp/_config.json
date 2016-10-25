@@ -1,6 +1,6 @@
 {
 	"env": {
-		"isProd": 					false,
+		"isProd": 					true,
 		"isTest": 				true,
 		"es6":					true
 	},
@@ -12,6 +12,8 @@
 	"ConfigHint_Building Steps" : "Building steps complements building sequence from _starter file, but have a higher priority",
 
 	"buildingSteps": {
+		"plumbing":					false,
+
 		"cleanDest": 			true,
 		"cleanTemp": 			true,
 		"cleanUndefined": 		true,

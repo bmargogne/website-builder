@@ -10,7 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');				// https://www.npmjs.com/packa
 const using = require('gulp-using');						// https://www.npmjs.com/package/gulp-using
 
 // imports
-const co = require('../config.json');
+const co = require('./_config.json');
 
 // task
 gulp.task('styleFinal', () => {

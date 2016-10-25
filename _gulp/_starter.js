@@ -12,7 +12,7 @@ gulp.task('_starter', () => {
 		startLocalServer();
 	}
 
-	if (argv.test) {
+	if (argv.serve) {
 		console.log('[Website Builder] Running : Local Server sequence + Open Multiple Browsers');
 		serveAndOpenBrowsers();
 	}
@@ -45,9 +45,9 @@ const testSequence = () => {
 	return runSequence(
 		'clean',
 		[
-			'style',
+			'scripts',
 		],
-		'watch-style'
+		'watch-scripts'
 	);
 };
 
@@ -69,7 +69,6 @@ const startLocalServer = () => {
 			'vendors'
 		],
 		[
-			'openBrowsers',
 			'serveLocal',
 			'watch-files',
 			'watch-imgBitmaps',

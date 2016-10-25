@@ -4,7 +4,7 @@ const runSequence = require('run-sequence');		// https://www.npmjs.com/package/r
 const watch = require('gulp-watch');				// https://www.npmjs.com/package/gulp-watch
 
 // imports
-const co = require('../config.json');
+const co = require('./_config.json');
 const processStyle = co.buildingSteps.processStyle;
 
 // task

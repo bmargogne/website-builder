@@ -2,7 +2,7 @@
 
 Elements for quality check on website :
 
-- is "production" built activated in config.json ?
+- is "production" built activated in _config.json ?
 
 - do images have "alt" (and title) attribute ?
 - are texts, image and tables completed with 'figure' and 'figcaption' when necessary ?

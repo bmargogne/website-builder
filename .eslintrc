@@ -10,6 +10,9 @@
 		"browser": true,
 		"node": true
 	},
+	"globals": {
+		"$": true
+	},
 	"extends": "eslint:recommended",
 	"rules": {
 		"semi": 2,
