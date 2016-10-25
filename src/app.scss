@@ -1,7 +1,6 @@
 // Be aware of dependencies, and load in the right order !
 @import '0-general/1-reset';
 @import '0-general/2-media';
-@import '0-general/3-fix';
 
 @import '1-colors/1-swatch';
 @import '1-colors/2-scheme';
@@ -16,20 +15,19 @@
 @import '3-images/1-background';
 @import '3-images/2-decoration'; 
 
-@import '4-texts/1-fonts';
-@import '4-texts/2-effects';
+@import '4-texts/1-font';
+@import '4-texts/2-effect';
 @import '4-texts/3-decoration';
+@import '4-texts/4-title';
 
-@import '5-pages/1-page';
-@import '5-pages/2-row';
+@import '5-tables/1-border';
 
-// website specific styles
-@import 'themes/1-text';
-@import 'themes/2-box';
+@import '6-pages/1-page';
+@import '6-pages/2-row';
+@import '6-pages/3-components';
+
 
 @import '_partials/navbar/navbar';
-@import '_partials/navbar/navbar-ghost';
 @import '_partials/footer/footer';
 
-@import 'start';
-@import 'pages/index';
+@import 'test3'; 

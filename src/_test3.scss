@@ -1,0 +1,94 @@
+.test3-container {
+	@include boxSize(90%, 90%);
+	margin:auto;
+	overflow:scroll; 
+	background-color: $neutral-ll;
+}
+
+.test3-colors {
+	margin-top: $offset-u;
+	margin-left: $offset-u;	
+	border:1px solid $primary-dd;
+}
+
+.test3-color-table {	
+	margin-top: $offset-u * 2;		
+	background-color: white;
+	border: 1px solid $neutral-dd; 
+	width:100%;
+
+	caption-side: bottom;
+	text-align:center;
+	font-size:$txt-xs;
+
+	td, th {		
+		height: 60px;
+		width: 60px;
+	}
+
+	.test3-neutral {
+
+		& > td:nth-child(2) { background-color: $neutral-ddd; }
+		& > td:nth-child(3) { background-color: $neutral-dd; }
+		& > td:nth-child(4) { background-color: $neutral-d; }
+		& > td:nth-child(5) { 
+			@include lateral-border(2px);
+			background-color: $neutral;
+		}
+		& > td:nth-child(6) { background-color: $neutral-l; }
+		& > td:nth-child(7) { background-color: $neutral-ll; }
+		& > td:nth-child(8) { background-color: $neutral-lll; }
+	}
+
+	.test3-primary {
+		& > td:nth-child(2) { background-color: $primary-ddd; }
+		& > td:nth-child(3) { background-color: $primary-dd; }
+		& > td:nth-child(4) { background-color: $primary-d; }
+		& > td:nth-child(5) { 
+			@include lateral-border(2px);
+			background-color: $primary;
+		}
+		& > td:nth-child(6) { background-color: $primary-l; }
+		& > td:nth-child(7) { background-color: $primary-ll; }
+		& > td:nth-child(8) { background-color: $primary-lll; }
+	}
+
+	.test3-secondary {
+		& > td:nth-child(2) { background-color: $secondary-ddd; }
+		& > td:nth-child(3) { background-color: $secondary-dd; }
+		& > td:nth-child(4) { background-color: $secondary-d; }
+		& > td:nth-child(5) {
+			background-color: $secondary; 
+			@include lateral-border(2px);
+		}
+		& > td:nth-child(6) { background-color: $secondary-l; }
+		& > td:nth-child(7) { background-color: $secondary-ll; }
+		& > td:nth-child(8) { background-color: $secondary-lll; }
+	}
+
+	.test3-primary-inverted {
+		& > td:nth-child(2) { background-color: $primary-lll; }
+		& > td:nth-child(3) { background-color: $primary-ll; }
+		& > td:nth-child(4) { background-color: $primary-l; }
+		& > td:nth-child(5) {
+			background-color: $primary; 
+			@include lateral-border(2px)
+		}
+		& > td:nth-child(6) { background-color: $primary-d; }
+		& > td:nth-child(7) { background-color: $primary-dd; }
+		& > td:nth-child(8) { background-color: $primary-ddd; }
+	}
+
+	.test3-secondary-inverted {
+		& > td:nth-child(2) { background-color: $secondary-lll; }
+		& > td:nth-child(3) { background-color: $secondary-ll; }
+		& > td:nth-child(4) { background-color: $secondary-l; }
+		& > td:nth-child(5) {
+			background-color: $secondary; 
+			@include lateral-border(2px)
+		}
+		& > td:nth-child(6) { background-color: $secondary-d; }
+		& > td:nth-child(7) { background-color: $secondary-dd; }
+		& > td:nth-child(8) { background-color: $secondary-ddd; }
+	}
+}

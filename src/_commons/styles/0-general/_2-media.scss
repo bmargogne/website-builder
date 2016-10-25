@@ -3,6 +3,9 @@ $small-screen: 		768px;
 $medium-screen: 	1024px;
 $max-screen:		1600px;
 
+
+// general responsive mixin. 
+// ideally, all mixin should be though for responsive designs
 @mixin responsive-3($property, $sizeS,
 					$coef : 1.5, 
 					$sizeM: $sizeS * (1 + $coef),

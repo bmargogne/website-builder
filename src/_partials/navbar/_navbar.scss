@@ -42,7 +42,6 @@ $navbar-icon-size: $navbar-height * 0.8;
 
 .std-navbar-block {
 	@extend .std-block;
-	// @extend .color-p-dynamic;
 	@include responsive-3(height, $navbar-height);
 
 	&.icon {

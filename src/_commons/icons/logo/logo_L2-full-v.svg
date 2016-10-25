@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 45 50" overflow="auto" xml:space="preserve">
+	 y="0px" viewBox="0 0 45 50" overflow="scroll" xml:space="preserve">
 <g id="background" display="none">
-	<rect x="-81.1" y="-26.4" display="inline" fill="#FFFFFF" width="133.9" height="246.9"/>
-	<rect x="-78.2" y="-24.1" display="inline" fill="#A6A8AA" width="297.7" height="257.3"/>
-	<rect x="-89.7" y="-31.3" fill="#4291AD" width="301.2" height="255.2"/>
+	<rect x="-14.1" y="-48.8" display="inline" fill="#D0D1D3" width="131.1" height="298.3"/>
+	<rect x="-17.8" y="-51.9" display="inline" fill="#FFFFFF" width="130.2" height="295.4"/>
+	<rect x="-15.9" y="-60.1" fill="#A6A8AA" width="297.7" height="314.6"/>
+	<rect x="-27.4" y="-67.3" fill="#4291AD" width="301.2" height="316.8"/>
 </g>
 <g id="examples">
 </g>
@@ -51,8 +52,6 @@
 	</g>
 </g>
 <g id="logoDark_1_">
-</g>
-<g id="repères">
 </g>
 <g id="infos">
 </g>

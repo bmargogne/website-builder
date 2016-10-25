@@ -1,4 +1,4 @@
-$footbar-height: 60px;
+$footbar-height: 40px;
 // $footbar-icon-padding: 13px;
 // $navbar-icon-size: $navbar-height - (2 * $navbar-icon-padding);
 
@@ -18,5 +18,4 @@ $footbar-height: 60px;
 
 .footer-menu-item {
 	@extend .std-block;
-	// @extend .color-dark-dynamic;
 }

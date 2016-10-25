@@ -10,7 +10,7 @@ $mainmenu-width: 160px;
 .mainmenu {		
 	position:absolute;
 	right:0px;
-	padding: 20px;
+	padding: 30px 15px;
 	text-align:center;
 	background-color:$neutral-dd;
 	color: white;
@@ -28,11 +28,9 @@ $mainmenu-width: 160px;
 	fill:$primary;
 }
 
-#menu-logo {
-	
+#menu-text {
+	@include globalBoxSize(100%, 100px);
 }
-
-$mainmenu-width: 200px;
 
 .welcome-box {
 	position:absolute;

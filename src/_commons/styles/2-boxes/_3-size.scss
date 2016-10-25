@@ -5,7 +5,7 @@
 }
 
 
-@mixin boxSize(	$width: $size-u, $height: $size-u,
+@mixin boxSize(	$width: $size-u, $height: $size-u,				
 				$minwidth: $width, $minheight: $height,
 				$maxwidth: $width, $maxheight: $height) {
 	
@@ -15,7 +15,27 @@
 
 	min-height: $minheight;
 	height: $height;
+	max-height: $maxheight;	
+
+	overflow:auto;
+}
+
+
+@mixin globalBoxSize(	$width: $size-u, $height: $size-u,
+						$padding: 0, $margin: auto,
+						$minwidth: $width, $minheight: $height,
+						$maxwidth: $width, $maxheight: $height) {
+	
+	min-width: $minwidth;
+	width: $width;
+	max-width: $maxwidth;
+
+	min-height: $minheight;
+	height: $height;
 	max-height: $maxheight;
+
+	padding: $padding;
+	margin: $margin;
 
 	overflow:auto;
 }

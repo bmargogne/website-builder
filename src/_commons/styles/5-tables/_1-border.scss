@@ -1,0 +1,4 @@
+@mixin lateral-border($border-size: 1px, $color: black) {
+	border: solid $color;
+	border-width: 0px $border-size; 
+}

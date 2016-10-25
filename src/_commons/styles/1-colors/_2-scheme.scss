@@ -9,8 +9,9 @@
 
 $neutral: $coldgrey;
 $primary: $technoblue;
-$secondary: $Red500;
+$secondary: $Pink500;
 
+// building shades & staes
 	// config default for shades
 	$ddd:50;
 	$dd:30;
@@ -25,37 +26,40 @@ $secondary: $Red500;
 	$highlighted:#FFFFFF;
 	$highlight-strength:0.5;
 
+// done manually through tweaking or proper color code uses
+$primary-lll: 	lighten($primary, 50);
+$primary-ll: 	desaturate( lighten($primary, 30), 20%);
+$primary-l: 	lighten($primary, 10);
+$primary-d: 	darken($primary, 15);
+$primary-dd: 	darken($primary, 25);
+$primary-ddd: 	darken($primary, 30);
+$primary-D: 	fade-out($primary, $disable-strength);
+$primary-S: 	mix($primary, $selected, $select-strength);
+$primary-H: 	mix($primary, $highlighted, $highlight-strength);
 
-// building shades & staes
+$secondary-lll: $Pink100;
+$secondary-ll: 	$Pink300;
+$secondary-l: 	$Pink400;
+$secondary-d: 	$Pink600;
+$secondary-dd: 	$Pink700;
+$secondary-ddd: $Pink900;
+$secondary-D: 	fade-out($secondary, $disable-strength);
+$secondary-S: 	mix($secondary, $selected, $select-strength);
+$secondary-H: 	mix($secondary, $highlighted, $highlight-strength);
+
+
+
+// using default values
 $neutral-lll: 	lighten($neutral, $lll);
 $neutral-ll: 	lighten($neutral, $ll);
 $neutral-l: 	lighten($neutral, $l);
 $neutral-d: 	darken($neutral, $d);
 $neutral-dd: 	darken($neutral, $dd);
 $neutral-ddd: 	darken($neutral, $ddd);
-$neutral-D: 		fade-out($neutral, $disable-strength);
-$neutral-S: 		mix($neutral, $selected, $select-strength);
-$neutral-H: 		mix($neutral, $highlighted, $highlight-strength);
+$neutral-D: 	fade-out($neutral, $disable-strength);
+$neutral-S: 	mix($neutral, $selected, $select-strength);
+$neutral-H: 	mix($neutral, $highlighted, $highlight-strength);
 
-$primary-lll: 	lighten($primary, $lll);
-$primary-ll: 	lighten($primary, $ll);
-$primary-l: 	lighten($primary, $l);
-$primary-d: 	darken($primary, $d);
-$primary-dd: 	darken($primary, $dd);
-$primary-ddd: 	darken($primary, $ddd);
-$primary-D: 		fade-out($primary, $disable-strength);
-$primary-S: 		mix($primary, $selected, $select-strength);
-$primary-H: 		mix($primary, $highlighted, $highlight-strength);
-
-$secondary-lll: 	lighten($secondary, $lll);
-$secondary-ll: 	lighten($secondary, $ll);
-$secondary-l: 	lighten($secondary, $l);
-$secondary-d: 	darken($secondary, $d);
-$secondary-dd: 	darken($secondary, $dd);
-$secondary-ddd: 	darken($secondary, $ddd);
-$secondary-D: 		fade-out($secondary, $disable-strength);
-$secondary-S: 		mix($secondary, $selected, $select-strength);
-$secondary-H: 		mix($secondary, $highlighted, $highlight-strength);
 
 
 
