@@ -58,13 +58,21 @@ _Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to
 ### Improvments ideas
 
 #### version 0.3
-- should handle FTP deployment : automatic upload new files to FTP, delete unused files. 
+- should write gulp scripts for audio & video
 - should clean generated CSS pages of unused selectors with gulp uncss (beware of dynamically generated selectors...)
 
-#### version ...who knows ??
-- should solve known issues (any hint / help is welcome!)
+#### version 0.4
+- should handle FTP deployment : automatic upload new files to FTP, delete unused files. 
+
+#### version 0.5
 - should handle server scripting (ex: using globs such as `**/server/**/*.*`)
 - should handle PHP pages (both server and client)
+
+#### version ...who knows ??
+
+It mostly depends on personal needs and spare time !
+
+- should solve known issues (any hint / help is welcome!)
 - should be able to be compatible with some external frameworks (Ember, Meteor...)
 - should accept typescript
 - should be able to keep subfolder structure when copying elements
