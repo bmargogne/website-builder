@@ -98,7 +98,7 @@
 		"destCss": "style",
 		"cssSheet": "styleCss.css",
 
-		"scssDefaultRoot": "_commons/styles",
+		"scssDefaultRoot": "_assets/styles",
 		"srcScss": "**/*.scss",
 		"destScss": "style",
 		"partialScss": "**/_*.scss",

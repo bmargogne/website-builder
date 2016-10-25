@@ -25,6 +25,7 @@ Please ask permission for exact copy.
 - gulp-concat : https://www.npmjs.com/package/gulp-concat
 - gulp-clean-css : https://www.npmjs.com/package/gulp-clean-css
 - gulp-file-include : https://www.npmjs.com/package/gulp-file-include
+- gulp-htmlmin : https://www.npmjs.com/package/gulp-htmlmin
 - gulp-if : https://www.npmjs.com/package/gulp-if
 - gulp-imagemin : https://www.npmjs.com/package/gulp-imagemin
 - gulp-insert : https://www.npmjs.com/package/gulp-concat

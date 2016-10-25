@@ -2,6 +2,7 @@
 const _if = require('gulp-if');							// https://www.npmjs.com/package/gulp-if
 const gulp = require('gulp');							// http://gulpjs.com/
 const fileinclude = require('gulp-file-include');		// https://www.npmjs.com/package/gulp-file-include
+const htmlmin = require('gulp-htmlmin');				// https://www.npmjs.com/package/gulp-htmlmin
 const newer = require('gulp-newer');					// https://www.npmjs.com/package/gulp-newer
 const plumber = require('gulp-plumber');				// https://www.npmjs.com/package/gulp-plumber
 const runSequence = require('run-sequence');			// https://www.npmjs.com/package/run-sequence
@@ -25,6 +26,7 @@ gulp.task('pagesHtml', () => {
 		console.log(`Html Pages building : [${SRC}] --> [${DEST}], excluding [${EXCLUDE1}], [${EXCLUDE2}] and [${EXCLUDE3}] `);
 
 		const isTest = co.env.isTest;
+		const isProd = co.env.isTest;
 		const forceRebuild = true; 	// if true, every change on HTML will rebuild everything.
 									// disable for higher performance, and/or when partials are not modified often.
 
@@ -33,6 +35,7 @@ gulp.task('pagesHtml', () => {
 			.pipe( _if(isTest,			using( {prefix:'[pages/html] building :', color:'cyan', filesize:true} )))
 			.pipe( plumber() )
 			.pipe(						fileinclude({ prefix: '@@', basepath: co.src }))
+			.pipe( _if(isProd,			htmlmin({collapseWhitespace: true})))
 			.pipe( plumber.stop() )
 			.pipe(						gulp.dest( DEST ));
 	}

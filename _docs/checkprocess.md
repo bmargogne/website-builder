@@ -1,8 +1,11 @@
 # Check process
 
-some steps to check :
+Elements for quality check on website :
+
+- is "production" built activated in config.json ?
+
 - do images have "alt" (and title) attribute ?
-- are texts completed with 'figure' and 'figcaption' when necessary ?
+- are texts, image and tables completed with 'figure' and 'figcaption' when necessary ?
 - can 'div' be replaced by HTML5 tags? (section, article, nav, header...) 
 - and 'span' be replaced by HTML5 tags? (em, strong, mark... )
-- 
+
