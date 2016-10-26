@@ -1,11 +1,3 @@
-$txt-xxs: 0.7em;
-$txt-xs: 0.8em;
-$txt-s: 0.9em;
-$txt-m: 1em;
-$txt-l: 1.5em;
-$txt-xl: 2em;
-$txt-xxl: 3em;
-
 @mixin font($font, $style: normal, $weight: normal) {
 	font-family: $font, Verdana, sans-serif;
 	font-style: $style;

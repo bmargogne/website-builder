@@ -1,0 +1,59 @@
+$stdu-ss : 1px; // typically for borders
+$stdu-s : 15px; // typically for spacing group elements: margin, padding
+$stdu : 35px; // typically for separation (ex: title & paragraph) or movement
+$stdu-l : 100px; // typically for small boxes like buttons, icons, color shape...
+$stdu-ll : 500px; // typically for box containers 
+
+
+// if needed, you can use more explicit values, even though their usage should be reserved to contextual needs
+// ex :
+$width-u : 300px;
+$offset-u : 25px; 
+
+
+// in MAQUETTING, variables should be coefficiented in comparaison to a std unit. ex: width : $stdu * 2.42
+
+
+
+// these define the horizontal thresholds for media queries
+$min-screen:		320px;
+$small-screen: 		768px;
+$medium-screen: 	1024px;
+$max-screen:		1600px;
+
+// these define the text size
+$txt-xxs: 0.7em;
+$txt-xs: 0.8em;
+$txt-s: 0.9em;
+$txt-m: 1em;
+$txt-l: 1.5em;
+$txt-xl: 2em;
+$txt-xxl: 3em;
+
+// these defines the z-index values additional layers may be added as needed
+$z-bg1 : -100;
+$z-bg2 : -90;
+$z-bg3 : -80;
+$z-main1 : 0;
+$z-main2 : 10;
+$z-main3 : 20;
+$z-front1 : 100;
+$z-front2 : 110;
+$z-front3 : 120;
+
+
+
+
+// general responsive mixin. 
+// ideally, all mixin should be thought for responsive designs with mobile first approach,
+// and include media queries for bigger screens
+@mixin responsive-3($property, $sizeS,
+					$coef : 1.5, 
+					$sizeM: $sizeS * (1 + $coef),
+					$sizeL: $sizeM * (1 + $coef) ) {
+
+	#{$property}: $sizeS;
+	@media (min-width: $small-screen) 	{ #{$property}: $sizeM; }
+	@media (min-width: $medium-screen)  { #{$property}: $sizeL } 
+}
+

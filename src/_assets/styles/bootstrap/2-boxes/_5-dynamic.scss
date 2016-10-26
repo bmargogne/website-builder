@@ -1,5 +1,6 @@
 @mixin test-border($size: 2px, $color: $primary, $style: solid) {
 	border: $size none $color;
+	box-sizing: border-box; 
 
 	&:hover {
 		border: $size $style $color;	
@@ -25,5 +26,5 @@ $defaut-colorB: rgba($primary-dd, 0);
 	background: $gradient;
 	&:hover {
 		background: $transparentgradient;
-	}
+	} 
 } 

@@ -1,3 +1,100 @@
+
+$start-boxSize:90%;
+.start-section {
+	@include setBoxSize($start-boxSize,$start-boxSize);
+	border:1px solid $neutral-l;
+	background-color: $neutral-ll;
+	// z-index: $z-bg1;
+	@include boxShadow(1px);
+	position:relative;
+}
+
+.bg {
+	position: absolute;
+	bottom:0;
+	@include setBoxSize(100%,90%);
+	@include test-border;
+	color:white;
+	z-index: $z-front1;
+	background-color:white;
+
+	& > li {
+		position:absolute;
+		padding: $offset-u;
+		background-color: $primary;
+		margin:4px;
+	}
+
+	li:nth-child(1) {		
+		left: 120px;
+	}
+	li:nth-child(2) {
+		background-color: $secondary;
+		z-index: $z-front2;
+	}
+	li:nth-child(3) {
+		background-color: $secondary-l;
+		top: 33px;
+		left: 33px;
+	}
+	li:nth-child(4) {
+		background-color: $neutral-d;
+		left: 55px;
+		top: 55px;
+	}
+	li:nth-child(5) {
+		background-color: $neutral-l;
+		left: 77px;
+		top: 77px;
+	}
+}
+
 .start-main {
-	color: red;
+	width:400px;
+	padding:4px;
+	position: absolute;
+	z-index: $z-front2;
+
+	left: 250px;
+	top: 200px;
+	@include boxShadow(3px, 1px);
+	@include test-border;
+	@include linear-gradient($neutral-lll, $neutral-ll);
+
+	& h1 {
+		color:$primary;
+		font-weight:600;
+
+	}
+	& em {
+		font-size:$txt-xl;
+		$color: $secondary;
+	} 
+
+	& p {
+		color:$neutral-dd;
+	}
+
+	p:last-of-type {
+		font-size: 14px;
+		color:$neutral-l;
+		margin-bottom: $offset-u;
+	}
+}
+
+.start-menu {
+	background-color:$neutral-ll;
+	padding:6px;
+
+	& > li {
+		background-color: $neutral-l;
+		color: $neutral-d;
+		margin: 4px;
+		padding: 4px;
+		@include test-border;
+
+		&:first-child {
+			color: white;
+		}
+	}
 }

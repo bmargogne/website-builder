@@ -60,9 +60,9 @@ after running `gulp` you will see
 - `node_modules` : the npm packages needed to run the builder. There are a hello lot of them, and you should not need to dig into this anyway. 
 
 
-### in the `src` folder
+#### in the `src` folder
 
-#### _assets
+##### _assets
 All basic elements common to the project, an
 
 - `files` : any files common to the whole website. If anymore precise, the file should be placed in a 'files' subfolder from the component / page directory. 
@@ -73,17 +73,19 @@ All basic elements common to the project, an
 - `styles` : contains the bootstrap set of rules, + the general project rules. 
 - `app.scss` : the root style file, which should include all other partials used. This method centralise the dependencies, and at the end is the easiest to maintain 
 
-#### _components
+##### _components
 Built-in elements which can be reused in many parts of the projects. Typicals are header, footer, navbars ... but also includes photo gallery for instance. 
 They include html partials (_.html), scripts, icons, style... anything to build a easy to include element in a page.
 This folder will not exist once the website is generated.
 
-#### _vendors
+##### _vendors
 contain any exterior code/packages/library which should be left untouched.
 
-#### pages
+##### pages
 The website itself. Each page consist in a folder, containing all the specific code to this page: style, scripts, images, and other 'subpages'.
 Nothing forces you to store your pages in this folder, but it helps to keep specific source files aside.
+
+
 
 ## Features completed
 

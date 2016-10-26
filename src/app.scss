@@ -1,36 +1,17 @@
 // Be aware of dependencies, and load in the right order !
-@import '0-general/1-reset';
-@import '0-general/2-globals';
 
-@import '1-colors/1-swatch';
-@import '1-colors/2-scheme';
-@import '1-colors/3-theme';
+// from _assets/styles
+@import 'bootstrap/bootstrap';
 
-@import '2-boxes/1-position';
-@import '2-boxes/2-layout';
-@import '2-boxes/3-size';
-@import '2-boxes/4-shape';
-@import '2-boxes/5-dynamic';
-@import '2-boxes/6-effect';
+@import 'project/6-pages/1-page';
+@import 'project/6-pages/2-row';
+@import 'project/6-pages/3-components';
 
-@import '3-images/1-background';
-@import '3-images/2-decoration'; 
+@import 'project/7-video/1-container.scss';
 
-@import '4-texts/1-font';
-@import '4-texts/2-effect';
-@import '4-texts/3-decoration';
-@import '4-texts/4-title';
-
-@import '5-tables/1-border';
-
-@import '6-pages/1-page';
-@import '6-pages/2-row';
-@import '6-pages/3-components';
-
-@import '7-video/1-container.scss';
-
+// from relative path
 @import '_components/navbar/navbar';
 @import '_components/footer/footer';
 
+
 @import 'index'; 
-@import 'test6-jquery'; 
