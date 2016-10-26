@@ -1,6 +1,6 @@
 // Be aware of dependencies, and load in the right order !
 @import '0-general/1-reset';
-@import '0-general/2-media';
+@import '0-general/2-globals';
 
 @import '1-colors/1-swatch';
 @import '1-colors/2-scheme';
@@ -11,6 +11,7 @@
 @import '2-boxes/3-size';
 @import '2-boxes/4-shape';
 @import '2-boxes/5-dynamic';
+@import '2-boxes/6-effect';
 
 @import '3-images/1-background';
 @import '3-images/2-decoration'; 
@@ -31,4 +32,4 @@
 @import '_components/navbar/navbar';
 @import '_components/footer/footer';
 
-@import 'test5'; 
+@import 'test6-jquery'; 

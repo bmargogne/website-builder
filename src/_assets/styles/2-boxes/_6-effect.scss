@@ -1,0 +1,8 @@
+@mixin boxShadow(	$distance: $d-u * 2,
+					$blur: $d-u,
+					$color: rgba($neutral, 0.5),
+					$spread: $d-u
+				) {
+
+	box-shadow: $distance $distance $blur $spread $color;
+} 

@@ -1,5 +1,5 @@
 @mixin test-border($size: 2px, $color: $primary, $style: solid) {
-	border: $size hidden $color;
+	border: $size none $color;
 
 	&:hover {
 		border: $size $style $color;	

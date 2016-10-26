@@ -71,7 +71,7 @@ in order to include partials in a page, use following command in HTML :
 You may pass variables from the page, to be used when generating the partial.
 
 Ex:(in the HTML page )
-`@@include('_components/header/_header.html', {`
+`@@include('_components/header/_header-blank.html', {`
 `	"title": "My awesome site - Homepage",`
 `	"description": "This description will be visible in some particular situation"`
 `})`
