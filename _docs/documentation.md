@@ -9,6 +9,22 @@ Documentation may not be up to date...
 
 ## How to use
 
+### presentation
+
+The **builder** checks and watches all files from a SRC directory.
+As soon as anything is changed (by saving code or adding/removing/moving/renaming a file), the program runs various **tasks**,
+which are made to treat certain files types. Some create html pages using components, while some preprocess a set of scss into a single
+style.css file.
+
+In pratice this **removes _a lot_ of reloading**, thus making the development process much more efficient.
+You basically never go to the command shell anymore, everything is automatic and reloads. At the contrary to other framework
+the source files are NOT hidden, as they should fully integrate in a project.
+
+
+
+
+
+
 ### settings
 
 All settings are done through the `_config.json` file. If the possibilities are not enough for your need, adjust the source code to your needs !
@@ -121,6 +137,22 @@ You should typically call it inside your footer.
 
 The generated script can be wrapped in a user defined string, for specific situations.
 ex: wrap in `$(document).ready( () => { ** generated script file ** })`
+
+
+### Styles
+
+** incomplete **
+I encourage to split your `scss` files in three levels of standard :
+- **_assets/styles/bootstrap** : contains a common set of files used for all your projects.
+The most stable / generic set possible, fully adapted to your own methods.
+- **_assets/styles/styles** : contains a common set of files used for this project only.
+This set should evolve a lot at first, when building key elements of the project, then it should not evolve anymore.
+While the rules applied are specific to this project, a uniform naming convention applied to your project will create your work automatisms
+- **_components** : contains all the html code, javascript code, and any filetype linked directly and only to this component  
+- **pages** : basically the same kind of content than components, except that pages uses components directly (while components refer
+to pages through naming conventions)
+
+
 
 
 

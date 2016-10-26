@@ -6,12 +6,15 @@ v0.3 - by Bertrand Margogne.
 
 ## Overview
 
-A simple builder for automating some operations during website building. It performs various common operations / optimization on files (pages, scripts, styles, spritesheets...)
+A builder tool for automating various operations during a website building.
+It performs various common operations / optimization on files : pages, scripts, styles, spritesheets...
+In practice you same a lot of reloading time, thus making your production process a lot smoother. 
 
-It was developped for working alone in a simple front-end project, using 'only' HTML, CSS & JS.
-It may not be adapted for bigger projects, teams, and probably isn't compatible with other more complex frameworks.
+It was developped for working alone in a simple front-end project (using 'only' HTML, CSS & JS),
+and may not be adapted for bigger projects or teams.  
+Though nothing was tested yet, it probably isn't compatible with other more complex frameworks.
 
-This is my first project... in order to improve, I welcome any remark or suggestion (...and critics, provided they are constructive!).
+This is my first project... in order to improve, I welcome any remark or suggestion ...and (constructive) critics !
 
 ## Get Started
 
@@ -22,13 +25,65 @@ You need node & npm installed. (...not sure which version, any feedback is appre
 - `npm install`
 - `run 'gulp'`
 
-Now, when working in your editor, any changes will be instantly taken into account and your browser will reload.
+This opens the demo menu, containing various tests and the demo website.
+Open your editor in the website builder directory, and explore !
+
+If you edit anything from the `src` directory, the builder will run and the page will reload
+with any applied change on html, style, script, image update, svg generation, etc.
+
+Start from there and build your site !
 
 
+### good to known
 
-`open '_gulp/_config.json' to adjust the builder to your needs`
+Luckily enough (but also after lots of renamings...), the file tree is organized to help the discovery of the project.
+User is encouraged to play with it to be able to tweak the system to its needs.
 
-_Note : temp files are volontary kept for debugging purpose. Run 'gulp clean' to get rid of them_
+#### files at root level
+You don't really need to dig into this unless you need to. (who wanted to disable the linting?)
+
+- `.eslintrc` : The eslint rules applied. I'm a bit more 'flexible' that the recommendations... (for good reasons!) 
+- `.gitignore` : All personnal files, or files that can be generated are not saved in git. Things like AI icon sources are ignored.
+- `gulpfile.js` : The build-starter. run gulp for default building sequence. Check options below.
+- `package.json` : describes all the packages needed for this builder. They install with `npm install`.
+
+#### folders at root level
+- `_docs` : Further info + the builder reference. They are a few naming rules to follow, go there to read them. 
+- `_gulp` : contains the builder `.js` files & config `.json`.
+- `_gulp/_config.json` : contains all the parameter to adjust all building sequences.
+- `_gulp/_starter.js` : contains the first task which define the building sequence.
+- `src` : contains the demo website & tests files. Remove them whenever and place your website source files there.
+
+after running `gulp` you will see 
+- `_temp` : contains some debugging files (ex: intermediary css) and some other file listing, used as reference. _Run 'gulp clean' to get rid of them_
+- `www` : contains the website which should be serve to the internet. Typically, upload it to a ftp.  
+- `node_modules` : the npm packages needed to run the builder. There are a hello lot of them, and you should not need to dig into this anyway. 
+
+
+### in the `src` folder
+
+#### _assets
+All basic elements common to the project, an
+
+- `files` : any files common to the whole website. If anymore precise, the file should be placed in a 'files' subfolder from the component / page directory. 
+- `fonts` : any fonts common to the whole website. If a font is only used in a specific component / page, it should be place together with it.
+- `icons` : contains icons common the whole website. These icons like UI or logo may typically used by different components.
+- `images` : contains the images common to the whole website. For instance, the website background. other image should be placed in page specific folders
+- `scripts` : contains scripts common to the whole website. For instance, script adding test features or UI dynamics on html tag elements. 
+- `styles` : contains the bootstrap set of rules, + the general project rules. 
+- `app.scss` : the root style file, which should include all other partials used. This method centralise the dependencies, and at the end is the easiest to maintain 
+
+#### _components
+Built-in elements which can be reused in many parts of the projects. Typicals are header, footer, navbars ... but also includes photo gallery for instance. 
+They include html partials (_.html), scripts, icons, style... anything to build a easy to include element in a page.
+This folder will not exist once the website is generated.
+
+#### _vendors
+contain any exterior code/packages/library which should be left untouched.
+
+#### pages
+The website itself. Each page consist in a folder, containing all the specific code to this page: style, scripts, images, and other 'subpages'.
+Nothing forces you to store your pages in this folder, but it helps to keep specific source files aside.
 
 ## Features completed
 
@@ -87,3 +142,5 @@ It mostly depends on personal needs and spare time !
 - `assets` folder should be emptied as `_components` are created: most common things should be thought as components.
 	Eventually, the assets are kept to minimal, as specific assets are better stored in the related folder, together with html, script and style. 
 - more comprehensive documentation
+- should regroup any md file, and automatically generate a page with a 'reading list' creation.
+	(--> a big file needs no click, hence no interruption, hence more uninterrompted focused reading... more efficient ! )
