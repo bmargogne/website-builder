@@ -1,7 +1,8 @@
+.vscode/
+_docs/src
+_svg/
+_temp/
 node_modules/
 www/
-.vscode/
-_temp/
-_svg/
-_docs/src
 **/*.ai
+**/*.psd
