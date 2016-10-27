@@ -3,4 +3,5 @@ www/
 .vscode/
 _temp/
 _svg/
+_docs/src
 **/*.ai
