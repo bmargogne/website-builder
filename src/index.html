@@ -1,29 +1,36 @@
 @@include('_components/header/_header-blank.html')
-<section class='section start-section'>	 
-
+<section class='start-section'>	 
+	<aside class='start-aside'>
+		Text appearing on rollover.
+	</aside>
 	<article class='start-main'>
-		<header><h1>Website Builder - welcome pagev0.2.5</h1></header>
+		<header>
+			<svg class='start-mainicon' title="Main Icon" role="img">
+				<use xlink:href="/_assets/images/s.svg#ic_menu"></use>
+			</svg>
+			<h1>Website Builder</h1>
+			<h2>welcome page</h2>
+			<p>0.2.5</p>
+		</header>
+		
 		<p>Welcome to the <em>website builder</em> project.</p>
 		<p>Have fun playing building small production or preproducation websites</p>
 
 		<nav>
 			<ul class='start-menu'>
 				<li class='start-menu-item1'>Demo website</li>
-				<li>Test 1</li> 
-				<li>Test 2</li> 
+				<li>Test 1 - Bootstrap and Mixin</li> 
+				<li>Test 2 - Jquery test elements</li> 
 				<li>Test 3</li>
 				<li>Test 4</li>
-			</ul> 
+			</ul>
+			clicking a test button reveals additional infos
+			by opening the aside panel
 		</nav>
 	</article> 
 
-	<ul class='bg'>
-		<li>bg1</li>
-		<li>bg2</li>
-		<li>bg3</li>
-		<li>bg4</li>
-		<li>bg5</li>		
-	</ul>
+
+
 
 </section>
 @@include('_components/footer/_footer-blank.html')

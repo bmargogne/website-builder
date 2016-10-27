@@ -1,0 +1,28 @@
+@mixin circleBox( $radius ){
+	width: $radius;
+	height: $radius;
+	border-radius: $radius;
+	text-align:center;
+	line-height: $radius;
+}
+
+// 0 parameters: all radius with default size
+// 1 parameter : all radius with given size
+// 2 parameters : topleft/bottomrigh tradius + bottomleft/topright radius.
+// 4 parameters : usual orders
+@mixin roundedBox( $topleft: $stdu-s, $topright: $topleft, $bottomright :$topleft, $bottomleft: $topright) {	
+	border-radius: $topleft, $topright, $bottomright, $bottomleft;
+}
+// This names define standbard bo
+@mixin roundedBoxL( $bottomleft: $stdu-s, $topleft: $bottomleft, $topright: 0, $bottomright: 0) {	
+	border-radius: $topleft, $topright, $bottomright, $bottomleft;
+}
+@mixin roundedBoxT( $topleft: $stdu-s, $topright: $topleft, $bottomright:0, $bottomleft:0) {	
+	border-radius: $topleft, $topright, $bottomright, $bottomleft;
+}
+@mixin roundedBoxR( $topright: $stdu-s, $bottomright: $topright, $bottomleft: 0, $topleft: 0) {	
+	border-radius: $topleft, $topright, $bottomright, $bottomleft;
+}
+@mixin roundedBoxB( $topleft: $stdu-s, $topright: $topleft, $bottomright :$topright, $bottomleft: $topleft  ){	
+	border-radius: $topleft, $topright, $bottomright, $bottomleft;
+}

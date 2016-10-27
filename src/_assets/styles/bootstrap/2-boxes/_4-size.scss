@@ -1,0 +1,17 @@
+// 0 parameter : square box of standard size 
+@mixin set-box-size(	$width: $stdu-l, $height: $width,
+						$forcemin: false, $forcemax: false) {
+	
+	width: $width;
+	height: $height;
+
+	@if ($forcemin) {
+		min-width: $width;
+		min-height: $height;
+	}	
+
+	@if ($forcemax) {
+		max-width: $width;
+		max-height: $height;	
+	}	
+}

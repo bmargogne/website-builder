@@ -1,8 +1,16 @@
-@mixin boxShadow(	$distance: $d-u * 2,
-					$blur: $d-u,
+@mixin box-shadow(	$distance: $stdu-s,
+					$blur: $stdu-s,
 					$color: rgba($neutral, 0.5),
-					$spread: $d-u
+					$spread: $stdu-ss
 				) {
-
 	box-shadow: $distance $distance $blur $spread $color;
-} 
+}
+
+@mixin bg-color( $color: $neutral-ll ){
+	background-color : $color;
+}
+
+@mixin lateral-border($border-size: 1px, $color: black) {
+	border: solid $color;
+	border-width: 0px $border-size; 
+}

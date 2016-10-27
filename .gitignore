@@ -2,4 +2,5 @@ node_modules/
 www/
 .vscode/
 _temp/
+_svg/
 **/*.ai

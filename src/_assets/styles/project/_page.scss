@@ -1,0 +1,61 @@
+.std-page-row {
+	@extend .std-row;
+	background-color:$neutral-lll;
+	margin-left: $offset-u;
+	margin-right: $offset-u;
+
+	&:nth-child(2n) {
+		background-color:$neutral-ll;
+	}
+	&:last-of-type {
+		border-bottom:1px solid black; 
+	}
+}
+
+.std-page-list {
+	@extend .std-list;
+}
+
+.std-page-welcome {
+	@include responsive3(min-height, 300px);
+	text-align:center;
+	position:relative;
+
+	& > .center-block {
+		margin:0;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}
+}
+
+.std-page-title {
+	@extend .std-title;
+}
+
+.img-header {
+	@include circularImage( 150px, 'default.jpg');
+}
+
+.section {	
+	max-width: $max-screen;
+	margin:auto;
+}
+
+
+.std-row {
+	margin: 0 auto;
+	height:100%;
+
+	& > .left {
+		// @extend .group-left;
+	}
+
+	& > .right {
+		// @extend .group-left;
+	}
+}
+
+
+

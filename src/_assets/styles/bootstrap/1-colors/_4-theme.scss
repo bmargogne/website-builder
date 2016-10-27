@@ -1,0 +1,104 @@
+// define mixin for colors themes and prepare any intersting color association.
+
+
+// The classic Color + Background with variants
+@mixin set-theme($color: $primary, $background: $primary-ll) {
+	color: $color;
+	fill: $color;
+	background-color: $background;
+}
+@mixin set-themeN-inv 	($color: $neutral-ll, 	$background: $neutral) { 		@include set-theme($color, $background); }
+@mixin set-themeN 		($color: $neutral, 		$background: $neutral-ll) { 	@include set-theme($color, $background); }
+@mixin set-themeN-dark 	($color: $neutral, 		$background: $neutral-dd) { 	@include set-theme($color, $background); }
+
+@mixin set-themeP-inv 	($color: $primary-ll, 	$background: $primary) { 		@include set-theme($color, $background); }
+@mixin set-themeP 		($color: $primary, 		$background: $primary-ll) { 	@include set-theme($color, $background); }
+@mixin set-themeP-dark 	($color: $primary, 		$background: $primary-dd) { 	@include set-theme($color, $background); }
+
+@mixin set-themeS-inv	($color: $secondary-ll, $background: $secondary-ll) { 	@include set-theme($color, $background); }
+@mixin set-themeS 		($color: $secondary, 	$background: $secondary-ll) { 	@include set-theme($color, $background); }
+@mixin set-themeS-dark	($color: $secondary, 	$background: $secondary-dd) { 	@include set-theme($color, $background); }
+
+@mixin set-themeNP 		($color: $primary, 		$background: $neutral-ll) { 	@include set-theme($color, $background); }
+@mixin set-themeNS 		($color: $secondary, 	$background: $neutral-ll) { 	@include set-theme($color, $background); }
+@mixin set-themePS 		($color: $secondary, 	$background: $primary-l) { 		@include set-theme($color, $background); }
+@mixin set-themeSP 		($color: $primary, 		$background: $secondary-ll) { 	@include set-theme($color, $background); }
+
+// more combination can be done, e.g. with -light suffix or using shades
+
+// Same thing, but with hover / active / visited pseudo selectors 
+@mixin set-dynamic-theme(	$color: $primary, $background: $primary-ll,
+						$color-hover: $primary-H, $background-hover: $primary-lll,
+						$color-active: $primary-A, $background-active: $primary-l,
+						$color-visited: $color, $background-visited: $background) {
+	@include set-theme;
+
+	&:hover {
+		color: $color-hover;
+		fill: $color-hover;
+		background-color: $background-hover;
+	}
+
+	&:active {
+		color: $color-active;
+		fill: $color-active;
+		background-color: $background-active;
+	}
+
+	&:visited {
+		color: $color-visited;
+		fill: $color-visited;
+		background-color: $background-visited;
+	}	
+}
+
+///// NEUTRAL COLORS DYNAMIC THEMES
+@mixin set-dynamic-themeN(	$color: $neutral, $background: $neutral-ll,
+							$color-hover: $neutral-H, $background-hover: $neutral-lll,
+							$color-active: $neutral-A, $background-active: $neutral-l,
+							$color-visited: $color, $background-visited: $background)  {
+
+	@include set-dynamic-theme($color, $background, $color-hover, $background-hover, $color-active, $background-active, $color-visited, $background-visited);
+}
+@mixin set-dynamic-themeN-inv(	$color: $neutral-ll, $background: $neutral,
+								$color-hover: $neutral-H, $background-hover: $neutral-l,
+								$color-active: $neutral-A, $background-active: $neutral,
+								$color-visited: $color, $background-visited: $background)  {
+	@include set-dynamic-theme($color, $background, $color-hover, $background-hover, $color-active, $background-active, $color-visited, $background-visited);
+}
+@mixin set-dynamic-themeN-dark(	$color: $neutral, $background: $neutral-dd,
+								$color-hover: $neutral-H, $background-hover: $neutral-d,
+								$color-active: $neutral-H, $background-active: $neutral-d,
+								$color-visited: $color, $background-visited: $background)  {
+	@include set-dynamic-theme($color, $background, $color-hover, $background-hover, $color-active, $background-active, $color-visited, $background-visited);
+}
+
+
+/////// PRIMARY COLORS DYNAMIC THEMES
+@mixin set-dynamic-themeP(	$color: $primary, $background: $primary-ll,
+							$color-hover: $primary-H, $background-hover: $primary-lll,
+							$color-active: $primary-H, $background-active: $primary-l,
+							$color-visited: $color, $background-visited: $background)  {
+	@include set-dynamic-theme($color, $background, $color-hover, $background-hover, $color-active, $background-active, $color-visited, $background-visited);
+}
+@mixin set-dynamic-themeP-inv(	$color: $primary-ll, $background: $primary,
+								$color-hover: $primary-H, $background-hover: $primary-lll,
+								$color-active: $primary-H, $background-active: $primary-l,
+								$color-visited: $primary, $background-visited: $primary-ll)  {
+	@include set-dynamic-theme($color, $background, $color-hover, $background-hover, $color-active, $background-active, $color-visited, $background-visited);
+}
+@mixin set-dynamic-themeP-dark(	$color: $primary, $background: $primary-ll,
+						$color-hover: $primary-H, $background-hover: $primary-lll,
+						$color-active: $primary-H, $background-active: $primary-l,
+						$color-visited: $primary, $background-visited: $primary-ll)  {
+	@include set-theme($color, $background);
+}
+
+//////// MIXIN COLORS DYNAMIC THEMES
+@mixin set-dynamic-themeNP(	$color: $primary, $background: $neutral-ll,
+							$color-hover: $primary-H, $background-hover: $primary-l,
+							$color-active: $neutral-H, $background-active: $primary-ll,
+							$color-visited: $color, $background-visited: $background)  {
+	@include set-dynamic-theme($color, $background, $color-hover, $background-hover, $color-active, $background-active, $color-visited, $background-visited);
+}
+

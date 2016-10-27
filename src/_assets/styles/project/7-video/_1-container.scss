@@ -1,5 +1,0 @@
-@mixin setVideoBox($video-width: $width-u, $ratio: 16/10) {
-	
-	width: $video-width;
-	height: $video-width / $ratio;
-}

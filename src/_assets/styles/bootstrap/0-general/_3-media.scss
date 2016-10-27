@@ -1,0 +1,22 @@
+// general responsive mixins. 
+// They should be used by other mixin, to ensure an easier integration of responsive design,
+// By default, the responsive approach implies mobile first
+
+// these define the horizontal thresholds for media queries & the default change coefficient
+$min-screen:		320px;
+$small-screen: 		768px;
+$medium-screen: 	1024px;
+$max-screen:		1600px;
+
+$responsive-coef:	1.5;
+
+@mixin responsive3(	$property,
+					$sizeS,
+					$sizeM: $sizeS * (1 + $responsive-coef),
+					$sizeL: $sizeM * (1 + $responsive-coef) ) {
+
+	#{$property}: $sizeS;
+	@media (min-width: $small-screen) 	{ #{$property}: $sizeM; }
+	@media (min-width: $medium-screen)  { #{$property}: $sizeL } 
+}
+

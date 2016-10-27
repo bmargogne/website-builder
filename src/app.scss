@@ -1,17 +1,21 @@
-// Be aware of dependencies, and load in the right order !
+// Be aware of SCSS dependencies, in order to load partials in the right order !
 
-// from _assets/styles
+
+// from styles / bootstrap -> main variables and low level mixins.
+// Should be thought as a very "stable" toolkit to be reused through each project. 
 @import 'bootstrap/bootstrap';
 
-@import 'project/6-pages/1-page';
-@import 'project/6-pages/2-row';
-@import 'project/6-pages/3-components';
+// from styles / project -> more specific to this project, but also commonly reused throughout website : page, button, etc... 
+@import 'project/title';
+@import 'project/page';
+@import 'project/row';
+@import 'project/video.scss';
 
-@import 'project/7-video/1-container.scss';
-
-// from relative path
+// from relative path -> components
 @import '_components/navbar/navbar';
 @import '_components/footer/footer';
 
 
+
+// from relative path -> page specific style
 @import 'index'; 

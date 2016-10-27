@@ -1,0 +1,42 @@
+$defaultPosition: absolute;
+
+
+// corner positionning
+@mixin positionTR($top: $stdu, $right: $top, $position: $defaultPosition) {	
+	top: $top; right: $right; position: $position;
+}
+@mixin positionTL($top: $stdu, $left: $top, $position: $defaultPosition) {
+	top: $top; left: $left; position: $position;
+}
+@mixin positionBR($bottom: $stdu, $right: $bottom, $position: $defaultPosition) {
+	bottom: $bottom; right: $right; position: $position;
+}
+@mixin positionBL($bottom: $stdu, $left: $bottom, $position: $defaultPosition) {
+	bottom: $bottom; left: $left; position: $position; 
+}
+
+// side positionning
+@mixin positionT($top: $stdu, $position: $defaultPosition) {
+	top: $top; position: $position; 
+}
+@mixin positionR($right: $stdu, $position: $defaultPosition) {
+	right: $right; position: $position;
+}
+@mixin positionB($bottom: $stdu, $position: $defaultPosition) {
+	bottom: $bottom; position: $position;
+}
+@mixin positionL($left: $stdu, $position: $defaultPosition) {
+	left: $left; position: $position;
+}
+
+
+// tricky to use ?
+@mixin position(	$top: $stdu, $right: $top,
+					$bottom: $top, $left: $right,
+					$position: $defaultPosition) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}

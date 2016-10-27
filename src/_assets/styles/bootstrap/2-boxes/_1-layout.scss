@@ -1,0 +1,63 @@
+body {
+	margin: auto;
+	min-width: $min-screen;
+	max-width: $max-screen;
+	height:100%;	
+	position:relative;
+	display:flex;
+}
+
+$default-flex-direction: row;
+$default-flex-wrap: wrap;
+$default-flex-justify: space-between;
+
+
+@mixin flexbox(	$direction: $default-flex-direction,
+				$default-flex-wrap: $default-flex-wrap,
+				$justify-content: $default-flex-justify) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap
+}
+
+//// default parameter is the direction, but can nonetheless be changed afterwards.
+@mixin flexbox-row( $wrap: $default-flex-wrap, $justify-content: $default-flex-justify, $direction: 'row') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-rowR( $wrap: $default-flex-wrap, $justify-content: $default-flex-justify, $direction: 'row-reverse') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-col( $wrap: $default-flex-wrap, 	$justify-content: $default-flex-justify, $direction: 'column') {
+	@include flexbox( 'column', $wrap, $justify-content);
+}
+@mixin flexbox-colR( $wrap: $default-flex-wrap, $justify-content: $default-flex-justify, $direction: 'column-reverse') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+
+//// default parameter is the wrap, but can nonetheless be changed afterwards.
+@mixin flexbox-wrap( $direction: $default-flex-direction, $justify-content: $default-flex-justify, $wrap: 'wrap') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-nowrap( $direction: $default-flex-direction, $justify-content: $default-flex-justify, $wrap: 'nowrap') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-wrapR( $direction: $default-flex-direction, $justify-content: $default-flex-justify, $wrap: 'wrap-reverse') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+
+//// default parameter is the wrap, but can nonetheless be changed afterwards.
+@mixin flexbox-spaceA( $direction: $default-flex-direction, $wrap: $default-flex-wrap, $justify-content: 'space-around') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-spaceB( $direction: $default-flex-direction, $wrap: $default-flex-, $justify-content: 'space-between') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-center( $direction: $default-flex-direction, $wrap: $default-flex-, $justify-content: 'center') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-start( $direction: $default-flex-direction, $wrap: $default-flex-, $justify-content: 'flex-start') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}
+@mixin flexbox-end( $direction: $default-flex-direction, $wrap: $default-flex-, $justify-content: 'flex-end') {
+	@include flexbox( $direction, $wrap, $justify-content);
+}

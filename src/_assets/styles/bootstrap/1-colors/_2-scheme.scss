@@ -1,30 +1,34 @@
 // Scheme variables helps restraining to some colors from the swatch throughout the building of the website
+// this comes very handy when it comes to test color schemes
 // use mixins to generate elements for you, or write each variables manually.
 
 // SHADE SUFFIX (ex: $primary-dd) : ddd, dd, d, l, ll, lll from very dark to very light
 // with 7 levels of shades, it allows to cover most general needs.
 
-// STATE SUFFIX (ex: primary-H) : H for highlight, D for disable, S for selected
+// STATE SUFFIX (ex: primary-H) : H for Hover, A for Active, D for disable
 // these special states represents particular situations in UX design (ex: clicked), and may use a different tone. 
 
 $neutral: $coldgrey;
 $primary: $technoblue;
 $secondary: $Pink500;
 
+$danger:red;
+$danger-bg: #fff2d6;
+
 // building shades & staes
 	// config default for shades
-	$ddd:50;
-	$dd:30;
-	$d:10;
-	$l:10;
-	$ll:30;
-	$lll:50;
+	$ddd: 50;
+	$dd: 30;
+	$d: 10;
+	$l: 10;
+	$ll: 30;
+	$lll: 50;
 	// config default for states
-	$disable-strength:0.5;
-	$selected:#AAAAAA;
-	$select-strength:0.5;
-	$highlighted:#FFFFFF;
-	$highlight-strength:0.5;
+	$hover:#AAAAAA;
+	$active:#FFFFFF;
+	$hover-strength: 0.5;
+	$active-strength: 0.5;
+	$disable-strength: 0.5;
 
 // done manually through tweaking or proper color code uses
 $primary-lll: 	lighten($primary, 50);
@@ -33,9 +37,9 @@ $primary-l: 	lighten($primary, 10);
 $primary-d: 	darken($primary, 15);
 $primary-dd: 	darken($primary, 25);
 $primary-ddd: 	darken($primary, 30);
+$primary-H: 	mix($primary, $hover, $hover-strength);
+$primary-A: 	mix($primary, $active, $active-strength);
 $primary-D: 	fade-out($primary, $disable-strength);
-$primary-S: 	mix($primary, $selected, $select-strength);
-$primary-H: 	mix($primary, $highlighted, $highlight-strength);
 
 $secondary-lll: $Pink100;
 $secondary-ll: 	$Pink300;
@@ -43,11 +47,9 @@ $secondary-l: 	$Pink400;
 $secondary-d: 	$Pink600;
 $secondary-dd: 	$Pink700;
 $secondary-ddd: $Pink900;
+$secondary-H: 	mix($secondary, $hover, $hover-strength);
+$secondary-A: 	mix($secondary, $active, $active-strength);
 $secondary-D: 	fade-out($secondary, $disable-strength);
-$secondary-S: 	mix($secondary, $selected, $select-strength);
-$secondary-H: 	mix($secondary, $highlighted, $highlight-strength);
-
-
 
 // using default values
 $neutral-lll: 	lighten($neutral, $lll);
@@ -56,12 +58,13 @@ $neutral-l: 	lighten($neutral, $l);
 $neutral-d: 	darken($neutral, $d);
 $neutral-dd: 	darken($neutral, $dd);
 $neutral-ddd: 	darken($neutral, $ddd);
+$neutral-H: 	mix($neutral, $hover, $hover-strength);
+$neutral-A: 	mix($neutral, $active, $active-strength);
 $neutral-D: 	fade-out($neutral, $disable-strength);
-$neutral-S: 	mix($neutral, $selected, $select-strength);
-$neutral-H: 	mix($neutral, $highlighted, $highlight-strength);
 
 
-
+// Generating color properties through mixin... it doesn't seem useful at the moment?
+// In sass, it seems you cannot use mixin to affect variables.
 
 // @mixin generate-shades( $color,
 // 						$ddd: 50, $dd: 30, $d: 10,  
@@ -86,18 +89,18 @@ $neutral-H: 	mix($neutral, $highlighted, $highlight-strength);
 // 	.#{$color}-bg-lll {	background-color: lighten($color, $lll); }
 // }
 
-// @mixin generate-states( $color, $selected: #AAAAAA, $highlighted: #FFFFFF,
-// 						$fade-coef: 0.5, $select-strength: 0.5, $higlight-strength: 0.5) {
+// @mixin generate-states( $color, $hover: #AAAAAA, $active: #FFFFFF,
+// 						$fade-coef: 0.5, $hover-strength: 0.5, $higlight-strength: 0.5) {
 
 // 	// color rules for text & svg icons
 // 	.#{$color}-D { 		color: fade-out($primary, $fade-coef);}
-// 	.#{$color}-S { 		color: mix($color, $selected, $select-strength); }
-// 	.#{$color}-H { 		color: mix($color, $highlighted, $select-strength); }
+// 	.#{$color}-S { 		color: mix($color, $hover, $hover-strength); }
+// 	.#{$color}-H { 		color: mix($color, $active, $hover-strength); }
 
 // 	// color rules for text & svg icons
 // 	.#{$color}-bg-D { 		background-color: fade-out($primary, $fade-coef);}
-// 	.#{$color}-bg-S { 		background-color: mix($color, $selected, $select-strength); }
-// 	.#{$color}-bg-H { 		background-color: mix($color, $highlighted, $select-strength); }
+// 	.#{$color}-bg-S { 		background-color: mix($color, $hover, $hover-strength); }
+// 	.#{$color}-bg-H { 		background-color: mix($color, $active, $hover-strength); }
 // }
 
 
