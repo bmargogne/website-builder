@@ -1,22 +1,7 @@
-# Additional Documentation
+# Npm packages Documentation
 =========================
 
-## Example website
-
-### Overview
-
-This example website is here to demonstrate the way to use this websiteBuilder. It can be used as a base to start any project.
-
-
-### Rights
-
-Feel free to inspire yourself from this example website.
-Please inform of any close copy used.
-Please ask permission for exact copy.
-
-
-
-## Npm packages Documentation
+This can be used as a quick reference if needed
 
 ### Gulp Specific
 - gulp-autoprefixer : https://www.npmjs.com/package/gulp-autoprefixer
