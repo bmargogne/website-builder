@@ -12,9 +12,6 @@ $neutral: $coldgrey;
 $primary: $technoblue;
 $secondary: $Pink500;
 
-$danger:red;
-$danger-bg: #fff2d6;
-
 // building shades & staes
 	// config default for shades
 	$ddd: 50;
@@ -61,6 +58,14 @@ $neutral-ddd: 	darken($neutral, $ddd);
 $neutral-H: 	mix($neutral, $hover, $hover-strength);
 $neutral-A: 	mix($neutral, $active, $active-strength);
 $neutral-D: 	fade-out($neutral, $disable-strength);
+
+
+$danger:red;
+$danger-bg: #fff2d6;
+
+body {
+	background: $neutral-ll; 
+}
 
 
 // Generating color properties through mixin... it doesn't seem useful at the moment?

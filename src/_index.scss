@@ -4,13 +4,13 @@ body{
 
 .start-section {
 	@include bg-color($neutral-l);	
-	@include set-box-size(100%, 100%);
+	@include box-size(100%, 100%);
 	position:relative;
 }
 
 $start-boxSize:90%;
 .start-main {
-	@include set-box-size($start-boxSize, $start-boxSize);
+	@include box-size($start-boxSize, $start-boxSize);
 	@include box-shadow;
 	margin:auto; 
 	@include test-hover;
@@ -19,11 +19,10 @@ $start-boxSize:90%;
 .start-aside {
 	position:absolute;
 	@include bg-color(white);
-	@include set-box-size(300px, 100%);
+	@include box-size(300px, 100%);
 	@include positionR(0);
-	
-
 }
+
 .bg {
 
 	& > li {

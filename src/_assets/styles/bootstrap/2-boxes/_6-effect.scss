@@ -1,16 +1,51 @@
 @mixin box-shadow(	$distance: $stdu-s,
 					$blur: $stdu-s,
 					$color: rgba($neutral, 0.5),
-					$spread: $stdu-ss
+					$spread: $stdu-ss,
+					$ycoord: $distance
 				) {
-	box-shadow: $distance $distance $blur $spread $color;
+	box-shadow: $distance $ycoord $blur $spread $color;
 }
 
 @mixin bg-color( $color: $neutral-ll ){
 	background-color : $color;
 }
 
-@mixin lateral-border($border-size: 1px, $color: black) {
-	border: solid $color;
+@mixin borderH($border-size: 1px, $color: black, $border-style: solid) {
+	border: $border-style $color;
 	border-width: 0px $border-size; 
 }
+
+@mixin borderV($border-size: 1px, $color: black, $border-style: solid) {
+	border: $border-style $color;
+	border-width: $border-size 0px; 
+}
+
+@mixin test() {
+	border: $stdu-ss solid $danger;
+	background: $danger-bg;
+	color:$danger;
+}
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+/*
+Usage
+
+<button class="mobile-navigation-trigger">
+  <b class="visually-hidden">Open the navigation</b>
+  <img src="img/mobile-navigation-icon.svg">
+</button>
+
+.visually-hidden {
+	@extend %visuallyhidden;
+}
+*/

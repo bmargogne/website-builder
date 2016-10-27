@@ -20,3 +20,17 @@ $defaut-colorB: rgba($primary-dd, 0);
 		background: $transparentgradient;
 	} 
 } 
+
+@mixin test-hover() {
+	&:hover {
+		border: $stdu-ss solid $danger;
+		background: $danger-bg;
+		color:$danger;
+	}
+}
+
+@mixin test-border($size: 2px, $color: $primary, $style: solid) {
+	&:hover {
+		border: $size $style $color;	
+	}
+}

@@ -1,11 +1,65 @@
-@mixin font($font, $style: normal, $weight: normal) {
-	font-family: $font, Verdana, sans-serif;
-	font-style: $style;
+// all fonts used in your project. Font files can be placed anywhere in Source filetree
+$myfonts : opensans, opensans-light, nevo-bold, nevo, SquareBox, LearningCurve;
+$default-bold: 650;
+
+
+@mixin txt($weight: normal, $decoration: none, $style: normal, $case-style: null){	
 	font-weight: $weight; 
+	text-decoration: $decoration;
+	font-style: $style;
+	@if ($case-style) { 
+		text-transform: $case-style;
+	}
+}
+@mixin txtB( $decoration: none, $style: normal, $case-style: null, $weight: $default-bold) {
+	@include txt($weight, $decoration, $style, $case-style);
+}
+@mixin txtU( $weight: $default-bold, $style: normal, $case-style: null, $decoration: underline) {
+	@include txt($weight, $decoration, $style, $case-style);
+}
+@mixin txtI( $weight: $default-bold, $decoration: none, $case-style: null, $style: italic) {
+	@include txt($weight, $decoration, $style, $case-style);
+}
+@mixin txtBU( $style: normal, $case-style: null, $weight: $default-bold, $decoration: underline) {
+	@include txt($weight, $decoration, $style, $case-style);
+}
+@mixin txt-upper( $weight: $default-bold, $decoration: none, $style: normal, $case-style: uppercase ) {
+	@include txt($weight, $decoration, $style, $case-style);
+}
+@mixin txt-lower( $weight: $default-bold, $decoration: none, $style: normal, $case-style: lowercase) {
+	@include txt($weight, $decoration, $style, $case-style);
+}
+@mixin txt-cap( $weight: $default-bold, $decoration: none, $style: normal, $case-style: capitalize) {
+	@include txt($weight, $decoration, $style, $case-style);
 }
 
+
+
+
+@mixin font($font, $weight: normal, $decoration: none, $style: normal) {
+	font-family: $font, opensans, Verdana, sans-serif;
+	font-style: $style;
+	font-weight: $weight; 
+	text-decoration: $decoration;
+}
+
+@mixin fontU($font, $weight: normal, $style: normal, $decoration: underline) {
+	@include font($font, $weight, $decoration, $style)
+}
+@mixin fontB($font, $style: normal, $decoration: normal, $weight: $default-bold) {
+	@include font($font, $style, $weight, $decoration)
+}
+@mixin fontI($font, $decoration: normal, $weight: normal, $style: italic) {
+	@include font($font, $style, $weight, $decoration)
+}
+
+body {
+	@include font(opensans);
+}
+
+
+
 // define used fonts
-$myfonts : opensans, opensans-light, nevo-bold, nevo, SquareBox, LearningCurve;
 @each $myfont in $myfonts {
 	@font-face {
 		// ../fonts = _assets/fonts, relative to //_assets/style
@@ -18,4 +72,3 @@ $myfonts : opensans, opensans-light, nevo-bold, nevo, SquareBox, LearningCurve;
 				url('fonts/#{$myfont}.svg') format('svg');;
 	}
 }
-

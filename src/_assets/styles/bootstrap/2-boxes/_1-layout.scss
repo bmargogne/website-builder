@@ -1,8 +1,4 @@
 body {
-	margin: auto;
-	min-width: $min-screen;
-	max-width: $max-screen;
-	height:100%;	
 	position:relative;
 	display:flex;
 }
@@ -61,3 +57,21 @@ $default-flex-justify: space-between;
 @mixin flexbox-end( $direction: $default-flex-direction, $wrap: $default-flex-, $justify-content: 'flex-end') {
 	@include flexbox( $direction, $wrap, $justify-content);
 }
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+/*
+Usage :
+
+.container-with-floated-children {
+	@extend %clearfix;
+}
+*/

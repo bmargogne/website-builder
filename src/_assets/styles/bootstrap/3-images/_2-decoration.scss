@@ -1,9 +1,16 @@
 $defaut-circle-size: 150px;
 $default-image: 'default.jpg';
 
-@mixin circularImage ($size: $defaut-circle-size, $imageName: $default-image) {
-	width: 300px;
-	height: 300px;
-	border-radius: 150px;
+@mixin circular-image ($size: $defaut-circle-size, $imageName: $default-image) {
+	width: $size;
+	height: $size;
+	border-radius: $size;
 	background: url(`_assets/images/#{$imageName}`) no-repeat;
+}
+
+// compatibility
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
 }

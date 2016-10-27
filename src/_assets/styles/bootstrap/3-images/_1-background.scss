@@ -2,7 +2,7 @@ $test:1;
 
 
 
-@mixin fullBackground($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
+@mixin full-background($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
 
 	$rootUrl:'/_assets/images/#{$imageName}';
 	background: url(#{$rootUrl}.jpg) $fixed no-repeat $origin-v $origin-h  / cover;
@@ -11,7 +11,7 @@ $test:1;
 
 
 
-@mixin fullResponsiveBackground($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
+@mixin full-responsive-background($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
 
 	$rootUrl:'/_assets/images/#{$imageName}';
 	$small: 's';
@@ -25,7 +25,7 @@ $test:1;
 
 
 
-@mixin fullOrientedBackground($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
+@mixin full-oriented-background($imageName,  $fixed: scroll, $origin-v: center, $origin-h: center) {
 
 	$rootUrl:'/_assets/images/#{$imageName}';
 	$small: 's';

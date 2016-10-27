@@ -5,28 +5,6 @@ $defaultGradientDirection: 180deg;
 	color: $secondary-lll;		
 }
 
-@mixin test() {
-	border: $stdu-ss solid $danger;
-	background: $danger-bg;
-	color:$danger;
-}
-
-@mixin test-hover() {
-	&:hover {
-		border: $stdu-ss solid $danger;
-		background: $danger-bg;
-		color:$danger;
-	}
-}
-
-@mixin test-light($size: 2px, $color: $primary, $style: solid) {
-	&:hover {
-		border: $size $style $color;	
-	}
-}
-
-
-
 @mixin linear-gradient($direction, $color-stops...) {
   // Direction has been omitted and happens to be a color-stop
   @if is-direction($direction) == false {

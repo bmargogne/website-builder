@@ -35,7 +35,7 @@
 }
 
 .img-header {
-	@include circularImage( 150px, 'default.jpg');
+	@include circular-image( 150px, 'default.jpg');
 }
 
 .section {	

@@ -1,6 +1,9 @@
+
+body {
+	margin: auto;
+}
+
 $defaultPosition: absolute;
-
-
 // corner positionning
 @mixin positionTR($top: $stdu, $right: $top, $position: $defaultPosition) {	
 	top: $top; right: $right; position: $position;
