@@ -1,0 +1,68 @@
+$qqquick: 0.3s;
+$qquick: 0.7s;
+$quick: 1s;
+$slow: 1.5s;
+$sslow: 3s;
+$ssslow: 6s;
+
+$default-animation-duration: $quick;
+$default-transition-duration: $quick;
+$default-timing: ease-in-out;
+$default-iteration-count: infinite;
+$default-delay: initial;
+
+
+@mixin transition-background( 	$duration: $default-animation-duration,
+								$timing: $default-timing,
+								$delay: $default-delay,
+								$prop: 'background-color') {
+	transition: $prop $duration $timing $delay;
+}
+
+@mixin transition-theme(	$duration: $default-animation-duration,
+							$timing: $default-timing,
+							$delay: $default-delay,
+							$prop: 'background-color, color') {
+	transition: $prop $duration $timing $delay;
+}
+
+@mixin transition-spacing(	$duration: $default-animation-duration,
+							$timing: $default-timing,
+							$delay: $default-delay,
+							$prop: 'margin, padding') {
+	transition: $prop $duration $timing $delay;
+}
+@mixin transition-size(		$duration: $default-animation-duration,
+							$timing: $default-timing,
+							$delay: $default-delay,
+							$prop: 'width, height') {
+	transition: $prop $duration $timing $delay;
+}
+
+
+@mixin transition-position( $duration: $default-animation-duration,
+							$timing: $default-timing,
+							// $delay: $default-delay,
+							$prop: right) {
+							// $prop: 'position, top, left, right, bottom') {
+	transition: $prop $duration $timing;
+}
+
+
+// animation should be used together with a @keyframe
+@mixin animation(	$name, $duration: $default-animation-time,
+					$iteration: $default-iteration-count, $timing: $default-timing ){
+
+	animation-name: $name; /* nom de l'animation */
+	animation-duration: $duration; /* temps de l'animation (4s) */
+	animation-iteration-count: $iteration; /* nombre de boucles (infinie) */
+	animation-timing-function: $timing; /* accelération de l'animation (constant) */
+}
+
+/* ex usage for an animation called "test1"
+@keyframes test1 {
+	0% {background:rgba(255,140,0,0.4) url(/images/main.png) no-repeat 5px 10px;}
+	50% {background:rgba(255,140,0,1) url(/images/main.png) no-repeat 50px 10px;}
+	100% {background:rgba(255,140,0,0.4) url(/images/main.png) no-repeat 5px 10px;}
+}
+*/

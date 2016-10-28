@@ -2,56 +2,124 @@ body{
 	@include bg-color;
 }
 
+.start-icon {
+	@include positionTR(15px);
+	fill: $primary;
+	@include box-size(36px);
+	@include z-front;
+}
+
 .start-section {
 	@include bg-color($neutral-l);	
 	@include box-size(100%, 100%);
 	position:relative;
 }
 
-$start-boxSize:90%;
+$start-boxSize:75%;
+$start-aside-width: 300px;
+$start-aside-visible: 40px;
 .start-main {
+
 	@include box-size($start-boxSize, $start-boxSize);
 	@include box-shadow;
+	@include bg-color($neutral-ll);
+	@include rounded-boxTL;
+	
 	margin:auto; 
-	@include test-hover;
+	margin-top:30px;
+	margin-right: $start-aside-width / 2;
+	@include padding;
+
+	& h1 {
+		@include titleN;
+	}
+
+	& em {
+		@include txtB;
+	}
+
+	& p {
+		@include marginB;
+	}
 }
 
+.hidden {
+	display:hidden;
+}
+.start-menu {
+
+	& > li {		
+		@include dynamic-themeN;
+		@include rounded-box($stdu-ss * 10);	
+
+		@include spacing($stdu-s);
+		&:first-child {
+			@include dynamic-themeNP;
+		}
+	}
+}
+
+$start-aside-hidden: $start-aside-visible - $start-aside-width;
 .start-aside {
 	position:absolute;
 	@include bg-color(white);
-	@include box-size(300px, 100%);
-	@include positionR(0);
+	@include box-size($start-aside-width, 100%);
+	@include positionR($start-aside-hidden);
+	@include padding;
+
+	@include transition-position;
+
+	& svg {
+		@include box-size(32px);
+		@include colorPD;
+	}
+	& article {
+		display:none;
+	}
+	&:hover {
+		@include positionR(0);
+	}
+	& img {
+		@include marginB;
+	}
+	& header {
+		@include titleN;
+		@include marginB;
+	}
+}
+
+
+.start-version {
+	@include sssmallN;
+	@include marginB;
 }
 
 .bg {
 
 	& > li {
+		@include themeN;
 	}
-
-	li:nth-child(1) {		
-
-	}
-	li:nth-child(2) {
-
-	}
-	li:nth-child(3) {
-
-	}
-	li:nth-child(4) {
-
-	}
-	li:nth-child(5) {
-
-	}
+	li:nth-child(1) {}
+	li:nth-child(2) {}
+	li:nth-child(3) {}
+	li:nth-child(4) {}
+	li:nth-child(5) {}
+}
+.box {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: #0000FF;
+  -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
 
-
-.start-menu {
-
-	& > li {
-
-		&:first-child {
-
-		}
-	}
+.box:hover {
+  background-color: #FFCCCC;
+  width: 200px;
+  height: 200px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }

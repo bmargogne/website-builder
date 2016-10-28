@@ -1,36 +1,58 @@
 @@include('_components/header/_header-blank.html')
-<section class='start-section'>	 
+<section class='start-section'>
+
+	<svg class='start-icon' title="Main Icon" role="img">
+		<use xlink:href="/_assets/images/s.svg#logo_L1"></use> 
+	</svg>
+
 	<aside class='start-aside'>
-		Text appearing on rollover.
+		<article>
+			<header>
+				Icon + Text appearing on rollover.
+			</header>		
+			<p>
+				<img  src='_assets/images/default.jpg'>
+				Presentation text
+			</p>
+		</article>
 	</aside>
+
+
 	<article class='start-main'>
-		<header>
+		<header> 
 			<svg class='start-mainicon' title="Main Icon" role="img">
-				<use xlink:href="/_assets/images/s.svg#ic_menu"></use>
+				<use xlink:href="/_assets/images/s.svg#logo_L2-full-v"></use>
 			</svg>
 			<h1>Website Builder</h1>
 			<h2>welcome page</h2>
-			<p>0.2.5</p>
+			<p class='start-version'>0.2.5</p>
 		</header>
-		
+
 		<p>Welcome to the <em>website builder</em> project.</p>
 		<p>Have fun playing building small production or preproducation websites</p>
 
 		<nav>
 			<ul class='start-menu'>
-				<li class='start-menu-item1'>Demo website</li>
-				<li>Test 1 - Bootstrap and Mixin</li> 
-				<li>Test 2 - Jquery test elements</li> 
-				<li>Test 3</li>
-				<li>Test 4</li>
+				<li value='demo' class='start-menu-item1'>
+					<a>Demo website</a>
+				</li>
+				<li value='test1'>
+					<a>Test 1 - Bootstrap and Mixin</a>
+				</li> 
+				<li value='test2'>
+					<a>Test 2 - Jquery test elements</a>
+				</li> 
+				<li value='test3'>
+					<a>Test 3</a>
+				</li>
+				<li value='test4'>
+					<a>Test 4</a>
+				</li>
 			</ul>
 			clicking a test button reveals additional infos
 			by opening the aside panel
 		</nav>
-	</article> 
-
-
-
+	</article>
 
 </section>
 @@include('_components/footer/_footer-blank.html')

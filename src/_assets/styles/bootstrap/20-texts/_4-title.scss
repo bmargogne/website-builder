@@ -1,0 +1,6 @@
+@mixin titleN( $size: $txt-ll, $weight: $default-bold, $color: $neutral, $decoration: none, $style: normal, $caps-style: null ) {
+
+	@include txt($weight, $decoration, $style, $caps-style);
+	@include colorN($color);
+	font-size: $size;
+}

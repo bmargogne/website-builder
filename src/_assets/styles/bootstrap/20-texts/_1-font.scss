@@ -1,7 +1,15 @@
 // all fonts used in your project. Font files can be placed anywhere in Source filetree
 $myfonts : opensans, opensans-light, nevo-bold, nevo, SquareBox, LearningCurve;
-$default-bold: 650;
+$default-bold: 700;
 
+// these define the text size
+$txt-sss: 0.6rem;
+$txt-ss: 0.75rem;
+$txt-s: 0.85rem;
+$txt: 1rem;
+$txt-l: 1.12rem;
+$txt-ll: 1.25rem;
+$txt-lll: 1.5rem;
 
 @mixin txt($weight: normal, $decoration: none, $style: normal, $case-style: null){	
 	font-weight: $weight; 
@@ -34,8 +42,6 @@ $default-bold: 650;
 }
 
 
-
-
 @mixin font($font, $weight: normal, $decoration: none, $style: normal) {
 	font-family: $font, opensans, Verdana, sans-serif;
 	font-style: $style;
@@ -54,9 +60,11 @@ $default-bold: 650;
 }
 
 body {
-	@include font(opensans);
+	@include font( opensans );
+	font-size: $txt-s;
+	@media (min-width: $small-screen) { &{ font-size: $txt; }}
+	@media (min-width: $medium-screen) { &{ font-size: $txt-l; }}
 }
-
 
 
 // define used fonts

@@ -16,7 +16,6 @@ gulp.task('styleScss', () => {
 	const SRC = `${co.src}/${co.style.srcScss}`;
 	const EXCLUDE1 = `!${co.src}/${co.exclude}/`;
 	const EXCLUDE2 = `!${co.src}/${co.vendors.src}/`;
-	const EXCLUDE3 = `!${co.src}/${co.style.partialScss}/`;
 	const DEST = `${co.temp}/${co.style.destScss}/`;
 	const STYLESHEET = co.style.scssSheet;
 	console.log(`Styles SCSS Building : [${SRC}] --> [${DEST}${STYLESHEET}], excluding [${EXCLUDE1}], and [${EXCLUDE2}]`);
@@ -26,7 +25,7 @@ gulp.task('styleScss', () => {
 
 	return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))
-		.pipe( _if( isTest,	using( {prefix:'[style/scss] preprocessing :', color:'yellow', filesize:true} )))
+		// .pipe( _if( isTest,	using( {prefix:'[style/scss] preprocessing :', color:'yellow', filesize:true} )))
 		.pipe(				sass({
 								includePaths: `${co.src}/${scssDefault}`
 							}).on('error', sass.logError))

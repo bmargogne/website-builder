@@ -1,6 +1,6 @@
 ///////////////// SPACING
 
-@mixin padding(	$top: $stdu-s, $right: $top, $bottom: $top, $left: $left) {
+@mixin padding(	$top: $stdu-s, $right: $top, $bottom: $top, $left: $right) {
 	padding: $top $right $bottom $left;
 }
 @mixin padding-reset( $top: 0, $right: 0, $bottom: 0, $left: 0) {
@@ -8,22 +8,24 @@
 }
 
 @mixin paddingH ( $left: $stdu-s, $right: $left) {
-	padding-left: $left;
-	padding-right: $right;
+	padding-left: $left; padding-right: $right;
 }
 @mixin paddingH-reset ( $left: 0, $right: 0) {
-	padding-left: $left;
-	padding-right: $right;
+	padding-left: $left; padding-right: $right;
 }
 
 @mixin paddingV ( $top: $stdu-s, $bottom: $top) {
-	padding-top: $left;
-	padding-bottom: $right;
+	padding-top: $top; padding-bottom: $bottom;
 }
 @mixin paddingV-reset ( $top: 0, $bottom: 0) {
-	padding-top: $left;
-	padding-bottom: $right;
+	padding-top: $top; padding-bottom: $bottom;
 }
+
+@mixin paddingT ( $top: $stdu-s ) { 	padding-top: $top; }
+@mixin paddingR ( $right: $stdu-s ) { 	padding-right: $right; }
+@mixin paddingB ( $bottom: $stdu-s ) { 	padding-bottom: $bottom; }
+@mixin paddingL ( $left: $stdu-s ) { 	padding-left: $left; }
+
 
 ////////////////// MARGIN
 
@@ -34,16 +36,15 @@
 	margin: $top $right $bottom $left;
 }
 
-@mixin marginH ( $left: $stdu-s, $right: $stdu-s) {
-	margin-left: $left;
-	margin-right: $right;
+@mixin marginH ( $left: $stdu-s, $right: $left) {
+	margin-left: $left; 	margin-right: $right;
 }
 @mixin marginH-reset ( $left: 0, $right: 0) {
 	margin-left: $left;
 	margin-right: $right;
 }
 
-@mixin marginV ( $top: $stdu-s, $bottom: $stdu-s) {
+@mixin marginV ( $top: $stdu-s, $bottom: $top) {
 	margin-top: $stdu-s;
 	margin-bottom: $stdu-s;
 }
@@ -52,9 +53,14 @@
 	margin-bottom: $stdu-s;
 }
 
+@mixin marginT( $top: $stdu-s) { 	margin-top: $top; }
+@mixin marginR( $right: $stdu-s) { 	margin-right: $right; }
+@mixin marginB( $bottom: $stdu-s) {	margin-bottom: $bottom; }
+@mixin marginL( $left: $stdu-s) { 	margin-left: $left; }
+
 ///////////////// BOTH
 
-@mixin spacing( $top: $stdu-s, $right: $stdu-s, $bottom: $stdu-s, $left: $stdu-s ) {
+@mixin spacing( $top: $stdu-s, $right: $top, $bottom: $top, $left: $right) {
 	@include margin( $top, $right, $bottom, $left);
 	@include padding( $top, $right, $bottom, $left);
 }
@@ -64,7 +70,7 @@
 	@include padding-reset( $top, $right, $bottom, $left);
 }
 
-@mixin spacingH( $left: $stdu-s, $right: $stdu-s ) {
+@mixin spacingH( $left: $stdu-s, $right: $left ) {
 	@include marginH( $left, $right);
 	@include paddingH( $left, $right);
 }
@@ -73,7 +79,7 @@
 	@include maddingH-reset( $left, $right );
 }
 
-@mixin spacingV( $top: $stdu-s, $bottom: $stdu-s ) {
+@mixin spacingV( $top: $stdu-s, $bottom: $top ) {
 	@include marginV( $top, $bottom );
 	@include paddingV( $top, $bottom );
 }
@@ -81,3 +87,8 @@
 	@include marginV-reset( $top, $bottom );
 	@include paddingV-reset( $top, $bottom );
 }
+
+@mixin spacingT( $top: $stdu-s ) {		@include marginT($top); 	@include paddingT($top); }
+@mixin spacingR( $right: $stdu-s ) {	@include marginR($right); 	@include paddingR($right); }
+@mixin spacingB( $bottom: $stdu-s ) {	@include marginB($bottom); 	@include paddingB($bottom); }
+@mixin spacingL( $left: $stdu-s ) {		@include marginL($left); 	@include paddingL($left); }

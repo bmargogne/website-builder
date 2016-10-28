@@ -95,16 +95,16 @@ By the way : path & names used in the documentation can be changed in the config
 - Also, in some cases two reloads seems to be needed for a proper update.
 - The test output may be confusing, as the file path display is wrong. This is necessary to keep the 'gulp-newer' check working.
 - Changing a HTML partial will not rebuild the "caller" file, unless the "newer" package is deactivated on this task.
-
+- Style Maps are incorrect.
 
 
 ### Improvments ideas
 
 #### version 0.3
-- should write gulp scripts for audio & video
 - should clean generated CSS pages of unused selectors with gulp uncss (beware of dynamically generated selectors...)
 
 #### version 0.4
+- should write gulp scripts for audio & video
 - should handle FTP deployment : automatic upload new files to FTP, delete unused files. 
 
 #### version 0.5

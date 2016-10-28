@@ -3,10 +3,20 @@ body {
 	display:flex;
 }
 
+// these defines the z-index values additional layers may be added as needed
+$z-bg : -100;
+$z-bbg : -90;
+$z-bbbg : -80;
+$z-main : 0;
+$z-mmain : 10;
+$z-mmmain : 20;
+$z-front : 100;
+$z-ffront : 110;
+$z-fffront : 120;
+
 $default-flex-direction: row;
 $default-flex-wrap: wrap;
 $default-flex-justify: space-between;
-
 
 @mixin flexbox(	$direction: $default-flex-direction,
 				$default-flex-wrap: $default-flex-wrap,
@@ -15,6 +25,29 @@ $default-flex-justify: space-between;
 	flex-direction: $direction;
 	flex-wrap: $wrap
 }
+
+@mixin zindex($zindex: $z-main1, $forceposition: false) {
+	z-index: $zindex;
+	@if $forceposition == 'absolute' {
+		position: absolute;
+	}
+	@else if $forceposition =='relative' {
+		position: relative;
+	}
+	@else if $forceposition =='fixed' {
+		position: fixed;
+	}	
+}
+@mixin z-bg(		$zindex: $z-bg, 	$forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-bbg(		$zindex: $z-bbg, 	$forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-bbbg(		$zindex: $z-bbbg,	$forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-main(		$zindex: $z-main, 	$forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-mmain(		$zindex: $z-mmain, 	$forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-mmmain(	$zindex: $z-mmmain, $forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-front(		$zindex: $z-front, 	$forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-ffront(	$zindex: $z-ffront, $forceposition: false) { @include zindex( $zindex, $forceposition); }
+@mixin z-fffront(	$zindex: $z-fffront,$forceposition: false) { @include zindex( $zindex, $forceposition); }
+
 
 //// default parameter is the direction, but can nonetheless be changed afterwards.
 @mixin flexbox-row( $wrap: $default-flex-wrap, $justify-content: $default-flex-justify, $direction: 'row') {

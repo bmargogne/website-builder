@@ -27,6 +27,15 @@
 	color:$danger;
 }
 
+@mixin reveal() {
+	visibility: visible;
+	@include test;
+
+	&:hover {
+		visibility: hidden;
+	}
+}
+
 %visuallyhidden {
   margin: -1px;
   padding: 0;

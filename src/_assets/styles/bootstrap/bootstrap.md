@@ -13,6 +13,11 @@ Well used, these bootstrap rules will eventually evolve towards something very s
 
 
 
+### improvement ideas
+
+- create a clear map of dependencies, (ex: text depends on colors,, theme depends on color AND themes, etc..)
+- create more intermediary global variable : ex: stdmargin, stdpadding, stdborderwidth ...
+
 
 
 idea for shortcuting @include & @extend...

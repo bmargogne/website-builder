@@ -1,9 +1,3 @@
-body {
-  @include font(opensans-light, normal, normal);
-  font-size: $txt-s;
-  @media (min-width: $small-screen) { &{ font-size: $txt; }}
-  @media (min-width: $medium-screen) { &{ font-size: $txt-l; }}
-}
 
 .std-title {
 	@include font(nevo-bold, normal, normal);
@@ -20,3 +14,4 @@ body {
 	font-weight: bold;
 	color:$secondary-d; 
 }
+

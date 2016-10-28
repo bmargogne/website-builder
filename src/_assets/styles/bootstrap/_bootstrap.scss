@@ -1,24 +1,28 @@
-@import '0-general/1-reset';
-@import '0-general/2-globals';
-@import '0-general/3-media';
+@import '00-general/1-reset';
+@import '00-general/2-globals';
+@import '00-general/3-media';
 
-@import '1-colors/1-swatch';
-@import '1-colors/2-scheme';
-@import '1-colors/3-effect';
-@import '1-colors/4-theme';
+@import '10-colors/1-swatch';
+@import '10-colors/2-scheme';
+@import '10-colors/3-effect';
+@import '10-colors/4-theme';
 
-@import '2-boxes/1-layout';
-@import '2-boxes/2-position';
-@import '2-boxes/3-spacing';
-@import '2-boxes/4-size';
-@import '2-boxes/5-shape';
-@import '2-boxes/6-effect';
-@import '2-boxes/7-dynamic';
+@import '20-texts/1-font';
+@import '20-texts/2-effect';
+@import '20-texts/3-color';
+@import '20-texts/4-title';
+@import '20-texts/5-text';
 
-@import '3-images/1-background';
-@import '3-images/2-decoration'; 
+@import '30-boxes/1-layout';
+@import '30-boxes/2-position';
+@import '30-boxes/3-spacing';
+@import '30-boxes/4-size';
+@import '30-boxes/5-shape';
+@import '30-boxes/6-effect';
+@import '30-boxes/7-dynamic';
 
-@import '4-texts/1-font';
-@import '4-texts/2-effect';
+@import '40-images/1-background';
+@import '40-images/2-decoration'; 
 
-@import '5-animation/1-compatibility';
+@import '50-animation/1-compatibility';
+@import '50-animation/2-transition';

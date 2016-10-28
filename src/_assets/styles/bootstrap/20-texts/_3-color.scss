@@ -1,0 +1,23 @@
+@mixin colorNLLL( $color: $neutral-lll) { 	color: $color; fill: $color;}
+@mixin colorNLL( $color: $neutral-ll) { 	color: $color; fill: $color; }
+@mixin colorNL( $color: $neutral-l) { 		color: $color; fill: $color; }
+@mixin colorN( $color: $neutral) { 			color: $color; fill: $color; }
+@mixin colorND( $color: $neutral-dd) { 		color: $color; fill: $color; }
+@mixin colorNDD( $color: $neutral-dd) { 	color: $color; fill: $color; }
+@mixin colorNDDD( $color: $neutral-dd) { 	color: $color; fill: $color; }
+
+@mixin colorPLLL( $color: $primary-lll) { 	color: $color; fill: $color; }
+@mixin colorPLL( $color: $primary-ll) { 	color: $color; fill: $color; }
+@mixin colorPL( $color: $primary-l) { 		color: $color; fill: $color; }
+@mixin colorP( $color: $primary) { 			color: $color; fill: $color; }
+@mixin colorPD( $color: $primary-dd) { 		color: $color; fill: $color; }
+@mixin colorPDD( $color: $primary-dd) { 	color: $color; fill: $color; }
+@mixin colorPDDD( $color: $primary-dd) { 	color: $color; fill: $color; }
+
+@mixin colorSLLL( $color: $secondary-lll) { color: $color; fill: $color; }
+@mixin colorSLL( $color: $secondary-ll) { 	color: $color; fill: $color; }
+@mixin colorSL( $color: $secondary-l) { 	color: $color; fill: $color; }
+@mixin colorS( $color: $secondary) { 		color: $color; fill: $color; }
+@mixin colorSD( $color: $secondary-dd) { 	color: $color; fill: $color; }
+@mixin colorSDD( $color: $secondary-dd) { 	color: $color; fill: $color; }
+@mixin colorSDDD( $color: $secondary-dd) { 	color: $color; fill: $color; }

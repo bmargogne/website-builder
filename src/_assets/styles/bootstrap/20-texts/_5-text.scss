@@ -1,0 +1,32 @@
+
+@mixin sssmallN( $size: $txt-sss, $weight: $default-bold, $color: $neutral, $decoration: none, $style: normal, $caps-style: null ) {
+	@include txt($weight, $decoration, $style, $caps-style);
+	@include colorN($color);
+	font-size: $size;
+}
+@mixin ssmallN( $size: $txt-ss, $weight: $default-bold, $color: $neutral, $decoration: none, $style: normal, $caps-style: null ) {
+	@include txt($weight, $decoration, $style, $caps-style);
+	@include colorN($color);
+	font-size: $size;
+}
+@mixin smallN( $size: $txt-s, $weight: $default-bold, $color: $neutral, $decoration: none, $style: normal, $caps-style: null ) {
+	@include txt($weight, $decoration, $style, $caps-style);
+	@include colorN($color);
+	font-size: $size;
+}
+
+@mixin largeN( $size: $txt-l, $weight: $default-bold, $color: $neutral, $decoration: none, $style: normal, $caps-style: null ) {
+	@include txt($weight, $decoration, $style, $caps-style);
+	@include colorN($color);
+	font-size: $size;
+}
+@mixin llargeN( $size: $txt-ll, $weight: $default-bold, $color: $neutral, $decoration: none, $style: normal, $caps-style: null ) {
+	@include txt($weight, $decoration, $style, $caps-style);
+	@include colorN($color);
+	font-size: $size;
+}
+@mixin lllargelN( $size: $txt-lll, $weight: $default-bold, $color: $neutral, $decoration: none, $style: normal, $caps-style: null ) {
+	@include txt($weight, $decoration, $style, $caps-style);
+	@include colorN($color);
+	font-size: $size;
+}
