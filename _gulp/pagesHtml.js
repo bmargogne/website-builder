@@ -9,6 +9,9 @@ const runSequence = require('run-sequence');			// https://www.npmjs.com/package/
 const using = require('gulp-using');					// https://www.npmjs.com/package/gulp-using
 const watch = require('gulp-watch');					// https://www.npmjs.com/package/gulp-watch
 
+
+const browserSync = require('browser-sync').create();	// https://www.browsersync.io/
+
 // imports
 const co = require('./_config.json');
 const processPages = co.buildingSteps.processPages;

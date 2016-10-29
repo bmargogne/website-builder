@@ -8,31 +8,6 @@
 - `package.json` : 'meta information' on the project, such as the packages / dependencies needed for this builder. They install with `npm install`.
 
 
-
-##### _assets
-All basic elements common to the project, an
-
-- `files` : any files common to the whole website. If anymore precise, the file should be placed in a 'files' subfolder from the component / page directory. 
-- `fonts` : any fonts common to the whole website. If a font is only used in a specific component / page, it should be place together with it.
-- `icons` : contains icons common the whole website. These icons like UI or logo may typically used by different components.
-- `images` : contains the images common to the whole website. For instance, the website background. other image should be placed in page specific folders
-- `scripts` : contains scripts common to the whole website. For instance, script adding test features or UI dynamics on html tag elements. 
-- `styles` : contains the bootstrap set of rules, + the general project rules. 
-- `app.scss` : the root style file, which should include all other partials used. This method centralise the dependencies, and at the end is the easiest to maintain 
-
-##### _components
-Built-in elements which can be reused in many parts of the projects. Typicals are header, footer, navbars ... but also includes photo gallery for instance. 
-They include html partials (_.html), scripts, icons, style... anything to build a easy to include element in a page.
-This folder will not exist once the website is generated.
-
-##### _vendors
-contain any exterior code/packages/library which should be left untouched.
-
-##### pages
-The website itself. Each page consist in a folder, containing all the specific code to this page: style, scripts, images, and other 'subpages'.
-Nothing forces you to store your pages in this folder, but it helps to keep specific source files aside..
-
-
 ## F.A.Q
 
 Some mistakes & solutions based on my own experience... Your feedbacks can complete this list !

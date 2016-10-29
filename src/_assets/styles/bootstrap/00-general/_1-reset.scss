@@ -15,7 +15,7 @@ html {
     box-sizing: inherit;
 }
 * {
-	overflow:hidden;		// this helps seeing where your positionning is wrong
+	overflow: auto;		// once detected using "auto", manually change overflow behavior to 'hidden' or 'visible' if needed
 	-webkit-tap-highlight-color: rgba(255,255,255,0); // This gets -webkit specific prefix as it is a non W3C property
 	-webkit-tap-highlight-color: transparent; // Older Androids need this instead
 }
@@ -72,6 +72,9 @@ select:-moz-focusring {
     text-shadow: 0 0 0 #000; // make sure color is #000
 }
 
+svg {
+    display: inline-flex;
+}
 
 // For any listed elements, use <ul> as a container and <li> as an element 
 ul {

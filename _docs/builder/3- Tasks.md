@@ -87,7 +87,7 @@ to pages through naming conventions)
 
 
 
-### Vector Sprites
+### SVG - Vector Sprites
 
 **glob src**: **/*.svg
 **goes to**: _assets/images/spriteSvg.svg
@@ -102,6 +102,7 @@ a SVG spritesheet. The following workflow is smooth and works for me :
 - In HTML, you can know call your graphics using  `<svg class="myClass" title="myTitle" role="img"><use xlink:href="/myPath/spritesheet.svg#name_menu-dark"></use></svg>`
 - In CSS, you can dynamically change the colors (using the `fill` property on `myClass`) and size of your SVG using CSS.
 - (note that CSS coloring only work with shapes filled with the 'magic black' : #000000
+- Note : you can target even more precise svg elements by naming layers, groups, and paths in AI, as they will create an id attribute in the SVG tag.
 
 
 ### Bitmap Images

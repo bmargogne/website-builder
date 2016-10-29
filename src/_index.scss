@@ -3,16 +3,29 @@ body{
 }
 
 .start-icon {
-	@include positionTR(15px);
+	// @include positionTR(15px);
 	fill: $primary;
 	@include box-size(36px);
 	@include z-front;
 }
+// .start-open-menu {
+// 	@include test;
+// 	@include positionTR($stdu, absolute);
+// 	@include colorP;
+// }
 
 .start-section {
 	@include bg-color($neutral-l);	
 	@include box-size(100%, 100%);
 	position:relative;
+}
+
+.magic {
+	&:hover {
+		.start-aside {
+			@include positionR(0);
+		}
+	}
 }
 
 $start-boxSize:75%;
@@ -43,11 +56,7 @@ $start-aside-visible: 40px;
 	}
 }
 
-.hidden {
-	display:hidden;
-}
 .start-menu {
-
 	& > li {		
 		@include dynamic-themeN;
 		@include rounded-box($stdu-ss * 10);	
@@ -60,25 +69,24 @@ $start-aside-visible: 40px;
 }
 
 $start-aside-hidden: $start-aside-visible - $start-aside-width;
+
 .start-aside {
-	position:absolute;
 	@include bg-color(white);
 	@include box-size($start-aside-width, 100%);
-	@include positionR($start-aside-hidden);
 	@include padding;
-
+	@include positionR($start-aside-hidden);
 	@include transition-position;
 
+	&:hover {
+		@include positionR(0);
+	}
 	& svg {
 		@include box-size(32px);
 		@include colorPD;
 	}
-	& article {
-		display:none;
-	}
-	&:hover {
-		@include positionR(0);
-	}
+	// & article {
+	// 	display:none;
+	// }
 	& img {
 		@include marginB;
 	}

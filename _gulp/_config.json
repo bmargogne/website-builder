@@ -36,7 +36,7 @@
 
 	"serve" : {
 		"localport":3000,
-		"localurl": "http://localhost:3000",
+		"localurl": "http://localhost:3000/pages/test3",
 		"browserSyncUI": 		true,
 
 		"browsers" : {
