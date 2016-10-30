@@ -11,12 +11,17 @@
 	background-color : $color;
 }
 
-@mixin borderH($border-size: 1px, $color: black, $border-style: solid) {
+@mixin border($color: black, $border-size: 1px, $border-style: solid) {
+	border: $border-style $color;
+	border-width: $border-size; 
+}
+
+@mixin borderH($color: black, $border-size: 1px, $border-style: solid) {
 	border: $border-style $color;
 	border-width: 0px $border-size; 
 }
 
-@mixin borderV($border-size: 1px, $color: black, $border-style: solid) {
+@mixin borderV($color: black, $border-size: 1px, $border-style: solid) {
 	border: $border-style $color;
 	border-width: $border-size 0px; 
 }

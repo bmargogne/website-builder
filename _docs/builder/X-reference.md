@@ -97,7 +97,7 @@ regroup all the common variables and mixin. Should be common to all your project
 	- spacingV-reset( top, bottom )
 
 - **boxes/size** : max/min width & heigth
-	- box-size( width, height, forcemin, forcemax)
+	- size( width, height, forcemin, forcemax)
 
 - **boxes/shape** : fancy stuff
 	- circle-box( radius )

@@ -3,43 +3,70 @@ body {
 	margin: auto;
 }
 
-$defaultPosition: absolute;
-// corner positionning
-@mixin positionTR($top: $stdu, $right: $top, $position: $defaultPosition) {	
-	top: $top; right: $right; position: $position;
+@mixin teleport( $x: $stdu, $y: $x, $z: $x) {
+	transform: translate3d($x,$y,$z);
 }
-@mixin positionTL($top: $stdu, $left: $top, $position: $defaultPosition) {
-	top: $top; left: $left; position: $position;
-}
-@mixin positionBR($bottom: $stdu, $right: $bottom, $position: $defaultPosition) {
-	bottom: $bottom; right: $right; position: $position;
-}
-@mixin positionBL($bottom: $stdu, $left: $bottom, $position: $defaultPosition) {
-	bottom: $bottom; left: $left; position: $position; 
+@mixin dynamic-teleport( $x: $stdu, $y: $x, $z: $x) {
+	transform: translate3d(0,0,0);
+
+	&:hover {
+		transform: translate3d($x,$y,$z);
+	}
 }
 
-// side positionning
-@mixin positionT($top: $stdu, $position: $defaultPosition) {
-	top: $top; position: $position; 
-}
-@mixin positionR($right: $stdu, $position: $defaultPosition) {
-	right: $right; position: $position;
-}
-@mixin positionB($bottom: $stdu, $position: $defaultPosition) {
-	bottom: $bottom; position: $position;
-}
-@mixin positionL($left: $stdu, $position: $defaultPosition) {
-	left: $left; position: $position;
-}
-
-
-// tricky to use ?
-@mixin position(	$top: $stdu, $right: $top,
-					$bottom: $top, $left: $right,
-					$position: $defaultPosition) {
+$default-position: absolute;
+@mixin position-reset(	$top: initial, $right: initial,
+						$bottom: initial, $left: initial,
+						$position: $default-position) {
 	position: $position;
 	top: $top;
 	right: $right;
 	bottom: $bottom;
 	left: $left;
 }
+@mixin position-initial($top: initial, $right: initial, $bottom: initial, $left: initial) {	
+	@include position-reset($top, $right, $bottom, $left, $position);
+}
+
+// corner positionning
+@mixin positionTR(	$top: $stdu, $right: $top,
+					$position: $default-position, $bottom: initial, $left: initial) {	
+	@include position-reset($top, $right, $bottom, $left, $position);
+}
+@mixin positionTL(	$top: $stdu, $left: $top,
+					$position: $default-position, $bottom: initial, $right: initial) {
+	@include position-reset($top, $right, $bottom, $left, $position);
+}
+@mixin positionBR(	$bottom: $stdu, $right: $bottom,
+					$position: $default-position, $top: initial, $left: initial) {
+	@include position-reset($top, $right, $bottom, $left, $position);
+}
+@mixin positionBL(	$bottom: $stdu, $left: $bottom,
+					$position: $default-position, $top: initial, $right: initial) {
+	@include position-reset($top, $right, $bottom, $left, $position);
+}
+
+
+// side positionning
+@mixin positionT($top: $stdu, $position: $default-position) {
+	@include position-reset;
+	top: $top;
+	position: $position; 
+}
+@mixin positionR($right: $stdu, $position: $default-position) {
+	@include position-reset;
+	right: $right;
+	position: $position;
+}
+@mixin positionB($bottom: $stdu, $position: $default-position) {
+	@include position-reset;
+	bottom: $bottom;
+	position: $position;
+}
+@mixin positionL($left: $stdu, $position: $default-position) {
+	@include position-reset;
+	left: $left; position:
+	$position;
+}
+
+

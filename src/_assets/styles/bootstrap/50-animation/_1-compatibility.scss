@@ -17,7 +17,7 @@
     }
 }
 
-@mixin animation($str) {
+@mixin animations($str) {
   -webkit-animation: #{$str};
   -moz-animation: #{$str};
   -ms-animation: #{$str};
@@ -25,7 +25,7 @@
   animation: #{$str};      
 }
 
-@mixin transition($args...) {
+@mixin transitions($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
   -ms-transition: $args;

@@ -1,0 +1,6 @@
+.testpanel{
+	@include themeN; 
+	@include border;
+	@include padding;
+	@include size(300px, 100%);
+}

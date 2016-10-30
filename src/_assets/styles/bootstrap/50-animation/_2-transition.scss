@@ -9,43 +9,59 @@ $default-animation-duration: $quick;
 $default-transition-duration: $quick;
 $default-timing: ease-in-out;
 $default-iteration-count: infinite;
-$default-delay: initial;
+$default-delay: 0s;
 
+// animation timing curve generator https://matthewlein.com/ceaser/
+
+@mixin transition(	$property: all,
+					$duration: $default-animation-duration,
+					$timing: $default-timing,
+					$delay: $default-delay ) {
+	// check if compatibility call is required considering gulp-autoprefix
+	transition: $property $duration $timing $delay;
+}
 
 @mixin transition-background( 	$duration: $default-animation-duration,
 								$timing: $default-timing,
 								$delay: $default-delay,
-								$prop: 'background-color') {
-	transition: $prop $duration $timing $delay;
+								$props: 'background-color') {
+	@include transition($props, $duration, $timing, $delay);
 }
 
 @mixin transition-theme(	$duration: $default-animation-duration,
 							$timing: $default-timing,
 							$delay: $default-delay,
-							$prop: 'background-color, color') {
-	transition: $prop $duration $timing $delay;
+							$props: 'background-color, color') {
+	@each $prop in $props {
+		@include transition($props, $duration, $timing, $delay);
+	}
 }
 
 @mixin transition-spacing(	$duration: $default-animation-duration,
 							$timing: $default-timing,
 							$delay: $default-delay,
-							$prop: 'margin, padding') {
-	transition: $prop $duration $timing $delay;
+							$props: 'margin, padding') {
+	@each $prop in $props {
+		@include transition($props, $duration, $timing, $delay);
+	}
 }
 @mixin transition-size(		$duration: $default-animation-duration,
 							$timing: $default-timing,
 							$delay: $default-delay,
-							$prop: 'width, height') {
-	transition: $prop $duration $timing $delay;
+							$props: 'width, height') {
+	@each $prop in $props {
+		@include transition($props, $duration, $timing, $delay);
+	}
 }
 
 
 @mixin transition-position( $duration: $default-animation-duration,
 							$timing: $default-timing,
-							// $delay: $default-delay,
-							$prop: right) {
-							// $prop: 'position, top, left, right, bottom') {
-	transition: $prop $duration $timing;
+							$delay: $default-delay,
+							$props: 'position, top, left, right, bottom') {
+	@each $prop in $props {
+		@include transition($prop, $duration, $timing, $delay);
+	}
 }
 
 

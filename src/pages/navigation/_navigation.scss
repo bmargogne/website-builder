@@ -1,0 +1,74 @@
+.exampledata {
+	display:none;
+}
+
+#navbutton {
+	@include dynamic-themeP-dark;
+}
+
+.navigator {
+	@include themeN-inv; 
+	@include test-border;
+	@include size(100%, 100%);
+	@include border(red);
+}
+
+.concepts {
+
+	@include border($neutral-l);
+	
+	& > li {
+		// for all concepts
+		@include dynamic-themeN;		
+		@include spacing;
+	}
+
+	// 1- LINKED TO FILE SYSTEM //////////
+	.folder {
+		// a folder can hold files
+		@include border($secondary);
+	}
+
+	.file {
+		// a file is contained in a folder
+		@include border($secondary);
+	}
+
+	// 2- LINKED TO FILE DEPENDENCIES ///////
+	.root {
+		// the file does not export anything
+		// it imports exclusively.
+	}
+	
+	.relay {
+		// a relay file has both imports and exports
+		// their appearance shoud depend on the type of file dependencie node.
+	}
+
+	.leaf {
+		// a generator has no dependencies. It only provides (export) data.
+		@include border($secondary);
+	}
+
+	// 3-CROSS PATH OBJECT BOUNDS //////
+	.concept {
+		//represents a high level idea, with no specific behaviour attached.
+		// They are always used in projects (brainstorming!),
+		// but their usage in the process towards effective code should be more seamless
+	}
+
+	.conceptPath {
+		// links between concepts. They have a direction, and a weight.
+	}
+
+	.object {
+		// an object has a data model in the system, so it behaves differently
+		// and should have a differentiated view than concepts.		
+	}
+
+	.callPath {
+		// links between objects
+	}
+
+
+}

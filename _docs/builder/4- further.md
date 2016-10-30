@@ -19,6 +19,12 @@ Some mistakes & solutions based on my own experience... Your feedbacks can compl
 - IF something doesn't seem to happen when changing a style, it may be because the preprocessor is crashing
 in such case, go to the console and scroll to check any Error message from the SASS pluging
 
+
+### My style is not taken into account ??
+- check that cache is disabled in your browser
+- check that your scss file is imported in the main "app.scss" file
+
+
 ### Some of my building steps are not running ??
 if a building sequence seems incomplete :
 - check if the building step is activated in the _config.json

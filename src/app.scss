@@ -14,9 +14,10 @@
 // from relative path -> components
 @import '_components/navbar/navbar';
 @import '_components/footer/footer';
-
+@import '_components/testpanel/testpanel';
 
 
 // from relative path -> page specific style
-@import 'index'; 
+@import 'pages/menu'; 
 @import 'pages/test3/test3';
+@import 'pages/navigation/navigation';

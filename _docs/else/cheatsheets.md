@@ -2,6 +2,7 @@
 =============
 
 When learning, cheat sheets are a great thing to keep printed and always at reach !
+I place the files in the _docs/src/ folder, which are not saved on the repository. 
 
 ##### GIT
 https://www.git-tower.com/blog/git-cheat-sheet/

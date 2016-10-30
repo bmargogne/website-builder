@@ -8,7 +8,7 @@ body {
 
 
 // 0 parameter : square box of standard size 
-@mixin box-size(	$width: $stdu-l, $height: $width,
+@mixin size(	$width: $stdu-l, $height: $width,
 					$forcemin: false, $forcemax: false) {
 	
 	width: $width;

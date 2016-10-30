@@ -1,0 +1,64 @@
+
+
+.test3-3dtransform {
+	@include size;
+	@include bg-color;
+	@include test;
+
+	@include dynamic-teleport;
+	// @include transition(transform);
+}
+
+
+.element {
+  animation: tutsFade 4s 1s infinite linear alternate,
+             tutsRotate 4s 1s infinite linear alternate;
+}
+@keyframes tutsFade {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes tutsRotate {
+  to {
+    transform: rotate(180deg); 
+  }
+}
+
+.test3-canvas {
+	@include size(90%, 90%);
+	margin:auto;
+	@include test-border;
+}
+
+.test3-animation {
+  width: 200px;
+  height: 200px;
+  animation: test3Anim 1.5s infinite linear;
+}
+
+
+
+@keyframes test3Anim {
+	0% {
+		background:red;
+		@include positionTR;
+	}
+	10% {
+		background: darkred;
+		@include positionTL;
+	}
+	20%  {	
+		background: indianred;
+		@include positionBL;
+	}	
+	60%  {	
+		background: red;
+		@include positionBR;
+	}
+	100%  {	
+		background: red;
+		@include positionTR;
+	}
+}
+
