@@ -7,5 +7,3 @@ console.log(topLevel);
 $('#navbutton').click( () => {
 	alert('yeh');
 });
-
-const concept

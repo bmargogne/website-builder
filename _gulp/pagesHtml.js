@@ -36,12 +36,12 @@ gulp.task('pagesHtml', () => {
 
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], { ignoreInitial: false } )
 			.pipe( _if(!forceRebuild,	newer( DEST )))
-			.pipe( _if(isTest,			using( {prefix:'[pages/html] building :', color:'cyan', filesize:true} )))
 			.pipe( _if(plumbing,		plumber() ))
 			.pipe(						fileinclude({ prefix: '@@', basepath: co.src }))
 			.pipe( _if(isProd,			htmlmin({collapseWhitespace: true})))
 			.pipe( _if(plumbing,		plumber.stop() ))
-			.pipe(						gulp.dest( DEST ));
+			.pipe(						gulp.dest( DEST ))
+			.pipe( _if(isTest,			using( {prefix:'[pages/html] builded :', color:'cyan', filesize:true} )));
 	}
 	return;
 });

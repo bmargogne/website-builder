@@ -23,8 +23,8 @@ gulp.task('styleCss', () => {
 
 	return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))
-		.pipe( _if( isTest,	using( {prefix:'[style/css] concatenating :', color:'yellow', filesize:true} )))
+		.pipe( _if( isTest,	using( {prefix:'[style/css] using :', color:'yellow', filesize:true} )))
 		.pipe(				concat( STYLESHEET ))
-		.pipe( _if( isTest,	using( {prefix:'[style/css] done concatenating :', color:'yellow', filesize:true} )))
-		.pipe(				gulp.dest( DEST ));
+		.pipe(				gulp.dest( DEST ))
+		.pipe( _if( isTest,	using( {prefix:'[style/css] done :', color:'yellow', filesize:true} )));
 });

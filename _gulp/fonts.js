@@ -27,8 +27,8 @@ gulp.task('fonts', () => {
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe(				rename( {dirname: ''} ))
 			.pipe(				newer( DEST ))
-			.pipe( _if(isTest,	using( {prefix:'[fonts] copying :', color:'gray', filesize:true} )))
-			.pipe(				gulp.dest( DEST ));
+			.pipe(				gulp.dest( DEST ))
+			.pipe( _if(isTest,	using( {prefix:'[fonts] copied :', color:'gray', filesize:true} )));
 	}
 	return;
 });

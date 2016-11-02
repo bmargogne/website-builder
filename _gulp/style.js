@@ -36,4 +36,5 @@ gulp.task('watch-style', () => {
 			runSequence('style', 'liveReload');
 		});
 	}
+	return;
 });

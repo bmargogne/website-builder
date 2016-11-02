@@ -30,9 +30,9 @@ gulp.task('imgBitmaps', () => {
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2, EXCLUDE3], { ignoreInitial: false })
 			.pipe(				rename( {dirname: ''}))
 			.pipe(				newer( DEST ))
-			.pipe( _if(isTest,	using( {prefix:'[images/bitmaps] compressing :', color:'magenta', filesize:true} )))
 			.pipe( _if(isProd,	imagemin()))
-			.pipe(				gulp.dest(DEST));
+			.pipe(				gulp.dest(DEST))
+			.pipe( _if(isTest,	using( {prefix:'[images/bitmaps] compressed & copied :', color:'magenta', filesize:true} )));
 	}
 	return;
 });

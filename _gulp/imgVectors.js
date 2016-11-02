@@ -67,8 +67,8 @@ gulp.task('imgVectors', function () {
 			.pipe(				rename( {dirname: ''} ))
 			.pipe( _if(isProd,	svgmin( configSvgo )))
 			.pipe(				svgSprite( configSprite )).on('error', error => { console.error(error); })
-			.pipe( _if(isTest,	using( {prefix:'[images/vector] spritesheet done :', color:'magenta', filesize:true} )))
-			.pipe(				gulp.dest( DEST));
+			.pipe(				gulp.dest( DEST))
+			.pipe( _if(isTest,	using( {prefix:'[images/vector] spritesheet done :', color:'magenta', filesize:true} )));
 	}
 	return;
 });

@@ -31,36 +31,35 @@ gulp.task('imgSprite', () => {
 		const isTest = co.env.isTest;
 
 		const spriteData = gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
-			.pipe( _if( isProd, newer( DEST + SPRITESHEET )))
-			.pipe( _if( isTest,
-				using({
-					prefix:'[images/sprite] including in spritesheet :',
-					color:'magenta',
-					filesize:true
-				})
+			.pipe( _if( isProd, 		newer( DEST + SPRITESHEET )))
+			.pipe( _if( isTest,			using({
+											prefix:'[images/sprite] including in spritesheet :',
+											color:'magenta',
+											filesize:true })
 			))
-			.pipe( spritesmith({
-				// the generated stylesheet contains sprites' size and position on the spritesheet
-				imgName: SPRITESHEET,
-				cssName: CSSFILE,
-			}));
+			.pipe( 						spritesmith({ 
+											// the generated stylesheet contains sprites' size and position on the spritesheet
+											imgName: SPRITESHEET,
+											cssName: CSSFILE })
+			);
 
 		const imgStream = spriteData.img
-			.pipe( buffer() )
-			.pipe( _if( isProd, imagemin() ))
-			.pipe( _if( isTest,
-				using({
-					prefix:'[images/sprite] spritesheet done :',
-					color:'magenta',
-					filesize:true
-				})
+			.pipe(						buffer() )
+			.pipe( _if( isProd, 		imagemin() ))
+			.pipe( _if( isTest, 		using({
+											prefix:'[images/sprite] spritesheet done :',
+											color:'magenta',
+											filesize:true })
 			))
-			.pipe( gulp.dest( DEST ));
+			.pipe( 						gulp.dest( DEST ));
 
 		const cssStream = spriteData.css
-			.pipe( _if( isTest,
-				using( {prefix:'[images/sprite] spritesheet Css definition done :', color:'magenta', filesize:true} )))
-			.pipe( gulp.dest( DESTCSS ));
+			.pipe( 						gulp.dest( DESTCSS ))
+			.pipe( _if( isTest, 		using({
+											prefix:'[images/sprite] spritesheet Css definition done :',
+											color:'magenta',
+											filesize:true })
+			));
 
 		return merge(imgStream, cssStream);
 	}

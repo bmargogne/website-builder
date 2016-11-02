@@ -1,0 +1,13 @@
+{
+ "name": "flare",
+ "children": [
+	{
+	"name": "flare",
+	"children": [
+		{"name": "Dépendances internes", "size": 100},
+		{"name": "Dépendances internes", "size": 100}
+	]},
+	{"name": "Dépendances internes", "size": 100},
+	{"name": "Dépendances internes", "size": 200},
+	{"name": "Dépendances externes", "size": 100}	
+]}

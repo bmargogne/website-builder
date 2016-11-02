@@ -85,13 +85,19 @@
 	},
 
 	"scripts": {
-		"src": "**/*.js",
-		"dest": "_assets",
+		"srcJs": "**/*.js",
+		"srcTs": "**/*.ts",
+		
+		"tempDirectory": "tempScripts",
+		"tempJsScript": "scriptsJS.js", 
+		"tempTsScript": "scriptTS.ts",
+
+		"dest": "_assets",	
 		"scriptfile": "script.js",
 
 		"wrapper" : {
-			"before":"$(document).ready(() => {",
-			"after":"});"
+			"before":"/* by BM */",
+			"after":"/* by BM */"
 		}
 	},
 

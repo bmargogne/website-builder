@@ -26,13 +26,15 @@ gulp.task('styleFinal', () => {
 
 	return gulp.src( SRC , { ignoreInitial: false })
 		.pipe(				newer( DEST + STYLESHEET ))
+		.pipe( _if( isTest, using( {prefix:'[style/final] using :', color:'yellow', filesize:true} )))
+
 		.pipe( _if( isProd, sourcemaps.init() ))
-		.pipe( _if( isTest, using( {prefix:'[style/final] concatenating :', color:'yellow', filesize:true} )))
 		.pipe(				concat ( STYLESHEET ))
 		.pipe( _if( isProd, gcmq() ))
 		.pipe(				autoprefixer())
-		.pipe( _if( isProd, cleanCss()))
+		.pipe( _if( isProd, cleanCss()))		
 		.pipe( _if( isProd, sourcemaps.write('./') ))
-		.pipe( _if( isTest, using( {prefix:'[style/final] done & optimized :', color:'yellow', filesize:true} )))
-		.pipe(				gulp.dest( DEST ));
+
+		.pipe(				gulp.dest( DEST ))
+		.pipe( _if( isTest, using( {prefix:'[style/final] done :', color:'yellow', filesize:true} )));
 });

@@ -17,15 +17,15 @@ gulp.task('vendors', () => {
 		// globs
 		const SRC = `${co.src}/${co.vendors.src}`;
 		const DEST = `${co.dest}/${co.vendors.dest}/`;
-		const EXCLUDE = `!${co.dest}/${co.exclude}/`;
-		console.log(`Vendors copying : ${SRC} --> ${DEST}`);
+		const EXCLUDE = `!${co.src}/${co.exclude}/`;
+		console.log(`Vendors copying : [${SRC}] --> [${DEST}], exceot for [${EXCLUDE}]`);
 
 		const isTest = co.env.isTest;
 
 		return gulp.src( [SRC, EXCLUDE], { ignoreInitial: false })
 			.pipe(				newer( DEST ))
-			.pipe( _if( isTest,	using( {prefix:'[vendors] copying :', color:'red', filesize:true} )))
-			.pipe(				gulp.dest( DEST ));
+			.pipe(				gulp.dest( DEST ))
+			.pipe( _if( isTest,	using( {prefix:'[vendors] copying :', color:'red', filesize:true} )));
 		}
 	return;
 });
@@ -36,7 +36,7 @@ gulp.task('watch-vendors', () => {
 
 		// globs
 		const SRC = `${co.src}/${co.vendors.src}`;
-		const EXCLUDE = `!${co.src}/${co.vendors.src}`;
+		const EXCLUDE = `!${co.src}/${co.exclude}`;
 		console.log(`Watching Vendors elements : [${SRC}], except for [${EXCLUDE}]`);
 
 		return watch( [SRC, EXCLUDE], () => {

@@ -30,6 +30,6 @@ gulp.task('styleScss', () => {
 								includePaths: `${co.src}/${scssDefault}`
 							}).on('error', sass.logError))
 		.pipe(				concat( STYLESHEET ))
-		.pipe( _if( isTest,	using( {prefix:'[style/scss] done generating & concatenating:', color:'yellow', filesize:true} )))
-		.pipe(				gulp.dest( DEST ));
+		.pipe(				gulp.dest( DEST ))
+		.pipe( _if( isTest,	using( {prefix:'[style/scss] done :', color:'yellow', filesize:true} )));
 });

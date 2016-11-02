@@ -27,8 +27,8 @@ gulp.task('files', () => {
 		return gulp.src( [SRC, EXCLUDE1, EXCLUDE2], { ignoreInitial: false })
 			.pipe(				rename( path => { path.dirname = ''; }))
 			.pipe(				newer( DEST ))
-			.pipe( _if(isTest,	using( {prefix:'[files] copying :', color:'blue', filesize:true} )))
-			.pipe(				gulp.dest( DEST ));
+			.pipe(				gulp.dest( DEST ))
+			.pipe( _if(isTest,	using( {prefix:'[files] copied :', color:'blue', filesize:true} )));
 	}
 	return;
 });
